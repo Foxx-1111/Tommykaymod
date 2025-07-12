@@ -1,0 +1,25 @@
+ideas = {
+
+	country = {
+		mod_grosse_depression = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 1.2
+				consumer_goods_factor = 0.80
+				conscription_factor = -0.75
+				local_resources_factor = -0.3
+			}
+		}
+	}
+}

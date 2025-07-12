@@ -1,0 +1,38 @@
+state={
+	id=1021
+	name="STATE_1021"
+	provinces={
+		9347 
+	}
+	state_category = large_city
+	manpower=1896796
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	history = {
+
+		owner = GER
+		add_core_of = GER
+		add_core_of = SHL
+		add_core_of = SAX
+
+		victory_points = {
+			9347 20 # Hamburg
+		}
+
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			dockyard = 6
+			air_base = 5
+		}
+		
+		1939.1.1 = {
+			buildings = {
+				synthetic_refinery = 3
+				anti_air_building = 5
+				dockyard = 7
+				arms_factory = 3
+			}
+		}
+	}
+}

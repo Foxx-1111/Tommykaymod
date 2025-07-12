@@ -1,0 +1,11 @@
+USA_mod_council_of_technocrats_dynamic_idea = {
+	enable = { always = yes }
+
+	icon = GFX_idea_general_staff
+	
+	#INITIAL
+	consumer_goods_factor = USA_mod_council_consumer_goods_factor
+	research_speed_factor = USA_mod_council_research_speed_factor
+	#FUTURE
+	political_power_gain =  USA_mod_council_political_power_gain
+}

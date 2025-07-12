@@ -1,0 +1,380 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_USA_CONGRESS}
+
+focus_tree = {
+	id = usa_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = USA
+		}
+		
+		modifier = {
+			add = 10
+			original_tag = USA
+		}
+	}
+	continuous_focus_position = { x = 50 y = 1600 }
+	default = no
+	
+	focus = {
+		id = USA_start_of_the_american_jahrhundert
+		icon = GFX_focus_generic_self_management
+		x = 8
+		y = 0
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_government = democratic
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+			
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_acknowledge_the_technocrats
+		icon = GFX_focus_generic_university_2
+		x = 0
+		y = 1
+		relative_position_id = USA_start_of_the_american_jahrhundert
+		prerequisite = { focus = USA_start_of_the_american_jahrhundert }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_government = democratic
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			set_power_balance = {
+				id = USA_power_balance
+				left_side = USA_liberal_technocrats # will keep the last set side if not specified
+				right_side = USA_authotarian_technocrats # will keep the last set side if not specified
+				set_default = yes # whether or not to reset the power balance to the initial value, default = no
+			}
+			
+			hidden_effect = {
+				add_dynamic_modifier = { modifier = USA_mod_council_of_technocrats_dynamic_idea }
+				add_to_variable = { USA_mod_council_consumer_goods_factor = -0.05 }
+				add_to_variable = { USA_mod_council_research_speed_factor = 0.02 }
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_in_a_silent_way
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 2
+		relative_position_id = USA_start_of_the_american_jahrhundert
+		prerequisite = { focus = MOD_USA_acknowledge_the_technocrats }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_intelligence_agency = yes
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			USA = { add_ideas = { usa_mod_idea_in_a_silent_way } }
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Concessions_to_the_Liberals
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -3
+		y = 2
+		relative_position_id = USA_start_of_the_american_jahrhundert
+		prerequisite = { focus = MOD_USA_acknowledge_the_technocrats }
+		
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = {
+				power_balance_value = {
+					id = USA_power_balance
+					value > 0.25
+				}
+			}
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = -0.1
+				tooltip_side = USA_liberal_technocrats
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Fund_Independent_Researchers
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 1
+		relative_position_id = MOD_USA_Concessions_to_the_Liberals
+		prerequisite = { focus = MOD_USA_Concessions_to_the_Liberals }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = {
+				power_balance_value = {
+					id = USA_power_balance
+					value > 0.25
+				}
+			}
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = -0.05
+				tooltip_side = USA_liberal_technocrats
+			}
+			custom_effect_tooltip = MOD_USA_Fund_Independent_Researchers_tt
+			hidden_effect = {
+				add_to_variable = { USA_mod_council_research_speed_factor = 0.03 }
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Open_Political_Discourse
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 1
+		relative_position_id = MOD_USA_Concessions_to_the_Liberals
+		prerequisite = { focus = MOD_USA_Concessions_to_the_Liberals }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = {
+				power_balance_value = {
+					id = USA_power_balance
+					value > 0.25
+				}
+			}
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = -0.05
+				tooltip_side = USA_liberal_technocrats
+			}
+			custom_effect_tooltip = MOD_USA_Open_Political_Discourse_tt
+			hidden_effect = {
+				add_to_variable = {  }
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Concessions_to_the_Authoritarians
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 3
+		y = 2
+		relative_position_id = USA_start_of_the_american_jahrhundert
+		prerequisite = { focus = MOD_USA_acknowledge_the_technocrats }
+		
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = {
+				power_balance_value = {
+					id = USA_power_balance
+					value < -0.25
+				}
+			}
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = 0.1
+				tooltip_side = USA_authotarian_technocrats
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Propaganda_for_the_Masses
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 1
+		relative_position_id = MOD_USA_Concessions_to_the_Authoritarians
+		prerequisite = { focus = MOD_USA_Concessions_to_the_Authoritarians }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = {
+				power_balance_value = {
+					id = USA_power_balance
+					value < 0.25
+				}
+			}
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = 0.05
+				tooltip_side = USA_authotarian_technocrats
+			}
+			custom_effect_tooltip = MOD_USA_Concessions_to_the_Authoritarians
+			hidden_effect = {
+				add_to_variable = { MOD_USA_Concessions_to_the_Authoritarians = 0.03 }
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Fund_the_Army
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 1
+		relative_position_id = MOD_USA_Concessions_to_the_Authoritarians
+		prerequisite = { focus = MOD_USA_Concessions_to_the_Authoritarians }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = {
+				power_balance_value = {
+					id = USA_power_balance
+					value < 0.25
+				}
+			}
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = 0.05
+				tooltip_side = USA_liberal_technocrats
+			}
+			add_political_power = 50
+			custom_effect_tooltip = MOD_USA_Fund_Independent_Researchers_tt
+			hidden_effect = {
+				add_to_variable = { USA_mod_council_political_power_gain = 0.05 }
+			}
+		}
+	}
+}

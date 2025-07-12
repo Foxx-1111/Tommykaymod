@@ -1,0 +1,30 @@
+state = {
+	id = 998
+	name = "STATE_998"
+	
+	state_category = large_town
+	manpower = 1166906
+	
+	history = {
+		owner = XSM
+		add_core_of = BRM
+		add_core_of = XSM
+
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+		}
+
+		victory_points = {
+			4425 10 
+		}
+	}
+
+	provinces={
+		1082 1197 1934 4087 4318 4425 4588 4996 8063 10386 10486 12335 12464 12492 
+	}
+
+	local_supplies = 0.000
+	buildings_max_level_factor = 1.000
+}

@@ -1,0 +1,91 @@
+ideas = {
+
+	country = {
+		mod_grosse_depression = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 1.2
+				consumer_goods_factor = 0.80
+				conscription_factor = -0.75
+				local_resources_factor = -0.3
+			}
+		}
+	}
+	country = {
+		usa_mod_5_habibis = {
+			picture = AFG_adopt_nufus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				recruitable_population_factor = -0.025
+				stability_weekly = -0.005
+			}
+		}
+	}
+	country = {
+		usa_mod_neglected_navy = {
+			picture = AUS_naval_efficiency_idea
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_dockyard_factor = -0.1
+				industrial_capacity_dockyard = -0.2
+				naval_speed_factor = -0.15
+				naval_strike = -0.05
+				naval_hit_chance = -0.1
+				naval_coordination = -0.1
+			}
+		}
+	}
+	country = {
+		usa_mod_idea_in_a_silent_way = {
+			picture = generic_spy_intel
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				operative_slot = 1
+				drift_defence_factor = 0.2
+				intelligence_agency_defense = 0.15
+				subversive_activites_upkeep = -0.25
+			}
+		}
+	}
+}
