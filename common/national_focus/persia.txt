@@ -625,7 +625,7 @@ focus_tree = {
 		x = 7
 		y = 1
 		relative_position_id = PER_modernizing_iran
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 15
@@ -1174,7 +1174,7 @@ focus_tree = {
 	focus = { #ARMY
 		id = PER_future_of_war
 		icon = GFX_focus_generic_army_tanks2
-		prerequisite = { focus = PER_german_tanks focus = PER_czech_tanks }
+		prerequisite = { focus = PER_german_tanks focus = PER_czech_tanks focus = PER_establish_tehran_armor }
 		x = 1
 		y = 1
 		relative_position_id = PER_czech_tanks
@@ -3637,7 +3637,7 @@ focus = { #Fascism
 		x = 1
 		y = 2
 		relative_position_id = PER_western_mountain_wall
-		cost = 5
+		cost = 10
 		
 		available = {	
 			has_government = communism
@@ -3660,6 +3660,7 @@ focus = { #Fascism
 
 			GRE = {
 				exists = no
+				is_subject = yes
 			}
 		}
 
@@ -3946,9 +3947,9 @@ focus = { #Fascism
 	focus = { #DEFENCE
 		id = PER_fight_for_iran
 		icon = GFX_focus_PER_fight_for_iran
-		x = -19
+		x = 10
 		y = 0
-		relative_position_id = PER_modernizing_iran
+		relative_position_id = PER_international_solidarity
 		cost = 0
 		
 		available = {
@@ -4751,10 +4752,10 @@ focus = { #Fascism
 	focus = { #DEMOCRATIC
 		id = PER_ally_bazaari
 		icon = GFX_focus_PER_ally_bazaari
-		prerequisite = { focus = PER_iranian_socialist_revolution }
-		x = -1
+		prerequisite = { focus = PER_appease_the_seperatists }
+		x = -0
 		y = 1
-		relative_position_id = PER_iranian_socialist_revolution
+		relative_position_id = PER_appease_the_seperatists
 		cost = 5
 		
 		available = {
@@ -5128,8 +5129,8 @@ focus = { #Fascism
 		id = PER_soviet_alignment
 		icon = GFX_focus_GER_stakhanovite_movement
 		prerequisite = { focus = PER_iranian_socialist_revolution }
-		x = -3
-		y = 2
+		x = -4
+		y = 1
 		relative_position_id = PER_iranian_socialist_revolution
 		cost = 2
 		
@@ -6035,7 +6036,7 @@ focus = { #Fascism
 		icon = GFX_focus_SWE_refuge_for_revolutionaries
 		prerequisite = { focus = PER_iranian_socialist_revolution }
 		prerequisite = { focus = PER_elevate_the_iran_party }
-		x = -1
+		x = -2
 		y = 2
 		relative_position_id = PER_elevate_the_iran_party
 		cost = 5
