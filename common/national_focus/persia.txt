@@ -3947,8 +3947,8 @@ focus = { #Fascism
 	focus = { #DEFENCE
 		id = PER_fight_for_iran
 		icon = GFX_focus_PER_fight_for_iran
-		x = 10
-		y = 0
+		x = 0
+		y = 12
 		relative_position_id = PER_international_solidarity
 		cost = 0
 		
@@ -4523,7 +4523,7 @@ focus = { #Fascism
 		id = PER_rally_the_reformers
 		icon = GFX_goal_generic_national_unity
 		#prerequisite = { focus = PER_separate_crown }
-		x = -38
+		x = -32
 		y = 0
 		relative_position_id = PER_modernizing_iran
 		cost = 5
@@ -6143,7 +6143,7 @@ focus = { #Fascism
 	focus = { #COMMUNIST
 		id = PER_international_solidarity
 		icon = GFX_focus_ETH_freedom_at_gunpoint
-		x = 8
+		x = 10
 
 		y = 0
 		relative_position_id = PER_rally_the_reformers
