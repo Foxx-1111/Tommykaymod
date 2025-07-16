@@ -9,3 +9,12 @@ USA_mod_council_of_technocrats_dynamic_idea = {
 	#FUTURE
 	political_power_gain =  USA_mod_council_political_power_gain
 }
+
+PER_women_workers = {
+	enable = { always = yes }
+	icon = GFX_focus_generic_universal_suffrage
+
+	consumer_goods_factor = -0.05
+	political_power_gain =  -0.10
+	conscription_factor = 0.15
+}
