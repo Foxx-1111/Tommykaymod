@@ -61,7 +61,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_revoke_heraklion
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -121,7 +121,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_recruit_the_fascists
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -306,7 +306,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_following_in_the_footsteps_of_giants
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -991,7 +991,8 @@ focus_tree = {
 		id = GRE_forada_nostrum
 		icon = GFX_focus_ITA_mare_nostrum
 		prerequisite = { focus = GRE_byzantine_themata }
-		x = 0
+		mutually_exclusive = { focus = GRE_Forging_a_Greek_empire }
+		x = -1
 		y = 1
 		relative_position_id = GRE_byzantine_themata
 		cost = 10
@@ -1005,12 +1006,30 @@ focus_tree = {
 		}
 	}
 	
+	focus = {
+		id = GRE_Forging_a_Greek_empire
+		icon = GFX_focus_GRE_resurrecting_the_megali_idea
+		prerequisite = { focus = GRE_byzantine_themata }
+		mutually_exclusive = { focus = GRE_forada_nostrum }
+		x = 1
+		y = 1
+		relative_position_id = GRE_byzantine_themata
+		cost = 10
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			unlock_decision_tooltip = form_roman_empire
+		}
+	}
 
 	focus = {
 		id = GRE_moulding_the_new_world_order
 		icon = GFX_focus_RAJ_to_shake_the_world
-		prerequisite = { focus = GRE_forada_nostrum }
-		x = 0
+		prerequisite = { focus = GRE_forada_nostrum focus = GRE_Forging_a_Greek_empire}
+		x = 1
 		y = 1
 		relative_position_id = GRE_forada_nostrum
 		cost = 10
@@ -1044,7 +1063,7 @@ focus_tree = {
 		x = -6
 		y = 1
 		relative_position_id = GRE_revoke_heraklion
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			base = 1
 		}
@@ -1068,7 +1087,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = GRE_the_modern_movement
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -1086,7 +1105,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GRE_expanding_unity_pact
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -1104,7 +1123,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GRE_expanding_unity_pact
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -1142,7 +1161,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GRE_appeal_to_the_soviet_union
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -1160,7 +1179,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_officalize_the_tripartite_pact
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -1178,7 +1197,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = GRE_officalize_the_tripartite_pact
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -1196,7 +1215,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = GRE_officalize_the_tripartite_pact
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 1
 		}
@@ -1325,7 +1344,7 @@ focus_tree = {
 		prerequisite = {  }
 		x = 9
 		y = 6
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -1345,6 +1364,68 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GRE_greatest_threat
+		cost = 5
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = {
+		id = GRE_surrounded_by_the_red_scurge
+		icon = GFX_focus_RAJ_red_in_the_shadows
+		prerequisite = { focus = GRE_deal_with_the_devil }
+		x = 0
+		y = 1
+		relative_position_id = GRE_deal_with_the_devil
+		cost = 10
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = {
+		id = GRE_demand_aleppo
+		icon = GFX_focus_generic_attack_syria
+		prerequisite = { focus = GRE_surrounded_by_the_red_scurge }
+		mutually_exclusive = { focus = GRE_aleppo_for_garantees}
+		x = -2
+		y = 1
+		relative_position_id = GRE_surrounded_by_the_red_scurge
+		cost = 10
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = {
+		id = GRE_aleppo_for_garantees
+		icon = GFX_focus_generic_befriend_saudi_arabia
+		prerequisite = { focus = GRE_surrounded_by_the_red_scurge }
+		mutually_exclusive = { focus = GRE_demand_aleppo}
+		x = 0
+		y = 1
+		relative_position_id = GRE_surrounded_by_the_red_scurge
 		cost = 10
 		ai_will_do = {
 			base = 0
@@ -1377,6 +1458,47 @@ focus_tree = {
 		
 		}
 	}
+
+	focus = {
+		id = GRE_moldova_or_war
+		icon = GFX_focus_generic_attack_romania
+		prerequisite = { focus = GRE_prepare_for_war }
+		x = 0
+		y = 1
+		relative_position_id = GRE_prepare_for_war
+		cost = 10
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = {
+		id = GRE_demand_balkan_compliance
+		icon = GFX_SOV_demand_balkan_submission_ccp_2d_sov_compatibility
+		prerequisite = { focus = GRE_moldova_or_war }
+		x = 0
+		y = 1
+		relative_position_id = GRE_moldova_or_war
+		cost = 10
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		
+		}
+	}
+
 
 
  ##   #### ##  ###   ### ###  ### ### 
