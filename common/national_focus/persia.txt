@@ -32,7 +32,7 @@
 ###		}
 ###
 ###		ai_will_do = {
-###			1
+###			factor = 0
 ###		}
 ###
 ###		search_filters = {
@@ -48,7 +48,7 @@ focus_tree = {
 	id = persian_focus_tree
 	
 	country = {
-		1
+		factor = 0
 		modifier = {
 			add = 10
 			tag = PER
@@ -384,7 +384,7 @@ focus_tree = {
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -468,7 +468,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -884,7 +884,7 @@ focus_tree = {
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -955,7 +955,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -2051,7 +2051,7 @@ focus_tree = {
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -2308,7 +2308,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = PER_modify_iranian_airforce_ns_intro
 			add_to_variable = {
-				PER_airforce_modifier_air_ace_generation_chance_1.15 tooltip = air_ace_generation_chance_factor_tt
+				PER_airforce_modifier_air_ace_generation_chance_factor = 0.15 tooltip = air_ace_generation_chance_factor_tt
 			}
 			add_to_variable = {
 				PER_airforce_modifier_air_doctrine_cost_factor = -0.1 tooltip = air_doctrine_cost_factor_tt
@@ -2362,10 +2362,10 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = PER_modify_iranian_airforce_ns_intro
 			add_to_variable = {
-				PER_airforce_modifier_air_range_1.2 tooltip = air_range_factor_tt
+				PER_airforce_modifier_air_range_factor = 0.2 tooltip = air_range_factor_tt
 			}
 			add_to_variable = {
-				PER_airforce_modifier_air_strategic_bomber_bombing_1.2 tooltip = air_strategic_bomber_bombing_factor_tt
+				PER_airforce_modifier_air_strategic_bomber_bombing_factor = 0.2 tooltip = air_strategic_bomber_bombing_factor_tt
 			}
 		}
 	}
@@ -2400,10 +2400,10 @@ focus_tree = {
 
 			custom_effect_tooltip = PER_modify_iranian_airforce_ns_intro
 			add_to_variable = {
-				PER_airforce_modifier_conscription_1.1 tooltip = conscription_factor_tt
+				PER_airforce_modifier_conscription_factor = 0.1 tooltip = conscription_factor_tt
 			}
 			add_to_variable = {
-				PER_airforce_modifier_air_ace_generation_chance_1.10 tooltip = air_ace_generation_chance_factor_tt
+				PER_airforce_modifier_air_ace_generation_chance_factor = 0.10 tooltip = air_ace_generation_chance_factor_tt
 			}
 		}
 	}
@@ -2496,7 +2496,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -2547,7 +2547,7 @@ focus_tree = {
 				PER_airforce_modifier_air_intercept_efficiency = 0.05 tooltip = air_intercept_efficiency_tt
 			}
 			add_to_variable = {
-				PER_airforce_modifier_air_agility_1.1 tooltip = air_agility_factor_tt
+				PER_airforce_modifier_air_agility_factor = 0.1 tooltip = air_agility_factor_tt
 			}
 		}
 	}
@@ -2576,10 +2576,10 @@ focus_tree = {
 				PER_airforce_modifier_air_superiority_efficiency = 0.05 tooltip = air_superiority_efficiency_tt
 			}
 			add_to_variable = {
-				PER_airforce_modifier_air_cas_present_1.1 tooltip = air_cas_present_factor_tt
+				PER_airforce_modifier_air_cas_present_factor = 0.1 tooltip = air_cas_present_factor_tt
 			}
 			add_to_variable = {
-				PER_airforce_modifier_ground_attack_1.05 tooltip = ground_attack_factor_tt
+				PER_airforce_modifier_ground_attack_factor = 0.05 tooltip = ground_attack_factor_tt
 			}
 		}
 	}
@@ -2594,7 +2594,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -2612,10 +2612,10 @@ focus_tree = {
 			}
 			custom_effect_tooltip = PER_modify_iranian_airforce_ns_intro
 			add_to_variable = {
-				PER_airforce_modifier_air_range_1.05 tooltip = air_range_factor_tt
+				PER_airforce_modifier_air_range_factor = 0.05 tooltip = air_range_factor_tt
 			}
 			add_to_variable = {
-				PER_airforce_modifier_air_defence_1.15 tooltip = air_defence_factor_tt
+				PER_airforce_modifier_air_defence_factor = 0.15 tooltip = air_defence_factor_tt
 			}
 		}
 	}
@@ -2638,7 +2638,7 @@ focus_tree = {
 				any_controlled_state = {
 					is_coastal = no
 				}
-				1	
+				factor = 0	
 			}
 		}
 
@@ -3208,7 +3208,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -3440,7 +3440,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			factor = 10
+			factor = 0
 		}
 
 		search_filters = {
@@ -3524,7 +3524,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			factor = 10
+			factor = 0
 		}
 
 		search_filters = {
@@ -4507,7 +4507,7 @@ focus = { #Fascism
 	#	}
 #
 	#	ai_will_do = {
-	#		1
+	#		factor = 0
 	#	}
 #
 	#	search_filters = {
@@ -4543,7 +4543,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			factor = 20
+			factor = 0
 		}
 
 		search_filters = {
@@ -4578,7 +4578,7 @@ focus = { #Fascism
 	#	}
 #
 	#	ai_will_do = {
-	#		1
+	#		factor = 0
 	#	}
 #
 	#	search_filters = {
@@ -4612,7 +4612,7 @@ focus = { #Fascism
 	#	}
 #
 	#	ai_will_do = {
-	#		1
+	#		factor = 0
 	#	}
 #
 	#	search_filters = {
@@ -4650,7 +4650,7 @@ focus = { #Fascism
 	#	allow_branch = {
 	#	}
 	#	ai_will_do = {
-	#		1
+	#		factor = 0
 	#	}
 	#	search_filters = {
 	#	}
@@ -4692,7 +4692,7 @@ focus = { #Fascism
 	#	allow_branch = {
 	#	}
 	#	ai_will_do = {
-	#		1
+	#		factor = 0
 	#	}
 	#	search_filters = {
 	#	}
@@ -4723,7 +4723,7 @@ focus = { #Fascism
 	#	}
 #
 	#	ai_will_do = {
-	#		1
+	#		factor = 0
 	#	}
 #
 	#	search_filters = {
@@ -4807,7 +4807,7 @@ focus = { #Fascism
 	#	}
 #
 	#	ai_will_do = {
-	#		1
+	#		factor = 0
 	#	}
 #
 	#	search_filters = {
@@ -4856,7 +4856,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			factor = 10
+			factor = 0
 		}
 
 		search_filters = {
@@ -4903,7 +4903,7 @@ focus = { #Fascism
 	#	}
 #
 	#	ai_will_do = {
-	#		1
+	#		factor = 0
 	#	}
 #
 	#	search_filters = {
@@ -4943,7 +4943,7 @@ focus = { #Fascism
 	#	}
 #
 	#	ai_will_do = {
-	#		1
+	#		factor = 0
 	#	}
 #
 	#	search_filters = {
@@ -5035,7 +5035,7 @@ focus = { #Fascism
 
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5070,7 +5070,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5106,7 +5106,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5149,7 +5149,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5210,7 +5210,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5259,7 +5259,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5302,7 +5302,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5399,7 +5399,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5439,7 +5439,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5481,7 +5481,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5532,7 +5532,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5601,7 +5601,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5634,7 +5634,7 @@ focus = { #Fascism
 				category = air_doctrine
 			}
 			add_to_variable = {
-				PER_airforce_modifier_air_ace_generation_chance_1.05 tooltip = air_ace_generation_chance_factor_tt
+				PER_airforce_modifier_air_ace_generation_chance_factor = 0.05 tooltip = air_ace_generation_chance_factor_tt
 			}
 		}
 	}
@@ -5661,7 +5661,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5713,7 +5713,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5765,7 +5765,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5820,7 +5820,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5873,7 +5873,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5943,7 +5943,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -5981,7 +5981,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -6054,7 +6054,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -6087,7 +6087,7 @@ focus = { #Fascism
 		allow_branch = {
 		}
 		ai_will_do = {
-			1
+			factor = 0
 		}
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
@@ -6161,7 +6161,7 @@ focus = { #Fascism
 		allow_branch = {
 		}
 		ai_will_do = {
-			1
+			factor = 0
 		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -6273,7 +6273,7 @@ focus = { #Fascism
 	#	allow_branch = {
 	#	}
 	#	ai_will_do = {
-	#		1
+	#		factor = 0
 	#	}
 	#	search_filters = {
 	#	}
@@ -6345,7 +6345,7 @@ focus = { #Fascism
 		allow_branch = {
 		}
 		ai_will_do = {
-			1
+			factor = 0
 		}
 		search_filters = {
 			FOCUS_FILTER_ANNEXATION
@@ -6408,7 +6408,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
@@ -6447,7 +6447,7 @@ focus = { #Fascism
 		}
 
 		ai_will_do = {
-			1
+			factor = 0
 		}
 
 		search_filters = {
