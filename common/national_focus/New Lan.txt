@@ -1,0 +1,587 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_USA_CONGRESS}
+
+
+focus_tree = {
+	id = lancaster_focus
+
+	country = {
+		base = 0
+		
+		modifier = {
+			add = 10
+			tag = SUR
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 4500 y = 1300 }
+
+
+
+
+
+
+focus = {
+		id = SUR_path_to_Greatness
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+
+		x = 15
+		y = 0
+		cost = 1
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 5
+				OR = { 
+					is_historical_focus_on = yes
+				}
+			}
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+			army_experience = 5
+			hidden_effect = { 
+				
+			}
+		}
+		
+
+
+	}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_support_the_fascists
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_path_to_Greatness }
+		x = -3
+		y = 1
+		relative_position_id = SUR_path_to_Greatness
+		cost = 10
+		mutually_exclusive = { focus = SUR_support_the_monarchists}
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+			completion_reward = {
+			add_popularity = {
+   				ideology = fascism
+   	 			popularity = 0.05
+			}
+			hidden_effect = { 
+				
+			}
+		}
+		
+
+
+	}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_strengthen_the_fascists
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_support_the_fascists }
+		x = -1
+		y = 1
+		relative_position_id = SUR_support_the_fascists 
+		cost = 10
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+			completion_reward = {
+
+			add_popularity = {
+				add_political_power = 100
+   				ideology = fascism
+   	 			popularity = 0.02
+			}
+			hidden_effect = { 
+				
+			}
+		}
+		
+
+
+	}
+
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_reorganize_the_government
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_strengthen_the_fascists}
+		x = 0
+		y = 1
+		relative_position_id = SUR_strengthen_the_fascists
+		cost = 9
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+				completion_reward = {
+    				
+		}
+
+	}
+
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_a_new_Lancaster
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_reorganize_the_government}
+		x = 0
+		y = 1
+		relative_position_id = SUR_reorganize_the_government
+		cost = 9
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+				completion_reward = {
+    				
+		}
+
+	}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_conquer_our_western_brothers
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_a_new_Lancaster}
+		x = 0
+		y = 1
+		relative_position_id = SUR_a_new_Lancaster
+		cost = 1
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+				completion_reward = {
+    				
+		}
+
+	}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_conquer_our_southern_brothers
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_a_new_Lancaster}
+		x = -2
+		y = 1
+		relative_position_id = SUR_a_new_Lancaster
+		cost = 1
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+				completion_reward = {
+    				
+		}
+
+	}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_retake_our_homeland
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_conquer_our_southern_brothers}
+		x = 1
+		y = 1
+		relative_position_id = SUR_conquer_our_southern_brothers
+		cost = 1
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+				completion_reward = {
+    				
+		}
+
+	}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_a_united_lancatser
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_retake_our_homeland}
+		x = 0
+		y = 1
+		relative_position_id = SUR_retake_our_homeland
+		cost = 1
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+				completion_reward = {
+    				
+		}
+
+	}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_better_our_relations
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_a_new_Lancaster}
+		x = 2
+		y = 1
+		relative_position_id = SUR_a_new_Lancaster
+		cost = 1
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+				completion_reward = {
+    				
+		}
+
+	}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_ally_with_the_greeks
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_better_our_relations}
+		x = 0
+		y = 1
+		relative_position_id = SUR_better_our_relations
+		cost = 1
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+				completion_reward = {
+    				
+		}
+
+	}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_fascist_schools
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_strengthen_the_fascists}
+		x = -2
+		y = 1
+		relative_position_id = SUR_strengthen_the_fascists
+		cost = 9
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+				completion_reward = {
+    				
+		}
+
+	}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_fascist_university
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_fascist_schools }
+		x = 0
+		y = 1
+		relative_position_id = SUR_fascist_schools
+		cost = 9
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+				completion_reward = {
+    				
+		}
+
+	}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_gather_loyalty
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_support_the_fascists}
+		x = 1
+		y = 1
+		relative_position_id = SUR_support_the_fascists
+		cost = 10
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+			completion_reward = {
+			add_stability = 0.02
+			add_war_support = 0.01
+			
+			
+			hidden_effect = { 
+				
+			}
+		}
+		
+
+
+	}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_recruit_loyal_soldiers
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_gather_loyalty }
+		x = 0
+		y = 1
+		relative_position_id = SUR_gather_loyalty
+		cost = 9
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+				completion_reward = {
+    				
+		}
+
+	}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_gather_support
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_gather_loyalty }
+		x = 2
+		y = 1
+		relative_position_id = SUR_gather_loyalty 
+		cost = 5
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+			completion_reward = {
+
+		}
+}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_reopen_the_mines
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_gather_support}
+		x = 1
+		y = 1
+		relative_position_id = SUR_gather_support
+		cost = 5
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+			completion_reward = {
+
+		}
+}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_reopen_the_factories
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_gather_support}
+		x = -1
+		y = 1
+		relative_position_id = SUR_gather_support
+		cost = 5
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+			completion_reward = {
+
+		}
+}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_grow_the_mils
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_reopen_the_factories}
+		x = 1
+		y = 1
+		relative_position_id = SUR_reopen_the_factories
+		cost = 5
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+			completion_reward = {
+
+		}
+}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_support_the_monarchists
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SUR_path_to_Greatness }
+		x = 3
+		y = 1
+		relative_position_id = SUR_path_to_Greatness
+		cost = 10
+		mutually_exclusive = { focus = SUR_support_the_facists}
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+			completion_reward = {
+			add_popularity = {
+   				ideology = neutrality
+   	 			popularity = 0.05
+			}
+			hidden_effect = { 
+				
+			}
+		}
+		
+
+
+	}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_strengthen_the_monarchy
+		icon = GFX_goal_support_neutrality
+		prerequisite = { focus = SUR_support_the_monarchists}
+		x = 4
+		y = 2
+		relative_position_id = SUR_path_to_Greatness
+		cost = 10
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+			completion_reward = {
+			add_political_power = 100
+			add_popularity = {
+   				ideology = neutrality
+   	 			popularity = 0.01
+			}
+			hidden_effect = { 
+				
+			}
+		}
+		
+
+
+	}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_gain_support
+		icon = GFX_goal_support_neutrality
+		prerequisite = { focus = SUR_support_the_monarchists}
+		x = 2
+		y = 2
+		relative_position_id = SUR_path_to_Greatness
+		cost = 10
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+			completion_reward = {
+			add_stability = 0.02
+			add_war_support = 0.01
+			hidden_effect = { 
+				
+			}
+		}
+		
+
+
+	}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		focus = {
+		id = SUR_fight_for_freedom
+		icon = GFX_goal_support_neutrality
+		prerequisite = { focus = SUR_gain_support && SUR_strengthen_the_monarchy}
+		x = 1
+		y = 1
+		relative_position_id = SUR_gain_support
+		cost = 5
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				is_historical_focus_on = no
+			}
+		}
+			completion_reward = {
+				
+			}
+		}
+		
+
+
+
+
+
+
+
+
+
