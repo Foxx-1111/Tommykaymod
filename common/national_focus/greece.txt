@@ -623,8 +623,8 @@ focus_tree = {
 			}
 		}
 		prerequisite = { focus = GRE_horror_and_fear }
-		x = 1
-		y = 1
+		x = 0
+		y = 2
 		relative_position_id = GRE_horror_and_fear
 		cost = 10
 		ai_will_do = {
@@ -672,7 +672,8 @@ focus_tree = {
 			
 		}
 		prerequisite = { focus = GRE_horror_and_fear }
-		x = -1
+		mutually_exclusive = {focus = GRE_forging_a_Greek_empire}
+		x = -2
 		y = 1
 		relative_position_id = GRE_horror_and_fear
 		cost = 10
@@ -743,8 +744,7 @@ focus_tree = {
 		id = GRE_byzantine_themata
 		icon = GFX_focus_GRE_byzantine_themata
 		prerequisite = { focus = GRE_phoideratoi }
-		prerequisite = { focus = GRE_the_die_is_cast }
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = GRE_phoideratoi
 		cost = 10
@@ -991,8 +991,8 @@ focus_tree = {
 		id = GRE_forada_nostrum
 		icon = GFX_focus_ITA_mare_nostrum
 		prerequisite = { focus = GRE_byzantine_themata }
-		mutually_exclusive = { focus = GRE_Forging_a_Greek_empire }
-		x = -1
+		prerequisite = { focus = GRE_the_die_is_cast }
+		x = 0
 		y = 1
 		relative_position_id = GRE_byzantine_themata
 		cost = 10
@@ -1007,13 +1007,68 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = GRE_Forging_a_Greek_empire
+		id = GRE_forging_a_Greek_empire
 		icon = GFX_focus_GRE_resurrecting_the_megali_idea
-		prerequisite = { focus = GRE_byzantine_themata }
-		mutually_exclusive = { focus = GRE_forada_nostrum }
-		x = 1
+		prerequisite = { focus = GRE_horror_and_fear }
+		mutually_exclusive = { focus = GRE_reviving_the_double_headed_eagle }
+		x = 2
 		y = 1
-		relative_position_id = GRE_byzantine_themata
+		relative_position_id = GRE_horror_and_fear
+		cost = 10
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			unlock_decision_tooltip = form_roman_empire
+		}
+	}
+
+	focus = {
+		id = GRE_alexanders_footsteps
+		icon = GFX_focus_GRE_resurrecting_the_megali_idea
+		prerequisite = { focus = GRE_forging_a_Greek_empire }
+		x = 0
+		y = 1
+		relative_position_id = GRE_forging_a_Greek_empire
+		cost = 10
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			unlock_decision_tooltip = form_roman_empire
+		}
+	}
+
+	focus = {
+		id = GRE_macidonian_dioikíseis
+		icon = GFX_focus_GRE_resurrecting_the_megali_idea
+		prerequisite = { focus = GRE_alexanders_footsteps }
+		x = 0
+		y = 1
+		relative_position_id = GRE_alexanders_footsteps
+		cost = 10
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			unlock_decision_tooltip = form_roman_empire
+		}
+	}
+
+	focus = {
+		id = GRE_masters_of_the_middle_east
+		icon = GFX_focus_GRE_resurrecting_the_megali_idea
+		prerequisite = { focus = GRE_macidonian_dioikíseis }
+		prerequisite = { focus = GRE_the_die_is_cast }
+		x = 0
+		y = 1
+		relative_position_id = GRE_macidonian_dioikíseis
 		cost = 10
 		ai_will_do = {
 			base = 1
@@ -1028,10 +1083,10 @@ focus_tree = {
 	focus = {
 		id = GRE_moulding_the_new_world_order
 		icon = GFX_focus_RAJ_to_shake_the_world
-		prerequisite = { focus = GRE_forada_nostrum focus = GRE_Forging_a_Greek_empire}
-		x = 1
-		y = 1
-		relative_position_id = GRE_forada_nostrum
+		prerequisite = { focus = GRE_the_die_is_cast focus = GRE_forada_nostrum focus = GRE_masters_of_the_middle_east}
+		x = 0
+		y = 2
+		relative_position_id = GRE_the_die_is_cast
 		cost = 10
 		ai_will_do = {
 			base = 1
