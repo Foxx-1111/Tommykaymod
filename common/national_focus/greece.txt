@@ -1493,6 +1493,26 @@ focus_tree = {
 		
 		}
 	}
+
+	focus = {
+		id = GRE_fund_the_turkmen
+		icon = GFX_focus_AFG_develop_turkmenistan
+		prerequisite = { focus = GRE_aleppo_for_garantees focus = GRE_demand_aleppo }
+		x = 0
+		y = 1
+		relative_position_id = GRE_aleppo_for_garantees
+		cost = 10
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		
+		}
+	}
 	
 	focus = {
 		id = GRE_prepare_for_war
@@ -1541,6 +1561,67 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_moldova_or_war
+		cost = 10
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = {
+		id = GRE_undermine_the_international
+		icon = GFX_focus_generic_infiltration
+		prerequisite = { focus = GRE_demand_balkan_compliance }
+		x = 0
+		y = 1
+		relative_position_id = GRE_demand_balkan_compliance
+		cost = 10
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = {
+		id = GRE_operation_alexander
+		icon = GFX_focus_generic_attack_iran
+		prerequisite = { focus = GRE_undermine_the_international }
+		prerequisite = { focus = GRE_fund_the_turkmen }
+		x = 1
+		y = 1
+		relative_position_id = GRE_fund_the_turkmen
+		cost = 10
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = {
+		id = GRE_ending_the_red_scurge
+		icon = GFX_focus_ger_great_red_menace
+		prerequisite = { focus = GRE_operation_alexander }
+		x = 0
+		y = 1
+		relative_position_id = GRE_operation_alexander
 		cost = 10
 		ai_will_do = {
 			base = 0
