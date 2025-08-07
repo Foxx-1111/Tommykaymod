@@ -22,8 +22,7 @@ state = {
 		}
 		
 		add_core_of = TMS
-		add_claim_by = MEN
-		add_core_of = UZB
+		add_claim_by = UZB
 		add_core_of = BUK
 
 	}

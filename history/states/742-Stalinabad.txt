@@ -18,8 +18,8 @@ state = {
 		}
 		add_core_of = PER
 		add_core_of = TAJ
-		add_core_of = UZB
-		add_claim_by = MEN
+		add_claim_by = UZB
+		add_claim_by = KYR
 		add_core_of = BUK
 
 	}

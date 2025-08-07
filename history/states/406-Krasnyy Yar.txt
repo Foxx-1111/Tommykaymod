@@ -7,11 +7,10 @@ state={
 	state_category = wasteland
 
 	history={
-		owner = MEN
+		owner = KAL
 		buildings = {
 			infrastructure = 1
 		}
-		add_core_of = MEN
 		add_core_of = KAZ
 		add_core_of = KAL
 		victory_points = {

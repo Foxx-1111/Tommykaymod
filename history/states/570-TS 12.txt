@@ -7,7 +7,7 @@ state={
 	state_category = town
 
 	history={
-		owner = MEN
+		owner = ALT
 		victory_points = {
 			7274 3 
 		}
@@ -16,7 +16,7 @@ state={
 			industrial_complex = 2
 			air_base = 1
 		}
-		add_core_of = MEN
+		add_core_of = ALT
 		add_core_of = FER
 		1939.1.1 = {
 			buildings = {

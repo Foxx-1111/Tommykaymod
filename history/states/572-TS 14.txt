@@ -7,7 +7,7 @@ state={
 	state_category = town
 
 	history={
-		owner = MEN
+		owner = YAM
 		victory_points = {
 			9292 5
 		}
@@ -17,7 +17,7 @@ state={
 
 		}
 		add_core_of = FER
-		add_core_of = MEN
+		add_core_of = YAM
 	}
 
 	provinces={

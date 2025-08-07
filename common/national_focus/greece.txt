@@ -1635,6 +1635,47 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = GRE_avenge_algers
+		icon = GFX_focus_IRQ_liberate_north_africa
+		prerequisite = { focus = GRE_ending_the_red_scurge}
+		x = 1
+		y = 1
+		relative_position_id = GRE_ending_the_red_scurge
+		cost = 10
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = {
+		id = GRE_a_common_enemy
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = GRE_ending_the_red_scurge}
+		mutually_exclusive ={ focus = GRE_avenge_algers }
+		x = -1
+		y = 1
+		relative_position_id = GRE_ending_the_red_scurge
+		cost = 10
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		
+		}
+	}
+
 
 
  ##   #### ##  ###   ### ###  ### ### 

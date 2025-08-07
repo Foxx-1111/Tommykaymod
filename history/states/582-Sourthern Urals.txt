@@ -8,14 +8,14 @@ state = {
 
 	history = {
 
-		owner = MEN
+		owner = KAZ
 
 		buildings = {
 			infrastructure = 3 #was: 5
 		}
 
 		add_core_of = KAZ
-		add_core_of = MEN
+		add_claim_by = SOV
 
 		victory_points = {
 			10256 3 # Magnitogorsk

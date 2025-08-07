@@ -17,6 +17,8 @@ state = {
 			infrastructure = 2
 		}
 		add_core_of = SOV
+		add_core_of = VGE
+		add_claim_by = KAL
 		victory_points = {
 			6502 1
 		}

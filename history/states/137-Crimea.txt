@@ -14,7 +14,7 @@ state = {
 		}
 
 		victory_points = {
-			9680 1 # Kerch
+			9680 5 # Kerch
 		}
 
 		victory_points = {

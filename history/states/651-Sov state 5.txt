@@ -7,7 +7,7 @@ state = {
 	state_category = city
 
 	history = {
-		owner = MEN
+		owner = YAM
 		buildings = {
 			infrastructure = 3 #was: 5
 			industrial_complex = 1
@@ -20,8 +20,9 @@ state = {
 			4354 1 
 		}
 		add_core_of = SOV
-		add_core_of = MEN
+		add_core_of = YAM
 		add_core_of = BSK
+		add_core_of = KAZ
 	}
 
 	provinces = {

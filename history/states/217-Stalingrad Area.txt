@@ -7,10 +7,9 @@ state = {
 
 	history = {
 
-		owner = MEN
+		owner = KAL
 		add_core_of = SOV
-		add_core_of = MEN
-		add_claim_by KAL
+		add_core_of = KAL
 
 		victory_points = {
 			3529 20 # Stalingrad
