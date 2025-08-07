@@ -1,4 +1,10 @@
 ﻿l_english:
+ MAN_MEN_Yuan:0 "Ilkanate of Manchuria"
+ MAN_MEN_Yuan_def:0 "the Ilkanate of Manchuria"
+ MAN_MEN_Yuan_ADJ:0 "Manchu"
+ MEN_Yuan:0 "Yuan"
+ MEN_Yuan_def:0 "the Heavenly Kingdom of Yuan"
+ MEN_Yuan_ADJ:0 "Mongolo-Chinese"
  INS_ADU:0 "al-Hind al-Sharqiyya"
  INS_ADU_def:0 "the al-Hind al-Sharqiyya"
  MOD_PAL_OUTREMER:0 "French Outremer"
