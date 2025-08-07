@@ -1,5 +1,7 @@
 ﻿capital = 237 #Elista
 
+set_cosmetic_tag = KAL_MEN_Yuan
+
 #oob = "KAL_1936"
 
 set_research_slots = 3

@@ -1,5 +1,7 @@
 ﻿capital = 579 #Salekhard
 
+set_cosmetic_tag = YAM_MEN_Yuan
+
 #oob = "TAY_1936"
 
 set_research_slots = 2

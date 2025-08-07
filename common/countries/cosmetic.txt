@@ -1666,3 +1666,48 @@ MAN_MEN_Yuan = {
 	color = rgb { 200 20 20 }
 	color_ui = rgb { 200 0 0 }
 }
+
+ALT_MEN_Yuan = {
+	color = rgb { 200 20 20 }
+	color_ui = rgb { 200 0 0 }
+}
+
+GXC_MEN_Yuan = {
+	color = rgb { 200 20 20 }
+	color_ui = rgb { 200 0 0 }
+}
+
+KAZ_MEN_Yuan = {
+	color = rgb { 200 20 20 }
+	color_ui = rgb { 200 0 0 }
+}
+
+KYR_MEN_Yuan = {
+	color = rgb { 200 20 20 }
+	color_ui = rgb { 200 0 0 }
+}
+
+YAM_MEN_Yuan = {
+	color = rgb { 200 20 20 }
+	color_ui = rgb { 200 0 0 }
+}
+
+KAL_MEN_Yuan = {
+	color = rgb { 200 20 20 }
+	color_ui = rgb { 200 0 0 }
+}
+
+DAG_MEN_Yuan = {
+	color = rgb { 200 20 20 }
+	color_ui = rgb { 200 0 0 }
+}
+
+CRI_MEN_Yuan = {
+	color = rgb { 200 20 20 }
+	color_ui = rgb { 200 0 0 }
+}
+
+TMS_MEN_Yuan = {
+	color = rgb { 200 20 20 }
+	color_ui = rgb { 200 0 0 }
+}
