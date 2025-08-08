@@ -1439,7 +1439,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_deal_with_the_devil
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -1460,7 +1460,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = GRE_surrounded_by_the_red_scurge
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -1481,7 +1481,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_surrounded_by_the_red_scurge
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -1521,7 +1521,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GRE_greatest_threat
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -1541,7 +1541,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_prepare_for_war
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -1550,6 +1550,16 @@ focus_tree = {
 		}
 
 		completion_reward = {
+
+		create_wargoal = {
+			type = take_state_focus
+			target = POL
+			generator = { 79 }
+			generator = { 78 }
+			generator = { 766 }
+			generator = { 192 }
+			generator = { 834 }
+		}
 		
 		}
 	}
@@ -1561,7 +1571,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_moldova_or_war
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -1602,7 +1612,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GRE_fund_the_turkmen
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -1611,6 +1621,11 @@ focus_tree = {
 		}
 
 		completion_reward = {
+
+		create_wargoal = {
+			type = annex_everything
+			target = PER
+		}
 		
 		}
 	}
@@ -1631,6 +1646,11 @@ focus_tree = {
 		}
 
 		completion_reward = {
+
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = GER
+		}
 		
 		}
 	}
@@ -1642,7 +1662,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GRE_ending_the_red_scurge
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -1651,6 +1671,14 @@ focus_tree = {
 		}
 
 		completion_reward = {
+
+		create_wargoal = {
+			type = take_state_focus
+			target = ADU
+			generator = { 460 }
+			generator = { 459 }
+			generator = { 513 }
+		}
 		
 		}
 	}
@@ -1663,7 +1691,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = GRE_ending_the_red_scurge
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 

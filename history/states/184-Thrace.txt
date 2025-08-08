@@ -2,7 +2,7 @@
 state={
 	id=184
 	name="STATE_184"
-	manpower = 382500
+	manpower = 412500
 
 	state_category = rural
 
@@ -21,11 +21,10 @@ state={
 
 		}
 		add_core_of = GRE
-		add_claim_by = BUL
 	}
 
 	provinces={
-		9791 9930 11774 11905 
+		6990 9791 9930 11774 11905 
 	}
 
 	local_supplies=9.0 
