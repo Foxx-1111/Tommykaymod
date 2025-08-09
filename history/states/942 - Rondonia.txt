@@ -10,6 +10,7 @@ state = {
 
 		owner = COL
 		add_core_of = COL
+		add_core_of = ARG
 
 		buildings = {
 			infrastructure = 1

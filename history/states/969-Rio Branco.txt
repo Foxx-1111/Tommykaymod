@@ -5,10 +5,11 @@ state={
 		5214 13340 13361
 	}
 	history={
-		owner = COL
-		add_core_of = COL
+		owner = SUR
+		add_core_of = SUR
+		add_claim_by = COL
 	}
-	manpower=10000
+	manpower=60000
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 	state_category = pastoral

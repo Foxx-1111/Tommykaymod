@@ -4,17 +4,19 @@ state={
 	name="STATE_475"
 	manpower = 805874
 	
-	state_category = rural
+	state_category = large_town
 
 	history={
 		owner = GUA
 		buildings = {
-			infrastructure = 2
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
 		}
 		add_core_of = GUA
 
 		victory_points = {
-			1900 3
+			1900 10
 		}
 	}
 

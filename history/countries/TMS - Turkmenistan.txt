@@ -48,16 +48,16 @@ set_convoys = 5
 	}
 }
 set_politics = {
-	ruling_party = democratic
+	ruling_party = neutrality
 	last_election = "1936.1.1"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
 set_popularities = {
-	democratic = 50
-	fascism = 1
-	communism = 40
-	neutrality = 9
+	democratic = 5
+	fascism = 50
+	communism = 0
+	neutrality = 45
 }
 
 #create_country_leader = {

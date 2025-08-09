@@ -26,7 +26,7 @@ state=
 		add_core_of = GUA
 		add_core_of = COS
 		victory_points = {
-			12865 3 
+			12865 5 
 		}
 
 	}

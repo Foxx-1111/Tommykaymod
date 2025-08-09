@@ -4,7 +4,7 @@ state={
 	name="STATE_476"
 	manpower = 1663331
 	
-	state_category = rural
+	state_category = town
 
 	resources={
 		oil=8
@@ -13,18 +13,21 @@ state={
 	history={
 		owner = GUA
 		buildings = {
-			infrastructure = 2
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 1
+			dockyard = 1
 			air_base = 2
 			10889 = {
-				naval_base = 2
+				naval_base = 3
 			}
 		}
 		add_core_of = GUA
 		victory_points = {
-			10889 1
+			10889 2
 		}
 		victory_points = {
-			2021 3
+			2021 6
 		}
 	}
 

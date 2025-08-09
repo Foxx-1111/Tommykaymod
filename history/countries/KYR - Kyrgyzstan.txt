@@ -70,16 +70,16 @@ recruit_character = KYR_communist_guy
 	}
 }
 set_politics = {
-	ruling_party = democratic
+	ruling_party = neutrality
 	last_election = "1936.1.1"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
 set_popularities = {
-	democratic = 50
-	fascism = 1
-	communism = 40
-	neutrality = 9
+	democratic = 29
+	fascism = 20
+	communism = 1
+	neutrality = 50
 }
 
 #create_country_leader = {

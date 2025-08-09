@@ -2,25 +2,28 @@
 state={
 	id=309
 	name="STATE_309"
-	manpower = 152000
+	manpower = 1082500
 
 	resources={
 		aluminium=60 # was: 104
 	}	
 	
-	state_category = rural
+	state_category = city
 
 	history={
 		add_core_of = SUR
 		owner = SUR
 		victory_points = {
-			10906 1
+			10906 15
 		}
 		buildings = {
-			infrastructure = 2
-			industrial_complex = 1
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 2
+
 			12828 = {
-				naval_base = 1
+				naval_base = 6
 			}
 		}
 	}

@@ -4,7 +4,7 @@ state = {
 	name = "STATE_936"
 	manpower = 2282000 # A third from Rio Grande
 
-	state_category = town # Was city
+	state_category = large_town # Was city
 
 	history = {
 
@@ -14,10 +14,11 @@ state = {
 
 		buildings = {
 			infrastructure = 3 #was: 5
-			industrial_complex = 1 # Was 3
+			industrial_complex = 2 # Was 3
+			arms_factory = 1
 
 			5168 = {
-				naval_base = 1
+				naval_base = 2
 			}
 		}
 
