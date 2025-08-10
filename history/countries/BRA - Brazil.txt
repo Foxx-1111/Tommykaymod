@@ -35,54 +35,6 @@ IF = {
 
 	add_ideas = BRA_separatism_idea
 
-	every_owned_state = {
-		limit = {
-			OR = {
-				has_state_category = wasteland
-				has_state_category = pastoral
-				has_state_category = rural
-				#TODO_JUNO: Check states below are correct after map changes implemented
-				state = 498
-				state = 499
-			}
-			NOT = {
-				state = 961
-				state = 962
-				state = 963
-				state = 964
-				state = 965
-				state = 966
-				state = 967
-				state = 968
-				state = 496
-			}
-		}
-
-		# Neglected State Modifier
-		set_variable = { BRA_state_development_production_speed = -0.4 }
-		set_variable = { BRA_state_development_local_building_slots_factor = -0.4 }
-		set_variable = { BRA_state_development_local_factories = -0.4 }
-		set_variable = { BRA_state_development_state_resources_factor = -0.4 }
-
-		add_dynamic_modifier = {
-			modifier = BRA_neglected_state_dynamic_modifier
-		}
-	}
-
-	every_owned_state = {
-		limit = {
-			OR = {
-				state = 498
-				state = 499
-				state = 935
-				state = 936
-				state = 937
-			}
-		}
-		add_dynamic_modifier = {
-			modifier = BRA_cangaceiro_state
-		}
-	}
 
 	JUNO_set_shared_military_branch_defaults = yes
 

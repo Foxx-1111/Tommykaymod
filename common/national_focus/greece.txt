@@ -37,10 +37,9 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_stability = 0.05
 			add_political_power = 50
 			army_experience = 5
-			remove_ideas = GRE_treaty_of_heraklion
+			country_event = { id = bftb_greece.01 }
 			339 = { set_demilitarized_zone = no }
 			340 = { set_demilitarized_zone = no }
 			347 = { set_demilitarized_zone = no }
@@ -1125,12 +1124,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			country_event = { id = bftb_greece.217 }
+			country_event = {  }
 			hidden_effect = { 
-				swap_ideas = {
-					remove_idea = GRE_political_instability_metaxas
-					add_idea = GRE_political_instability_fascism
-				}
 			}
 		}
 	}
@@ -1337,7 +1332,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		
+		PON = {country_event = pontus.1}
 		}
 	}
 	
@@ -1844,8 +1839,9 @@ focus = {
 		id = GRE_default_on_turkish_debt
 		icon = GFX_focus_TUR_purge_the_kemalists
 		prerequisite = { focus = GRE_negotiate_with_britian }
+		prerequisite = {focus = GRE_renegotiate_debt_with_france }
 
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = GRE_negotiate_with_britian
 		cost = 5
@@ -1861,6 +1857,17 @@ focus = {
 		
 		completion_reward = {
 			add_political_power = 50
+			TUR = {  remove_ideas = TUR_reperation_payments}
+			if = {
+				limit = {
+					has_ideas = { GRE_crippling_reperations }
+				}
+				swap_ideas = {
+					remove_idea = GRE_crippling_reperations
+					add_idea = GRE_crippling_reperations_2
+				}
+			}
+			add_named_threat = { threat = 5}
 			hidden_effect = { 
 				
 			}

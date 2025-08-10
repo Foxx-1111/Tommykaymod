@@ -1417,6 +1417,19 @@ leader_traits = {
 		justify_war_goal_time = -0.15
 	}
 
+	dislikes_turkey = {
+		random = no
+		ai_strategy = {
+			type = antagonize
+			id = "TUR"
+			value = 200
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	likes_turkey = {
 		random = no
 		ai_strategy = {

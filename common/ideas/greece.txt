@@ -26,7 +26,7 @@ ideas = {
 			}
 		}
 		
-		GRE_political_instability = {
+		GRE_civil_instability = {
 				
 			allowed = {
 				original_tag = GRE
@@ -41,7 +41,8 @@ ideas = {
 			removal_cost = -1
 				
 			modifier = {
-				political_power_factor	= -0.30		
+				political_power_factor	= -0.30	
+				stability_factor = -0.1	
 			}
 		}
 
@@ -88,6 +89,31 @@ ideas = {
 			modifier = {
 				stability_factor = -0.1	
 				consumer_goods_factor = 0.30	
+			}
+		}
+
+			GRE_crippling_reperations_2 = {
+				
+			allowed = {
+				original_tag = GRE
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					OR = { 
+						has_government = communism
+						has_government = fascism 
+					}
+				}
+			}
+
+			picture = gre_debt_to_the_ifc
+				
+			removal_cost = -1
+				
+			modifier = {
+				stability_factor = -0.05	
+				consumer_goods_factor = 0.20	
 			}
 		}
 
@@ -156,7 +182,24 @@ ideas = {
 
 
 
+		GRE_political_instability = {
+				
+			allowed = {
+				original_tag = GRE
+			}
 
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = gre_political_instability
+				
+			removal_cost = -1
+				
+			modifier = {
+				political_power_factor	= -0.30		
+			}
+		}
 
 
 		
@@ -2624,219 +2667,5 @@ ideas = {
 		}
 	}
 
-	hidden_ideas = {
 
-		GRE_loyal_monarchists = {
-
-			allowed = {
-				always = no
-			}
-
-			cancel = {
-				NOT = { check_variable = { GRE_monarchist_loyalty = 2 compare = equals } }
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				stability_factor = 0.1
-				conscription_factor = 0.2
-			}
-		}
-
-		GRE_friendly_monarchists = {
-
-			allowed = {
-				always = no
-			}
-
-			cancel = {
-				NOT = { check_variable = { GRE_monarchist_loyalty = 1 compare = equals } }
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				stability_factor = 0.05
-				conscription_factor = 0.15
-			}
-		}
-
-		GRE_hostile_monarchists = {
-
-			allowed = {
-				always = no
-			}
-
-			cancel = {
-				NOT = { check_variable = { GRE_monarchist_loyalty = -1 compare = equals } }
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				stability_factor = -0.15
-			}
-		}
-
-		GRE_loyal_republicans = {
-
-			allowed = {
-				always = no
-			}
-
-			cancel = {
-				NOT = { check_variable = { GRE_republican_loyalty = 2 compare = equals } }
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				stability_factor = 0.1
-				conscription_factor = 0.2
-			}
-		}
-
-		GRE_friendly_republicans = {
-
-			allowed = {
-				always = no
-			}
-
-			cancel = {
-				NOT = { check_variable = { GRE_republican_loyalty = 1 compare = equals } }
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				stability_factor = 0.05
-				conscription_factor = 0.15
-			}
-		}
-
-		GRE_hostile_republicans = {
-
-			allowed = {
-				always = no
-			}
-
-			cancel = {
-				NOT = { check_variable = { GRE_republican_loyalty = -1 compare = equals } }
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				stability_factor = -0.15
-			}
-		}
-
-		GRE_loyal_communists = {
-
-			allowed = {
-				always = no
-			}
-
-			cancel = {
-				NOT = { check_variable = { GRE_communist_loyalty = 2 compare = equals } }
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				stability_factor = 0.1
-				conscription_factor = 0.2
-			}
-		}
-
-		GRE_friendly_communists = {
-
-			allowed = {
-				always = no
-			}
-
-			cancel = {
-				NOT = { check_variable = { GRE_communist_loyalty = 1 compare = equals } }
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				stability_factor = 0.05
-				conscription_factor = 0.15
-			}
-		}
-
-		GRE_hostile_communists = {
-
-			allowed = {
-				always = no
-			}
-
-			cancel = {
-				NOT = { check_variable = { GRE_communist_loyalty = -1 compare = equals } }
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				stability_factor = -0.15
-			}
-		}
-
-		GRE_loyal_fascists = {
-
-			allowed = {
-				always = no
-			}
-
-			cancel = {
-				NOT = { check_variable = { GRE_fascist_loyalty = 2 compare = equals } }
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				stability_factor = 0.1
-				conscription_factor = 0.2
-			}
-		}
-
-		GRE_friendly_fascists = {
-
-			allowed = {
-				always = no
-			}
-
-			cancel = {
-				NOT = { check_variable = { GRE_fascist_loyalty = 1 compare = equals } }
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				stability_factor = 0.05
-				conscription_factor = 0.15
-			}
-		}
-
-		GRE_hostile_fascists = {
-
-			allowed = {
-				always = no
-			}
-
-			cancel = {
-				NOT = { check_variable = { GRE_fascist_loyalty = -1 compare = equals } }
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				stability_factor = -0.15
-			}
-		}
-
-	}
 }

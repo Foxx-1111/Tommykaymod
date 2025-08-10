@@ -1,0 +1,23 @@
+###########################
+# Greek Events
+###########################
+
+add_namespace = pontus
+
+#Enosis
+country_event = {
+	id = pontus.1
+	title = pontus.1.t
+	desc = pontus.1.desc
+	picture = GFX_report_event_gre_greek_cavalry
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	option = {
+		name = pontus.1.a
+        GRE = {country_event = bftb_greece.02}
+		
+	}		
+}
