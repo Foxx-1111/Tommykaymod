@@ -1,0 +1,13 @@
+spriteTypes = {	
+
+	#### Generic continuous goal icons
+
+	SpriteType = {
+	name = "MOD_FOCUS_Dankus_GFX"
+	texturefile = "gfx/interface/goals/MOD_FOCUS_Dankus_GFX.dds"			
+	}
+	SpriteType = {
+	name = "MOD_FOCUS_Discard_GFX"
+	texturefile = "gfx/interface/goals/MOD_FOCUS_Discard_GFX.dds"			
+	}
+}

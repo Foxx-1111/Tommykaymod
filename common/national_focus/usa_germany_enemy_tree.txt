@@ -1,0 +1,60 @@
+shared_focus = {
+	id = German_USA_enemy_tree
+	
+	dynamic = yes 
+	
+	icon = GFX_SOV_heavy_industry_ccp_2d_sov_compatibility
+	
+	#prerequisite = { focus = NORDIC_strengthen_ties }
+	#prerequisite = { focus = NORDIC_mutual_guarantees }
+
+	allow_branch = {
+	}
+
+	x = 40
+	y = 10
+	#USA
+	#relative_position_id = NORDIC_mutual_guarantees
+	cost = 5
+
+	available = {
+	}
+	ai_will_do = {
+		base = 1
+	}
+
+	search_filters = { FOCUS_FILTER_POLITICAL }
+
+	completion_reward = {
+	}
+}
+joint_focus = {
+	id = GER_USA_War_Fighting
+	
+	icon = GFX_goal_generic_army_doctrines
+	
+	prerequisite = { focus = German_USA_enemy_tree }
+	
+	x = 0
+	y = 1
+	relative_position_id = German_USA_enemy_tree
+	cost = 5
+
+
+	available = {
+	}
+
+	search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_NAVY_XP FOCUS_FILTER_AIR_XP }
+
+	joint_trigger = {
+	}
+
+
+	completion_reward_joint_originator = {
+		add_stability = 0.05
+	}
+
+	completion_reward_joint_member = {
+		add_stability = -0.05
+	}
+}

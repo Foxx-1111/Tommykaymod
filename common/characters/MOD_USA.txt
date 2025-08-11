@@ -1,0 +1,258 @@
+characters={
+	MOD_USA_Thoman_Ketelhodt ={
+		name=MOD_USA_Thoman_Ketelhodt
+		portraits={
+			civilian={
+				large="GFX/leaders/USA/portrait_MOD_USA_Thoman_Ketelhodt.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			traits={ technocrat }
+			expire="1949.1.1.1"
+			id=-1
+		}
+	}
+	
+	MOD_USA_Character_1={
+		name=MOD_USA_Character_1
+		portraits={
+			army = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Character_1.dds"
+			}
+			civilian = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Character_1.dds"
+			}
+		}
+	}
+	MOD_USA_Character_2={
+		name=MOD_USA_Character_2
+		portraits={
+			army = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Character_2.dds"
+			}
+			civilian = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Character_2.dds"
+			}
+		}
+	}
+	MOD_USA_Character_3={
+		name=MOD_USA_Character_3
+		portraits={
+			army = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Character_3.dds"
+			}
+			civilian = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Character_3.dds"
+			}
+		}
+	}
+	MOD_USA_Character_4={
+		name=MOD_USA_Character_4
+		portraits={
+			army = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Character_4.dds"
+			}
+			civilian = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Character_4.dds"
+			}
+		}
+	}
+	MOD_USA_Character_5={
+		name=MOD_USA_Character_5
+		portraits={
+			army = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Character_5.dds"
+			}
+			civilian = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Character_5.dds"
+			}
+		}
+	}
+	MOD_USA_Character_6={
+		name=MOD_USA_Character_6
+		portraits={
+			army = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Character_6.dds"
+			}
+			civilian = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Character_6.dds"
+			}
+		}
+	}
+	MOD_USA_Character_7={
+		name=MOD_USA_Character_7
+		portraits={
+			army = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Character_7.dds"
+			}
+			civilian = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Character_7.dds"
+			}
+		}
+	}
+	
+	MOD_USA_Navich ={
+		name=MOD_USA_Navich
+		portraits={
+			army = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Navich.dds"
+			}
+			civilian = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Navich.dds"
+			}
+		}
+		corps_commander={
+			traits={  }
+			skill=1
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=0
+		}
+	}
+	MOD_USA_Anthony_Muranyi ={
+		name=MOD_USA_Anthony_Muranyi
+		portraits={
+			navy = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Anthony_Muranyi.dds"
+			}
+			civilian = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Anthony_Muranyi.dds"
+			}
+		}
+		navy_leader={
+			traits={  }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			maneuvering_skill=1
+			coordination_skill=2
+			legacy_id=0
+		}
+	}
+	MOD_USA_Gato ={
+		name=MOD_USA_Gato
+		portraits={
+			army = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Gato.dds"
+			}
+			civilian = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Gato.dds"
+			}
+		}
+	}
+	MOD_USA_Quirin ={
+		name=MOD_USA_Quirin
+		portraits={
+			army = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Quirin.dds"
+			}
+			civilian = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Quirin.dds"
+			}
+		}
+		corps_commander={
+			traits={  }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=0
+		}
+	}
+	MOD_USA_LoveLux ={
+		name=MOD_USA_LoveLux
+		portraits={
+			army = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_LoveLux.dds"
+			}
+			civilian = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_LoveLux.dds"
+			}
+		}
+		corps_commander={
+			traits={  }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=0
+		}
+	}
+	MOD_USA_Fremzenek ={
+		name=MOD_USA_Fremzenek
+		portraits={
+			army = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Fremzenek.dds"
+			}
+			civilian = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Fremzenek.dds"
+			}
+		}
+		corps_commander={
+			traits={  }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=0
+		}
+	}
+	MOD_USA_Mango ={
+		name=MOD_USA_Mango
+		portraits={
+			army = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Mango.dds"
+			}
+			civilian = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Mango.dds"
+			}
+		}
+	}
+	MOD_USA_Discard_Pixel ={
+		name=MOD_USA_Discard_Pixel
+		portraits={
+			army = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Discard_Pixel.dds"
+			}
+			civilian = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Discard_Pixel.dds"
+			}
+		}
+		field_marshal={
+			traits={ politically_connected organizer logistics_wizard offensive_doctrine }
+			skill=5
+			attack_skill=4
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=5
+			legacy_id=602
+		}
+	}
+	
+	MOD_USA_Dankus_Memecus ={
+		name=MOD_USA_Dankus_Memecus
+		portraits={
+			army = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Dankus_Memecus.dds"
+			}
+			civilian = {
+				large = "GFX/leaders/USA/portrait_MOD_USA_Dankus_Memecus.dds"
+			}
+		}
+		field_marshal={
+			traits={ media_personality offensive_doctrine career_officer armor_officer }
+			skill=5
+			attack_skill=5
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=602
+		}
+	}
+}

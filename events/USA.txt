@@ -3,39 +3,229 @@
 ###########################
 
 add_namespace = usa
+add_namespace = mod.usa
+add_namespace = MOD_USA_inner_circle
 
-# Amelia Eartharts wants to join the USAAC
+# CONSTANT FOR INNER CIRCLE TIMES (These needs to be x7 compared to the Focus cost in the focus file) - NEEDS TO MATCH THE SAME CONSTANTS USED IN THE FOCUS FILE x7
+@inner_circle_time_tier_1 = 140
+@inner_circle_time_tier_2 = 140
+@inner_circle_time_tier_3 = 280
+# FLAG CONSTANTS (It is 1 day more so the tooltip and days shown in the focus about Focus Progress match exactly the moment when the focus is completed)
+@inner_circle_time_tier_1_flag = 141
+@inner_circle_time_tier_2_flag = 141
+@inner_circle_time_tier_3_flag = 281
+
+
+# DISCARD / DANKUS / SEEMOPS
 country_event = {
-	id = usa.1
-	title = usa.1.t
-	desc = usa.1.d
-	picture = GFX_report_event_usa_amelia_earhart_airplane
+	id = mod.usa.1
+	title = mod.usa.1.t
+	desc = mod.usa.1.d
+	picture = 
 
 	fire_only_once = yes
 	
-	trigger = {
-		tag = USA
-		has_war = yes
-		NOT = { has_global_flag = earhart_disappeared }
-	}
+	is_triggered_only = yes
 	
-	mean_time_to_happen = {
-		days = 30
-	}
-	
-	option = { # Let her join
-		name = usa.1.a
-		add_political_power = -10
-		add_ace = {
-			name = "Amelia"
-			surname = "Earhart"
-			callsign = "Revenant"
-			type = fighter_genius
-			is_female = yes
+	option = { # Dankus
+		name = mod.usa.1.a
+		hidden_effect = {
+			complete_national_focus = { 
+				focus = MOD_USA_Dankus_Memecus_Focus
+			}
 		}
-		set_country_flag = amelia_active_ace
 	}
-	option = { # Refuse
-		name = usa.1.b
+	option = { # Discard
+		name = mod.usa.1.b
+		hidden_effect = {
+			complete_national_focus = { 
+				focus = MOD_USA_Discard_Pixel_Focus
+			}
+		}
+	}
+	option = { # Seemops
+		name = mod.usa.1.c
+		hidden_effect = {
+			complete_national_focus = { 
+				focus = MOD_USA_Seemops_Focus
+			}
+		}
+	}
+	option = { # Chat
+		name = mod.usa.1.d
+		hidden_effect = {
+			complete_national_focus = { 
+				focus = MOD_USA_CHAT_Focus_Focus
+			}
+		}
+	}
+}
+
+
+
+# New Character replaces an Ascended Advisor
+country_event = {
+	id = MOD_USA_inner_circle.01
+	title = MOD_USA_inner_circle.01.t
+	desc = MOD_USA_inner_circle.01.desc
+	picture = "[GetAscendingAdvisorPortrait]"
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = MOD_USA_inner_circle_event_pending_flag
+		}
+	}
+
+	option = { #Replace Ascended Advisor 1
+		name = MOD_USA_inner_circle.01.a
+		
+		MOD_USA_remove_replaced_advisor_1_effects = yes
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		set_variable = { MOD_USA_ascended_advisor_1 = MOD_USA_ascending_advisor }
+		MOD_USA_add_replacing_advisor_effects = yes
+
+		hidden_effect = {
+			#Cleaning vars / flags / etc
+			clear_variable = MOD_USA_ascending_advisor
+			clr_country_flag = MOD_USA_inner_circle_event_pending_flag
+		}
+	}
+
+	option = { #Replace Ascended Advisor 2
+		name = MOD_USA_inner_circle.01.b
+
+		MOD_USA_remove_replaced_advisor_2_effects = yes
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		set_variable = { MOD_USA_ascended_advisor_2 = MOD_USA_ascending_advisor }
+		MOD_USA_add_replacing_advisor_effects = yes
+
+		hidden_effect = {
+			#Cleaning vars / flags / etc
+			clear_variable = MOD_USA_ascending_advisor
+			clr_country_flag = MOD_USA_inner_circle_event_pending_flag
+		}
+	}
+
+	option = { #Replace Ascended Advisor 3
+		name = MOD_USA_inner_circle.01.c
+
+		ai_chance = {
+			base = 1
+			modifier = { #Himmler should replace Bormann on Historical when he ascends
+				factor = 100
+				MOD_USA_is_historical_ai = yes
+				check_variable = { MOD_USA_ascending_advisor = 4 } #Himmler Ascending
+				check_variable = { MOD_USA_ascended_advisor_3 = 7 } #Bormann ascended in this slot
+			}
+		}
+
+		MOD_USA_remove_replaced_advisor_3_effects = yes
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		set_variable = { MOD_USA_ascended_advisor_3 = MOD_USA_ascending_advisor }
+		MOD_USA_add_replacing_advisor_effects = yes
+
+		hidden_effect = {
+			#Cleaning vars / flags / etc
+			clear_variable = MOD_USA_ascending_advisor
+			clr_country_flag = MOD_USA_inner_circle_event_pending_flag
+		}
+	}
+
+	option = { # Abort - Ditch this advisor
+		name = MOD_USA_inner_circle.01.d
+
+		ai_chance = { #AI "knows" what its doing (pffff)
+			base = 0
+		}
+
+		if = {
+			limit = {
+				check_variable = { MOD_USA_ascending_advisor = 1 }
+			}
+			uncomplete_national_focus = {
+				focus = MOD_USA_ascension_of_number_1
+				uncomplete_children = no
+				refund_political_power = yes
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { MOD_USA_ascending_advisor = 2 }
+			}
+			uncomplete_national_focus = {
+				focus = MOD_USA_ascension_of_number_2
+				uncomplete_children = no
+				refund_political_power = yes
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { MOD_USA_ascending_advisor = 3 }
+			}
+			uncomplete_national_focus = {
+				focus = MOD_USA_ascension_of_number_3
+				uncomplete_children = no
+				refund_political_power = yes
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { MOD_USA_ascending_advisor = 4 }
+			}
+			uncomplete_national_focus = {
+				focus = MOD_USA_ascension_of_number_4
+				uncomplete_children = no
+				refund_political_power = yes
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { MOD_USA_ascending_advisor = 5 }
+			}
+			uncomplete_national_focus = {
+				focus = MOD_USA_ascension_of_number_5
+				uncomplete_children = no
+				refund_political_power = yes
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { MOD_USA_ascending_advisor = 6 }
+			}
+			uncomplete_national_focus = {
+				focus = MOD_USA_ascension_of_number_6
+				uncomplete_children = no
+				refund_political_power = yes
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { MOD_USA_ascending_advisor = 7 }
+			}
+			uncomplete_national_focus = {
+				focus = MOD_USA_ascension_of_number_7
+				uncomplete_children = no
+				refund_political_power = yes
+			}
+		}
+		else = {
+			log = "Something went terribly wrong with your nazis (no wonder)"
+		}
+
+		hidden_effect = {
+			#Cleaning vars / flags / etc
+			clear_variable = MOD_USA_ascending_advisor
+			clr_country_flag = MOD_USA_inner_circle_event_pending_flag
+
+			clr_country_flag = MOD_USA_inner_circle_cd_flag
+		}
 	}
 }

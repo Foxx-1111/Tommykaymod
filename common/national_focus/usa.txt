@@ -7,6 +7,10 @@
 ### search_filters = {FOCUS_FILTER_ANNEXATION}
 ### search_filters = {FOCUS_FILTER_USA_CONGRESS}
 
+@inner_circle_time_tier_1 = 20
+@inner_circle_time_tier_2 = 20
+@inner_circle_time_tier_3 = 40
+
 focus_tree = {
 	id = usa_focus
 	
@@ -23,13 +27,19 @@ focus_tree = {
 			original_tag = USA
 		}
 	}
-	continuous_focus_position = { x = 50 y = 1600 }
+	shared_focus = German_USA_enemy_tree
+	inlay_window = {
+		id = mod_usa_inner_circle_inlay_window
+		position = { x = 7300 y = 2000 }
+	}
+	
+	continuous_focus_position = { x = 8000 y = 1400 }
 	default = no
 	
 	focus = {
 		id = USA_start_of_the_american_jahrhundert
-		icon = GFX_focus_generic_self_management
-		x = 8
+		icon = GFX_USA_The_Good_Neighbor
+		x = 0
 		y = 0
 
 		cost = 5
@@ -57,8 +67,38 @@ focus_tree = {
 	}
 	
 	focus = {
+		id = USA_MOD_Bread_And_Butter_Act
+		icon = GFX_focus_generic_self_management
+		relative_position_id = USA_start_of_the_american_jahrhundert
+		prerequisite = { focus = USA_start_of_the_american_jahrhundert }
+		x = -2
+		y = 1
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_government = democratic
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
 		id = MOD_USA_acknowledge_the_technocrats
-		icon = GFX_focus_generic_university_2
+		icon = GFX_GENERIC_Technocratic_Principles
 		x = 0
 		y = 1
 		relative_position_id = USA_start_of_the_american_jahrhundert
@@ -97,10 +137,171 @@ focus_tree = {
 			
 		}
 	}
-	
+	focus = {
+		id = MOD_USA_The_American_Gambit
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 15
+		y = 2
+		relative_position_id = USA_start_of_the_american_jahrhundert
+		prerequisite = { focus = MOD_USA_acknowledge_the_technocrats }
+		
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_The_Communist_Option
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -3
+		y = 1
+		relative_position_id = MOD_USA_The_American_Gambit
+		prerequisite = { focus = MOD_USA_The_American_Gambit }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Support_Cocomes_Cause
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 1
+		relative_position_id = MOD_USA_The_Communist_Option
+		prerequisite = { focus = MOD_USA_The_Communist_Option }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Hold_Back_Fascists
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 1
+		relative_position_id = MOD_USA_The_Communist_Option
+		prerequisite = { focus = MOD_USA_The_Communist_Option }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_The_Fascist_Option
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 3
+		y = 1
+		relative_position_id = MOD_USA_The_American_Gambit
+		prerequisite = { focus = MOD_USA_The_American_Gambit }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_The_American_Option
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_The_American_Gambit
+		prerequisite = { focus = MOD_USA_The_American_Gambit }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
 	focus = {
 		id = MOD_USA_in_a_silent_way
-		icon = GFX_goal_generic_intelligence_exchange
+		icon = GFX_focus_generic_secret_service_agency
 		x = 0
 		y = 2
 		relative_position_id = USA_start_of_the_american_jahrhundert
@@ -131,7 +332,7 @@ focus_tree = {
 	focus = {
 		id = MOD_USA_Concessions_to_the_Liberals
 		icon = GFX_goal_generic_intelligence_exchange
-		x = -3
+		x = -4
 		y = 2
 		relative_position_id = USA_start_of_the_american_jahrhundert
 		prerequisite = { focus = MOD_USA_acknowledge_the_technocrats }
@@ -169,7 +370,7 @@ focus_tree = {
 	
 	focus = {
 		id = MOD_USA_Fund_Independent_Researchers
-		icon = GFX_goal_generic_intelligence_exchange
+		icon = GFX_focus_research2
 		x = -1
 		y = 1
 		relative_position_id = MOD_USA_Concessions_to_the_Liberals
@@ -212,7 +413,7 @@ focus_tree = {
 	
 	focus = {
 		id = MOD_USA_Open_Political_Discourse
-		icon = GFX_goal_generic_intelligence_exchange
+		icon = GFX_SOV_military_engineering_university_ccp_2d_sov_compatibility
 		x = 1
 		y = 1
 		relative_position_id = MOD_USA_Concessions_to_the_Liberals
@@ -254,9 +455,95 @@ focus_tree = {
 	}
 	
 	focus = {
+		id = MOD_USA_Expand_Social_Institutions
+		icon = GFX_focus_SWE_institute_of_technology
+		x = 1
+		y = 2
+		relative_position_id = MOD_USA_Concessions_to_the_Liberals
+		prerequisite = { focus = MOD_USA_Open_Political_Discourse }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = {
+				power_balance_value = {
+					id = USA_power_balance
+					value > 0.25
+				}
+			}
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = -0.1
+				tooltip_side = USA_liberal_technocrats
+			}
+			custom_effect_tooltip = MOD_USA_Open_Political_Discourse_tt
+			hidden_effect = {
+				add_to_variable = {  }
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Invest_in_Global_Research
+		icon = GFX_focus_POL_support_global_falangism
+		x = -1
+		y = 2
+		relative_position_id = MOD_USA_Concessions_to_the_Liberals
+		prerequisite = { focus = MOD_USA_Fund_Independent_Researchers }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = {
+				power_balance_value = {
+					id = USA_power_balance
+					value > 0.25
+				}
+			}
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = -0.1
+				tooltip_side = USA_liberal_technocrats
+			}
+			custom_effect_tooltip = MOD_USA_Fund_Independent_Researchers_tt
+			hidden_effect = {
+				add_to_variable = { USA_mod_council_research_speed_factor = 0.03 }
+			}
+		}
+	}
+	
+	focus = {
 		id = MOD_USA_Concessions_to_the_Authoritarians
 		icon = GFX_goal_generic_intelligence_exchange
-		x = 3
+		x = 4
 		y = 2
 		relative_position_id = USA_start_of_the_american_jahrhundert
 		prerequisite = { focus = MOD_USA_acknowledge_the_technocrats }
@@ -293,7 +580,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MOD_USA_Propaganda_for_the_Masses
-		icon = GFX_goal_generic_intelligence_exchange
+		icon = GFX_goal_generic_propaganda
 		x = -1
 		y = 1
 		relative_position_id = MOD_USA_Concessions_to_the_Authoritarians
@@ -309,7 +596,7 @@ focus_tree = {
 			NOT = {
 				power_balance_value = {
 					id = USA_power_balance
-					value < 0.25
+					value < -0.25
 				}
 			}
 		}
@@ -336,7 +623,7 @@ focus_tree = {
 	
 	focus = {
 		id = MOD_USA_Fund_the_Army
-		icon = GFX_goal_generic_intelligence_exchange
+		icon = GFX_focus_usa_reestablish_the_gold_standard
 		x = 1
 		y = 1
 		relative_position_id = MOD_USA_Concessions_to_the_Authoritarians
@@ -352,7 +639,7 @@ focus_tree = {
 			NOT = {
 				power_balance_value = {
 					id = USA_power_balance
-					value < 0.25
+					value < -0.25
 				}
 			}
 		}
@@ -370,11 +657,7897 @@ focus_tree = {
 				value = 0.05
 				tooltip_side = USA_liberal_technocrats
 			}
-			add_political_power = 50
 			custom_effect_tooltip = MOD_USA_Fund_Independent_Researchers_tt
 			hidden_effect = {
 				add_to_variable = { USA_mod_council_political_power_gain = 0.05 }
 			}
 		}
 	}
+	
+	focus = {
+		id = MOD_USA_Hire_Authoritarian_Advisors
+		icon = GFX_SOV_call_for_aid_ccp_2d_sov_compatibility
+		x = 1
+		y = 2
+		relative_position_id = MOD_USA_Concessions_to_the_Authoritarians
+		prerequisite = { focus = MOD_USA_Fund_the_Army }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = {
+				power_balance_value = {
+					id = USA_power_balance
+					value < -0.25
+				}
+			}
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = 0.1
+				tooltip_side = USA_liberal_technocrats
+			}
+			#custom_effect_tooltip = 
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Reorganize_Governmental_Structures
+		icon = GFX_SOV_military_reorganization_ccp_2d_sov_compatibility
+		x = -1
+		y = 2
+		relative_position_id = MOD_USA_Concessions_to_the_Authoritarians
+		prerequisite = { focus = MOD_USA_Propaganda_for_the_Masses }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = {
+				power_balance_value = {
+					id = USA_power_balance
+					value < -0.25
+				}
+			}
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = 0.1
+				tooltip_side = USA_authotarian_technocrats
+			}
+			#custom_effect_tooltip = 
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_The_Authoritarians_Win
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 4
+		relative_position_id = MOD_USA_Concessions_to_the_Authoritarians
+		prerequisite = { focus = MOD_USA_Reorganize_Governmental_Structures focus = MOD_USA_Hire_Authoritarian_Advisors }
+		mutually_exclusive = { focus = MOD_USA_The_Liberals_Win }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = {
+				power_balance_value = {
+					id = USA_power_balance
+					value < 0.5
+				}
+			}
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = 0.2
+				tooltip_side = USA_authotarian_technocrats
+			}
+			#custom_effect_tooltip = 
+			hidden_effect = {
+			
+			}
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = MOD_USA_The_Liberals_Win
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 4
+		relative_position_id = MOD_USA_Concessions_to_the_Liberals
+		prerequisite = { focus = MOD_USA_Invest_in_Global_Research focus = MOD_USA_Expand_Social_Institutions}
+		mutually_exclusive = { focus = MOD_USA_The_Authoritarians_Win }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = {
+				power_balance_value = {
+					id = USA_power_balance
+					value > -0.5
+				}
+			}
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = -0.2
+				tooltip_side = USA_authotarian_technocrats
+			}
+			#custom_effect_tooltip = 
+			hidden_effect = {
+			
+			}
+			add_research_slot = 1
+		}
+	}
+	
+	# 5 HABIBIS
+	
+	focus = {
+		id = MOD_USA_Liberals_5_Habibis
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 3
+		y = 1
+		relative_position_id = MOD_USA_Concessions_to_the_Liberals
+		prerequisite = { focus = MOD_USA_Concessions_to_the_Liberals }
+		mutually_exclusive = { focus = MOD_USA_Authoritarians_5_Habibis }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = {
+				power_balance_value = {
+					id = USA_power_balance
+					value > -0.1
+				}
+			}
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = -0.15
+				tooltip_side = USA_authotarian_technocrats
+			}
+			#custom_effect_tooltip = 
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_5_Osmans_Legion
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_Liberals_5_Habibis
+		prerequisite = { focus = MOD_USA_Liberals_5_Habibis focus = MOD_USA_Authoritarians_5_Habibis }
+		
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Authoritarians_5_Habibis
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -3
+		y = 1
+		relative_position_id = MOD_USA_Concessions_to_the_Authoritarians
+		prerequisite = { focus = MOD_USA_Concessions_to_the_Authoritarians }
+		mutually_exclusive = { focus = MOD_USA_Liberals_5_Habibis }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = {
+				power_balance_value = {
+					id = USA_power_balance
+					value < 0.1
+				}
+			}
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = 0.15
+				tooltip_side = USA_liberal_technocrats
+			}
+			#custom_effect_tooltip = 
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_5_Habibi_Limit_Intervention
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_Authoritarians_5_Habibis
+		prerequisite = { focus = MOD_USA_Liberals_5_Habibis focus = MOD_USA_Authoritarians_5_Habibis }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Deal_With_5_Habibis
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 2
+		relative_position_id = MOD_USA_Authoritarians_5_Habibis
+		prerequisite = { focus = MOD_USA_Authoritarians_5_Habibis focus = MOD_USA_Liberals_5_Habibis }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	
+	
+	#SHARED BRANCH
+	
+	focus = {
+		id = MOD_USA_Shape_Political_Landscape
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 7
+		relative_position_id = USA_start_of_the_american_jahrhundert
+		prerequisite = { focus = MOD_USA_The_Authoritarians_Win focus = MOD_USA_The_Liberals_Win }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Liberals_Foreign_Policies
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 2
+		relative_position_id = MOD_USA_The_Liberals_Win
+		prerequisite = { focus = MOD_USA_The_Liberals_Win }
+		prerequisite = { focus = MOD_USA_Shape_Political_Landscape }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+
+	focus = {
+		id = MOD_USA_Develop_African_Colonies
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -5
+		y = 1
+		relative_position_id = MOD_USA_Liberals_Foreign_Policies
+		prerequisite = { focus = MOD_USA_Liberals_Foreign_Policies }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+
+	focus = {
+		id = MOD_USA_Towards_Globalism
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_Liberals_Foreign_Policies
+		prerequisite = { focus = MOD_USA_Liberals_Foreign_Policies }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Kanadian_Partnership
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_Towards_Globalism
+		prerequisite = { focus = MOD_USA_Towards_Globalism }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Research_Cooperation
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 2
+		relative_position_id = MOD_USA_Towards_Globalism
+		prerequisite = { focus = MOD_USA_Kanadian_Partnership }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Invite_African_Holdings
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 3
+		relative_position_id = MOD_USA_Towards_Globalism
+		prerequisite = { focus = MOD_USA_Research_Cooperation }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Invite_Asian_Partners
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 4
+		relative_position_id = MOD_USA_Towards_Globalism
+		prerequisite = { focus = MOD_USA_Research_Cooperation }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Invite_European_Partners
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 3
+		relative_position_id = MOD_USA_Towards_Globalism
+		prerequisite = { focus = MOD_USA_Research_Cooperation }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+
+	focus = {
+		id = MOD_USA_Authoritarians_Foreign_Policies
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 2
+		relative_position_id = MOD_USA_The_Authoritarians_Win
+		prerequisite = { focus = MOD_USA_The_Authoritarians_Win }
+		prerequisite = { focus = MOD_USA_Shape_Political_Landscape }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Set_A_Statement
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_Authoritarians_Foreign_Policies
+		prerequisite = { focus = MOD_USA_Authoritarians_Foreign_Policies }
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Handle_The_Kanadier
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_Set_A_Statement
+		prerequisite = { focus = MOD_USA_Set_A_Statement }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Autonomy_For_Price
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 2
+		relative_position_id = MOD_USA_Set_A_Statement
+		prerequisite = { focus = MOD_USA_Handle_The_Kanadier }
+		cost = 5
+		mutually_exclusive = { focus = MOD_USA_2_Sides_of_Same_Coin }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_2_Sides_of_Same_Coin
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 2
+		relative_position_id = MOD_USA_Set_A_Statement
+		prerequisite = { focus = MOD_USA_Handle_The_Kanadier }
+		cost = 5
+		mutually_exclusive = { focus = MOD_USA_Autonomy_For_Price }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Keep_Potential_Enemies_Weak
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 4
+		y = 2
+		relative_position_id = MOD_USA_Authoritarians_Foreign_Policies
+		prerequisite = { focus = MOD_USA_Set_A_Statement }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Garden_the_Backyard
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_Keep_Potential_Enemies_Weak
+		prerequisite = { focus = MOD_USA_Keep_Potential_Enemies_Weak }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Pull_Them_Down
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 2
+		relative_position_id = MOD_USA_Keep_Potential_Enemies_Weak
+		prerequisite = { focus = MOD_USA_Garden_the_Backyard }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Fierce_Loyalty
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 3
+		relative_position_id = MOD_USA_Keep_Potential_Enemies_Weak
+		prerequisite = { focus = MOD_USA_Pull_Them_Down }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Erase_Mistakes
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 2
+		relative_position_id = MOD_USA_Keep_Potential_Enemies_Weak
+		prerequisite = { focus = MOD_USA_Garden_the_Backyard }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Central_American_Intervention
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 4
+		y = 1
+		relative_position_id = MOD_USA_Keep_Potential_Enemies_Weak
+		prerequisite = { focus = MOD_USA_Keep_Potential_Enemies_Weak }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Carribean_Affairs
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 4
+		y = 2
+		relative_position_id = MOD_USA_Keep_Potential_Enemies_Weak
+		prerequisite = { focus = MOD_USA_Central_American_Intervention }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Hand_Over_The_Canal
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 3
+		relative_position_id = MOD_USA_Keep_Potential_Enemies_Weak
+		prerequisite = { focus = MOD_USA_Central_American_Intervention }
+		cost = 5
+		
+		mutually_exclusive = { focus = MOD_USA_Channel_For_Independence }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Channel_For_Independence
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 6
+		y = 3
+		relative_position_id = MOD_USA_Keep_Potential_Enemies_Weak
+		prerequisite = { focus = MOD_USA_Central_American_Intervention }
+		cost = 5
+		
+		mutually_exclusive = { focus = MOD_USA_Hand_Over_The_Canal }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Push_Them_Farther
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 4
+		relative_position_id = MOD_USA_Keep_Potential_Enemies_Weak
+		prerequisite = { focus = MOD_USA_Hand_Over_The_Canal }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Exploit_African_Colonial_Holdings
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 8
+		y = 1
+		relative_position_id = MOD_USA_Authoritarians_Foreign_Policies
+		prerequisite = { focus = MOD_USA_Authoritarians_Foreign_Policies }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Resources_Win_Wars
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 7
+		y = 2
+		relative_position_id = MOD_USA_Authoritarians_Foreign_Policies
+		prerequisite = { focus = MOD_USA_Exploit_African_Colonial_Holdings }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Factories_Forge_Worlds
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 9
+		y = 2
+		relative_position_id = MOD_USA_Authoritarians_Foreign_Policies
+		prerequisite = { focus = MOD_USA_Exploit_African_Colonial_Holdings }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Threats_Around_The_Globe
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 3
+		relative_position_id = MOD_USA_Shape_Political_Landscape
+		prerequisite = { focus = MOD_USA_Set_A_Statement focus = MOD_USA_Towards_Globalism }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+		
+	focus = {
+		id = MOD_USA_Prepare_The_Crossings
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_Threats_Around_The_Globe
+		prerequisite = { focus = MOD_USA_Threats_Around_The_Globe }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}	
+	
+	focus = {
+		id = MOD_USA_The_Vast_Ocean
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 2
+		relative_position_id = MOD_USA_Threats_Around_The_Globe
+		prerequisite = { focus = MOD_USA_Prepare_The_Crossings }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}	
+	
+	focus = {
+		id = MOD_USA_The_Fearless_Waves
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 2
+		relative_position_id = MOD_USA_Threats_Around_The_Globe
+		prerequisite = { focus = MOD_USA_Prepare_The_Crossings }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}	
+	
+	focus = {
+		id = MOD_USA_Crossing_The_Atlantic
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 3
+		relative_position_id = MOD_USA_Threats_Around_The_Globe
+		prerequisite = { focus = MOD_USA_Threats_Around_The_Globe }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Help_The_Old_Empire
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_Crossing_The_Atlantic
+		prerequisite = { focus = MOD_USA_Crossing_The_Atlantic }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+
+	focus = {
+		id = MOD_USA_The_Fading_Empire
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_Help_The_Old_Empire
+		prerequisite = { focus = MOD_USA_Help_The_Old_Empire }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_The_Lone_Islands
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 1
+		relative_position_id = MOD_USA_Crossing_The_Atlantic
+		prerequisite = { focus = MOD_USA_Crossing_The_Atlantic }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Our_Ancestors
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 4
+		y = 1
+		relative_position_id = MOD_USA_Crossing_The_Atlantic
+		prerequisite = { focus = MOD_USA_Crossing_The_Atlantic }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Invite_The_Exiles
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 1
+		relative_position_id = MOD_USA_Our_Ancestors
+		prerequisite = { focus = MOD_USA_Our_Ancestors }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Cause_Internal_Issues
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 2
+		relative_position_id = MOD_USA_Our_Ancestors
+		prerequisite = { focus = MOD_USA_Invite_The_Exiles }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Diplomatic_Isolation
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 1
+		relative_position_id = MOD_USA_Our_Ancestors
+		prerequisite = { focus = MOD_USA_Our_Ancestors }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Sanctions
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 2
+		relative_position_id = MOD_USA_Our_Ancestors
+		prerequisite = { focus = MOD_USA_Diplomatic_Isolation }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Protect_Weaker_Nations
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 3
+		relative_position_id = MOD_USA_Our_Ancestors
+		prerequisite = { focus = MOD_USA_Sanctions }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Enemy_Of_My_Enemy
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 3
+		y = 3
+		relative_position_id = MOD_USA_Our_Ancestors
+		prerequisite = { focus = MOD_USA_Sanctions }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_The_Father_Son_War
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 4
+		relative_position_id = MOD_USA_Our_Ancestors
+		prerequisite = { focus = MOD_USA_Our_Ancestors }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_An_Unified_German_State
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_The_Father_Son_War
+		prerequisite = { focus = MOD_USA_The_Father_Son_War }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+
+	focus = {
+		id = MOD_USA_Reconciliation
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_An_Unified_German_State
+		prerequisite = { focus = MOD_USA_An_Unified_German_State }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_The_Southern_Germans
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -3
+		y = 1
+		relative_position_id = MOD_USA_An_Unified_German_State
+		prerequisite = { focus = MOD_USA_An_Unified_German_State }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Bavarian_Affairs
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -4
+		y = 2
+		relative_position_id = MOD_USA_An_Unified_German_State
+		prerequisite = { focus = MOD_USA_The_Southern_Germans }
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Wurttemberg_Affairs
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -2
+		y = 2
+		relative_position_id = MOD_USA_An_Unified_German_State
+		prerequisite = { focus = MOD_USA_The_Southern_Germans }
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Austrian_Affairs
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 3
+		relative_position_id = MOD_USA_An_Unified_German_State
+		prerequisite = { focus = MOD_USA_The_Southern_Germans }
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Rheinland_Affairs
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -3
+		y = 3
+		relative_position_id = MOD_USA_An_Unified_German_State
+		prerequisite = { focus = MOD_USA_The_Southern_Germans }
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Hessian_Affairs
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -5
+		y = 3
+		relative_position_id = MOD_USA_An_Unified_German_State
+		prerequisite = { focus = MOD_USA_The_Southern_Germans }
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_The_Northern_Germans
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 3
+		y = 1
+		relative_position_id = MOD_USA_An_Unified_German_State
+		prerequisite = { focus = MOD_USA_An_Unified_German_State }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Saxon_Affairs
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 3
+		y = 3
+		relative_position_id = MOD_USA_An_Unified_German_State
+		prerequisite = { focus = MOD_USA_The_Northern_Germans }
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_A_New_Capital
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 3
+		y = 4
+		relative_position_id = MOD_USA_An_Unified_German_State
+		prerequisite = { focus = MOD_USA_Saxon_Affairs }
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Schlesischer_Affairs
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 5
+		y = 3
+		relative_position_id = MOD_USA_An_Unified_German_State
+		prerequisite = { focus = MOD_USA_The_Northern_Germans }
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Mecklenburg_Affairs
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 2
+		relative_position_id = MOD_USA_An_Unified_German_State
+		prerequisite = { focus = MOD_USA_The_Northern_Germans }
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Schleswiger_Affairs
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 4
+		y = 2
+		relative_position_id = MOD_USA_An_Unified_German_State
+		prerequisite = { focus = MOD_USA_The_Northern_Germans }
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Lower_Saxon_Affairs
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 3
+		relative_position_id = MOD_USA_An_Unified_German_State
+		prerequisite = { focus = MOD_USA_The_Northern_Germans }
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_Crossing_The_Pacific
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -2
+		y = 3
+		relative_position_id = MOD_USA_Threats_Around_The_Globe
+		prerequisite = { focus = MOD_USA_Threats_Around_The_Globe }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			hidden_effect = {
+			
+			}
+		}
+	}
+	
+	#ARMY BRANCH
+	
+	focus = {
+		id = MOD_USA_Address_The_State_of_The_Army
+		icon = GFX_USA_US_Army
+		x = 46
+		y = 0
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Get_A_Secretary_of_the_Army
+		icon = GFX_focus_secret_rearmament
+		prerequisite = { focus = MOD_USA_Address_The_State_of_The_Army }
+		relative_position_id = MOD_USA_Address_The_State_of_The_Army
+		x = 0
+		y = 1
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			country_event = { id = mod.usa.1 days = 1 }
+		}
+	}
+	focus = {
+		id = MOD_USA_Discard_Pixel_Focus		#SUPERIOR FIREPOWER
+		icon = MOD_FOCUS_Discard_GFX
+		prerequisite = { focus = MOD_USA_Get_A_Secretary_of_the_Army }
+		relative_position_id = MOD_USA_Address_The_State_of_The_Army
+		x = -5
+		y = 2
+		
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_country_flag = MOD_USA_never_achievable
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Dankus_Memecus_Focus			#MOBILE WARFARE
+		icon = MOD_FOCUS_Dankus_GFX
+		prerequisite = { focus = MOD_USA_Get_A_Secretary_of_the_Army }
+		relative_position_id = MOD_USA_Address_The_State_of_The_Army
+		x = -16
+		y = 2
+		
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_country_flag = MOD_USA_never_achievable
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Seemops_Focus	#GRAND BATTLEPLAN
+		icon = GFX_SOV_great_commander_ccp_2d_sov_compatibility
+		prerequisite = { focus = MOD_USA_Get_A_Secretary_of_the_Army }
+		relative_position_id = MOD_USA_Address_The_State_of_The_Army
+		x = 5
+		y = 2
+		
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_country_flag = MOD_USA_never_achievable
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_CHAT_Focus_Focus	#MASS ASSAULT
+		icon = GFX_SOV_strengthen_the_mobilization_plan_ccp_2d_sov_compatibility
+		prerequisite = { focus = MOD_USA_Get_A_Secretary_of_the_Army }
+		relative_position_id = MOD_USA_Address_The_State_of_The_Army
+		x = 15
+		y = 2
+		
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_country_flag = MOD_USA_never_achievable
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Modern_Warfare_Theorists	
+		icon = GFX_focus_research2
+		prerequisite = { focus = MOD_USA_Dankus_Memecus_Focus }
+		relative_position_id = MOD_USA_Dankus_Memecus_Focus
+		x = -3
+		y = 1
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Efficiency_For_Machinery
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = MOD_USA_Dankus_Memecus_Focus }
+		relative_position_id = MOD_USA_Dankus_Memecus_Focus
+		x = 3
+		y = 1
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_function_over_form
+		icon = GFX_focus_NOR_rikstanken
+		prerequisite = { focus = MOD_USA_Efficiency_For_Machinery }
+		relative_position_id = MOD_USA_Dankus_Memecus_Focus
+		x = 3
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	
+	focus = {
+		id = MOD_USA_flesh_is_obsolete
+		icon = GFX_focus_generic_heavy_tank
+		prerequisite = { focus = MOD_USA_function_over_form }
+		relative_position_id = MOD_USA_Dankus_Memecus_Focus
+		x = 3
+		y = 5
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Metal_is_Perfection
+		icon = GFX_SOV_the_glory_of_the_red_army_alt_ccp_2d_sov_compatibility
+		prerequisite = { focus = MOD_USA_Modern_Warfare_Theorists }
+		relative_position_id = MOD_USA_Dankus_Memecus_Focus
+		x = -3
+		y = 2
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Embrace_Progress
+		icon = GFX_focus_BEL_engine_of_the_economy
+		prerequisite = { focus = MOD_USA_Metal_is_Perfection }
+		relative_position_id = MOD_USA_Dankus_Memecus_Focus
+		x = -4
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_With_Utmost_Efficiency
+		icon = GFX_focus_CHL_silverworking
+		prerequisite = { focus = MOD_USA_Metal_is_Perfection }
+		relative_position_id = MOD_USA_Dankus_Memecus_Focus
+		x = -3
+		y = 4
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Fix_All_Flaws
+		icon = GFX_focus_generic_tankette
+		prerequisite = { focus = MOD_USA_Dankus_Memecus_Focus }
+		relative_position_id = MOD_USA_Dankus_Memecus_Focus
+		x = 0
+		y = 1
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Inferior_Constructs
+		icon = GFX_focus_generic_mechanized
+		prerequisite = { focus = MOD_USA_Fix_All_Flaws }
+		relative_position_id = MOD_USA_Dankus_Memecus_Focus
+		x = -1
+		y = 2
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Their_Bodies_are_Frail
+		icon = GFX_focus_RAJ_a_private_military
+		prerequisite = { focus = MOD_USA_Fix_All_Flaws }
+		relative_position_id = MOD_USA_Dankus_Memecus_Focus
+		x = 1
+		y = 2
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Destroy_Then_Improve
+		icon = GFX_focus_generic_army_tanks2
+		prerequisite = { focus = MOD_USA_Inferior_Constructs }
+		relative_position_id = MOD_USA_Dankus_Memecus_Focus
+		x = -1
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Adapt_Or_Be_Removed
+		icon = GFX_focus_GER_german_army_invincible
+		prerequisite = { focus = MOD_USA_Their_Bodies_are_Frail }
+		relative_position_id = MOD_USA_Dankus_Memecus_Focus
+		x = 1
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Submit_To_Our_Designs
+		icon = GFX_focus_generic_tank_assault
+		prerequisite = { focus = MOD_USA_Destroy_Then_Improve focus = MOD_USA_Adapt_Or_Be_Removed }
+		relative_position_id = MOD_USA_Dankus_Memecus_Focus
+		x = 0
+		y = 4
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Supersede_Nature
+		icon = GFX_focus_generic_resource_extraction
+		prerequisite = { focus = MOD_USA_Submit_To_Our_Designs }
+		prerequisite = { focus = MOD_USA_With_Utmost_Efficiency }
+		relative_position_id = MOD_USA_Dankus_Memecus_Focus
+		x = -2
+		y = 5
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_The_First_of_Many
+		icon = GFX_focus_SWE_lynx_armored_car
+		prerequisite = { focus = MOD_USA_function_over_form }
+		relative_position_id = MOD_USA_Dankus_Memecus_Focus
+		x = 2
+		y = 4
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Glorious_Evolution
+		icon = GFX_USA_The_Sherman_Tank
+		prerequisite = { focus = MOD_USA_flesh_is_obsolete }
+		prerequisite = { focus = MOD_USA_Supersede_Nature }
+		relative_position_id = MOD_USA_Dankus_Memecus_Focus
+		x = 0
+		y = 6
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Quality_Over_Quantity
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = MOD_USA_Discard_Pixel_Focus }
+		relative_position_id = MOD_USA_Discard_Pixel_Focus
+		x = 0
+		y = 1
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Invest_In_Artillery
+		icon = GFX_SOV_soviet_artillery_ccp_2d_sov_compatibility
+		prerequisite = { focus = MOD_USA_Quality_Over_Quantity }
+		relative_position_id = MOD_USA_Discard_Pixel_Focus
+		x = -3
+		y = 2
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Solution_to_CAS
+		icon = GFX_GENERIC_Anti_Air_Units
+		prerequisite = { focus = MOD_USA_Invest_In_Artillery }
+		relative_position_id = MOD_USA_Invest_In_Artillery
+		x = 1
+		y = 1
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Higher_Infantry_Standards
+		icon = GFX_goal_generic_axis_build_infantry
+		prerequisite = { focus = MOD_USA_Invest_In_Artillery }
+		relative_position_id = MOD_USA_Invest_In_Artillery
+		x = -1
+		y = 1
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Heavy_Hitters
+		icon = GFX_focus_generic_anti_tank_guns
+		prerequisite = { focus = MOD_USA_Invest_In_Artillery }
+		relative_position_id = MOD_USA_Invest_In_Artillery
+		x = -3
+		y = 1
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Study_Rocketry
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = MOD_USA_Invest_In_Artillery }
+		relative_position_id = MOD_USA_Invest_In_Artillery
+		x = 3
+		y = 1
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Wunderwaffen
+		icon = GFX_focus_GER_wunderwaffe_inner_circle
+		prerequisite = { focus = MOD_USA_Study_Rocketry }
+		relative_position_id = MOD_USA_Invest_In_Artillery
+		x = 3
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Special_Forces
+		icon = GFX_focus_AFG_mountain_training
+		prerequisite = { focus = MOD_USA_Higher_Infantry_Standards }
+		relative_position_id = MOD_USA_Invest_In_Artillery
+		x = 0
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Improve_Radio_Comms
+		icon = GFX_focus_generic_radio_communication
+		prerequisite = { focus = MOD_USA_Higher_Infantry_Standards }
+		relative_position_id = MOD_USA_Invest_In_Artillery
+		x = -2
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Introduce_Quality_Controls
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = MOD_USA_Quality_Over_Quantity }
+		relative_position_id = MOD_USA_Quality_Over_Quantity
+		x = 3
+		y = 1
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Factory_Improvement
+		icon = GFX_focus_generic_reorient_production
+		prerequisite = { focus = MOD_USA_Introduce_Quality_Controls }
+		relative_position_id = MOD_USA_Quality_Over_Quantity
+		x = 2
+		y = 2
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Assembly_Lines
+		icon = GFX_focus_CHL_domestic_production_of_the_willys_mb
+		prerequisite = { focus = MOD_USA_Factory_Improvement }
+		relative_position_id = MOD_USA_Quality_Over_Quantity
+		x = 2
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Why_We_Fight
+		icon = GFX_SOV_collectivist_propaganda_ccp_2d_sov_compatibility
+		prerequisite = { focus = MOD_USA_Introduce_Quality_Controls }
+		relative_position_id = MOD_USA_Quality_Over_Quantity
+		x = 4
+		y = 2
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Encourage_The_Troops
+		icon = GFX_focus_PER_stage_mass_protests
+		prerequisite = { focus = MOD_USA_Why_We_Fight }
+		relative_position_id = MOD_USA_Quality_Over_Quantity
+		x = 4
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Station_The_Permanent_Guard
+		icon = GFX_SOV_muster_the_old_guard_ccp_2d_sov_compatibility
+		prerequisite = { focus = MOD_USA_Encourage_The_Troops }
+		prerequisite = { focus = MOD_USA_Assembly_Lines }
+		relative_position_id = MOD_USA_Quality_Over_Quantity
+		x = 3
+		y = 4
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Establish_Discardian_Strategies
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = MOD_USA_Station_The_Permanent_Guard }
+		prerequisite = { focus = MOD_USA_Wunderwaffen }
+		prerequisite = { focus = MOD_USA_Special_Forces focus = MOD_USA_Improve_Radio_Comms }
+		relative_position_id = MOD_USA_Discard_Pixel_Focus
+		x = 0
+		y = 6
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Create_The_Hexagon
+		icon = GFX_focus_usa_build_the_pentagon
+		prerequisite = { focus = MOD_USA_Seemops_Focus }
+		relative_position_id = MOD_USA_Seemops_Focus
+		x = 0
+		y = 1
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Intelligence_Branch
+		icon = GFX_focus_generic_secret_service_agency
+		prerequisite = { focus = MOD_USA_Create_The_Hexagon }
+		relative_position_id = MOD_USA_Seemops_Focus
+		x = -3
+		y = 2
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_More_Spies
+		icon = GFX_USA_X_2_Branch
+		prerequisite = { focus = MOD_USA_Intelligence_Branch }
+		relative_position_id = MOD_USA_Seemops_Focus
+		x = -4
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Agency_Defense
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = MOD_USA_Intelligence_Branch }
+		relative_position_id = MOD_USA_Seemops_Focus
+		x = -2
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Anticipation
+		icon = GFX_focus_hol_the_foundations_of_defense
+		prerequisite = { focus = MOD_USA_Agency_Defense }
+		prerequisite = { focus = MOD_USA_More_Spies }
+		relative_position_id = MOD_USA_Seemops_Focus
+		x = -3
+		y = 5
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_2_Steps_Ahead
+		icon = GFX_SOV_an_adaptable_army_ccp_2d_sov_compatibility
+		prerequisite = { focus = MOD_USA_Create_The_Hexagon }
+		relative_position_id = MOD_USA_Seemops_Focus
+		x = 0
+		y = 2
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Always_2_Steps_Ahead
+		icon = GFX_focus_AFG_against_kabul
+		prerequisite = { focus = MOD_USA_2_Steps_Ahead }
+		relative_position_id = MOD_USA_Seemops_Focus
+		x = 0
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Defense_Is_Best
+		icon = GFX_USA_A_Defence_against_Aggression
+		prerequisite = { focus = MOD_USA_Always_2_Steps_Ahead }
+		relative_position_id = MOD_USA_Seemops_Focus
+		x = 0
+		y = 4
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Infantry_Knows_All
+		icon = GFX_USA_Louisiana_Maneuvers
+		prerequisite = { focus = MOD_USA_Defense_Is_Best }
+		relative_position_id = MOD_USA_Seemops_Focus
+		x = -1
+		y = 5
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Infantry_Beats_All
+		icon = GFX_USA_The_Only_Sure_Defense_is_Offense
+		prerequisite = { focus = MOD_USA_Defense_Is_Best }
+		relative_position_id = MOD_USA_Seemops_Focus
+		x = 1
+		y = 5
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Better_The_Equipment
+		icon = GFX_focus_generic_reorient_production
+		prerequisite = { focus = MOD_USA_Create_The_Hexagon }
+		relative_position_id = MOD_USA_Seemops_Focus
+		x = 2
+		y = 2
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Logistical_Improvements
+		icon = GFX_focus_CHL_strengthen_the_central_bank
+		prerequisite = { focus = MOD_USA_Better_The_Equipment }
+		relative_position_id = MOD_USA_Seemops_Focus
+		x = 2
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Create_An_Economic_Plan
+		icon = GFX_focus_generic_central_planning
+		prerequisite = { focus = MOD_USA_Create_The_Hexagon }
+		relative_position_id = MOD_USA_Seemops_Focus
+		x = 4
+		y = 2
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_City_of_Progress
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		prerequisite = { focus = MOD_USA_Create_An_Economic_Plan }
+		relative_position_id = MOD_USA_Seemops_Focus
+		x = 4
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Towards_The_Future
+		icon = GFX_GENERIC_Stimulus_Plan
+		prerequisite = { focus = MOD_USA_City_of_Progress }
+		prerequisite = { focus = MOD_USA_Logistical_Improvements }
+		relative_position_id = MOD_USA_Seemops_Focus
+		x = 3
+		y = 5
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_The_Meta_Of_War
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = MOD_USA_Towards_The_Future }
+		prerequisite = { focus = MOD_USA_Infantry_Beats_All focus = MOD_USA_Infantry_Knows_All }
+		prerequisite = { focus = MOD_USA_Anticipation }
+		relative_position_id = MOD_USA_Seemops_Focus
+		x = 0
+		y = 6
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Quantity_Over_Quality
+		icon = GFX_SOV_strengthen_the_mobilization_plan_ccp_2d_sov_compatibility
+		prerequisite = { focus = MOD_USA_CHAT_Focus_Focus }
+		relative_position_id = MOD_USA_CHAT_Focus_Focus
+		x = 0
+		y = 1
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Loosen_The_Standards
+		icon = GFX_focus_generic_full_social_mobilization
+		prerequisite = { focus = MOD_USA_Quantity_Over_Quality }
+		relative_position_id = MOD_USA_CHAT_Focus_Focus
+		x = -4
+		y = 2
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Men_Require_Guns
+		icon = GFX_focus_ETH_freedom_at_gunpoint
+		prerequisite = { focus = MOD_USA_Quantity_Over_Quality }
+		relative_position_id = MOD_USA_CHAT_Focus_Focus
+		x = -2
+		y = 2
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_The_People_Are_Rising
+		icon = GFX_SOV_expand_aviation_institutes_ccp_2d_sov_compatibility
+		prerequisite = { focus = MOD_USA_Quantity_Over_Quality }
+		relative_position_id = MOD_USA_CHAT_Focus_Focus
+		x = 0
+		y = 2
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Factories_Are_The_Base
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = MOD_USA_Quantity_Over_Quality }
+		relative_position_id = MOD_USA_CHAT_Focus_Focus
+		x = 2
+		y = 2
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_No_Modern_Machinery
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = MOD_USA_Quantity_Over_Quality }
+		relative_position_id = MOD_USA_CHAT_Focus_Focus
+		x = 4
+		y = 2
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Production_At_All_Costs
+		icon = GFX_GENERIC_Military_Industrial_Complexes
+		prerequisite = { focus = MOD_USA_Loosen_The_Standards }
+		prerequisite = { focus = MOD_USA_Men_Require_Guns }
+		relative_position_id = MOD_USA_CHAT_Focus_Focus
+		x = -3
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Change_Military_Structures
+		icon = GFX_USA_The_War_Plans_Division
+		prerequisite = { focus = MOD_USA_Men_Require_Guns focus = MOD_USA_The_People_Are_Rising }
+		relative_position_id = MOD_USA_CHAT_Focus_Focus
+		x = -1
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Women_In_The_Workforce
+		icon = GFX_focus_SOV_womens_fascist_movement
+		prerequisite = { focus = MOD_USA_The_People_Are_Rising focus = MOD_USA_Factories_Are_The_Base }
+		relative_position_id = MOD_USA_CHAT_Focus_Focus
+		x = 1
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Improve_Factorial_Infrastructure
+		icon = GFX_GENERIC_Road_Construction
+		prerequisite = { focus = MOD_USA_Factories_Are_The_Base }
+		prerequisite = { focus = MOD_USA_No_Modern_Machinery }
+		relative_position_id = MOD_USA_CHAT_Focus_Focus
+		x = 3
+		y = 3
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Academy_of_Defense
+		icon = GFX_GENERIC_Military_Academy
+		prerequisite = { focus = MOD_USA_Production_At_All_Costs }
+		prerequisite = { focus = MOD_USA_Change_Military_Structures }
+		relative_position_id = MOD_USA_CHAT_Focus_Focus
+		x = -2
+		y = 4
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Council_Will_Decide_your_Fate
+		icon = GFX_GENERIC_Parliament
+		prerequisite = { focus = MOD_USA_Women_In_The_Workforce focus = MOD_USA_Change_Military_Structures }
+		relative_position_id = MOD_USA_CHAT_Focus_Focus
+		x = 0
+		y = 4
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Railway_Connections
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = MOD_USA_Women_In_The_Workforce }
+		prerequisite = { focus = MOD_USA_Improve_Factorial_Infrastructure }
+		relative_position_id = MOD_USA_CHAT_Focus_Focus
+		x = 2
+		y = 4
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Send_People_To_The_Front
+		icon = GFX_SOV_an_adaptable_army_ccp_2d_sov_compatibility
+		prerequisite = { focus = MOD_USA_Academy_of_Defense }
+		prerequisite = { focus = MOD_USA_Council_Will_Decide_your_Fate }
+		relative_position_id = MOD_USA_CHAT_Focus_Focus
+		x = -1
+		y = 5
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_The_Great_Chat_Purge
+		icon = GFX_focus_SOV_military_purge
+		prerequisite = { focus = MOD_USA_Railway_Connections }
+		prerequisite = { focus = MOD_USA_Council_Will_Decide_your_Fate }
+		relative_position_id = MOD_USA_CHAT_Focus_Focus
+		x = 1
+		y = 5
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Retardation_Elimination
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = MOD_USA_The_Great_Chat_Purge }
+		prerequisite = { focus = MOD_USA_Send_People_To_The_Front }
+		relative_position_id = MOD_USA_CHAT_Focus_Focus
+		x = 0
+		y = 6
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Legacy_of_The_Stahl_Ball_Rennen
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = MOD_USA_Get_A_Secretary_of_the_Army }
+		relative_position_id = MOD_USA_Get_A_Secretary_of_the_Army
+		x = 0
+		y = 1
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	#ADVISORS
+	
+	focus = {
+		id = MOD_USA_advisorship
+
+		dynamic = yes
+
+		icon = GFX_focus_MOD_USA_support_the_fuhrer
+
+		prerequisite = { focus = MOD_USA_acknowledge_the_technocrats }
+		x = 24
+		y = 9
+		relative_position_id = MOD_USA_acknowledge_the_technocrats
+		cost = 5
+		available = {
+			has_government = democratic
+		}
+
+		search_filters = { FOCUS_FILTER_INNER_CIRCLE FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER }
+
+		completion_reward = {
+			custom_effect_tooltip = MOD_USA_fuhrerprinzip_inner_circle_tt
+			add_political_power = 50
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			# No fallback if country leader is not Hitler and the Werhmacht / Neurath focuses are completed
+
+			hidden_effect = {
+				add_dynamic_modifier = {
+					modifier = MOD_USA_the_inner_circle_dm
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_ascension_of_number_1
+		icon = GFX_focus_MOD_USA_ascension_of_1
+		prerequisite = { focus = MOD_USA_advisorship }
+
+		x = -7
+		y = 1
+		relative_position_id = MOD_USA_advisorship
+		cost = 2
+		
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				hidden_trigger = {
+					NOT = { has_country_flag = MOD_USA_1_was_ascended_flag } #Flag to prevent AI from taking the focus again after advisor has been replaced
+				}
+			}
+
+			has_government = democratic
+			if = {
+				limit = {
+					has_country_flag = MOD_USA_inner_circle_event_pending_flag
+				}
+				NOT = { has_country_flag = MOD_USA_inner_circle_event_pending_flag }
+			}
+
+			MOD_USA_inner_circle_is_ascension_cd_over = yes
+			if = {
+				limit = {
+					has_country_flag = MOD_USA_inner_circle_cd_flag
+				}
+				custom_trigger_tooltip = {
+					tooltip = MOD_USA_inner_circle_cd_days_tt
+					NOT = {	has_country_flag = MOD_USA_inner_circle_cd_flag }
+				}
+			}
+		}
+		
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		search_filters = { FOCUS_FILTER_INNER_CIRCLE FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_INDUSTRY }
+
+		select_effect = { #Necessary to prevent AI from getting stuck if the focus is paused due to available trigger returning false
+			set_country_flag = MOD_USA_1_ascension_flag
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = MOD_USA_ascension_of_character_tt
+				CHARACTER = MOD_USA_Character_1
+			}
+			show_ideas_tooltip = MOD_USA_Character_1_description
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = MOD_USA_ascension_of_character_focus_tt
+				CHARACTER = MOD_USA_Character_1
+			}
+
+			if = { #Just to make it easy to debug stuff for development
+				limit = {
+					OR = {
+						check_variable = { MOD_USA_ascended_advisor_1 = 1 }
+						check_variable = { MOD_USA_ascended_advisor_2 = 1 }
+						check_variable = { MOD_USA_ascended_advisor_3 = 1 }
+					}
+				}
+				log = "Advisor was already there. STOP CHEATING!"
+			}
+			else_if = { # ASCENDED ADVISORS FULL - NEED TO REPLACE SOMEONE
+				limit = {
+					check_variable = { MOD_USA_ascended_advisor_1 = 0 compare = not_equals }
+					check_variable = { MOD_USA_ascended_advisor_2 = 0 compare = not_equals }
+					check_variable = { MOD_USA_ascended_advisor_3 = 0 compare = not_equals }
+				}
+				hidden_effect = {
+					set_variable = { MOD_USA_ascending_advisor = 1 }
+					country_event = MOD_USA_inner_circle.01
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = {
+					localization_key = MOD_USA_event_to_replace_ascended_advisor_tt
+					EVENT = MOD_USA_inner_circle.01.t
+					CHARACTER = MOD_USA_Character_1
+				}
+			}
+			else = {
+				hidden_effect = {
+					add_ideas = MOD_USA_Character_1_description
+				}
+				if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_1 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_1 = 1 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_2 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_2 = 1 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_3 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_3 = 1 }
+				}
+			}
+
+			hidden_effect = {
+				country_event = { id = MOD_USA_inner_circle_1.01 days = MOD_USA_inner_circle_days_to_start_focus random_days = MOD_USA_inner_circle_random_days }
+
+				clr_country_flag = MOD_USA_1_ascension_flag
+
+				MOD_USA_inner_circle_set_ascension_cd = yes
+
+				if = { #If historical make sure Todt is not picked ever after being replaced by Speer in the Intrigue Event
+					limit = {
+						MOD_USA_is_historical_ai = yes
+					}
+					set_country_flag = MOD_USA_1_was_ascended_flag #Flag to prevent AI from taking the focus again after advisor has been replaced
+				}
+				else = {
+					set_country_flag = { #Flag to prevent AI from taking the focus again after advisor has been replaced
+						flag = MOD_USA_1_was_ascended_flag
+						days = 1500 # Clear after ~4 years 
+						value = 1
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_ascension_of_number_2
+		icon = GFX_focus_MOD_USA_ascension_of_2
+		prerequisite = { focus = MOD_USA_advisorship }
+
+		x = -5
+		y = 1
+		relative_position_id = MOD_USA_advisorship
+		cost = 2
+		
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				hidden_trigger = {
+					NOT = { has_country_flag = MOD_USA_2_was_ascended_flag } #Flag to prevent AI from taking the focus again after advisor has been replaced
+				}
+			}
+
+			has_government = democratic
+			if = {
+				limit = {
+					has_country_flag = MOD_USA_inner_circle_event_pending_flag
+				}
+				NOT = { has_country_flag = MOD_USA_inner_circle_event_pending_flag }
+			}
+
+			MOD_USA_inner_circle_is_ascension_cd_over = yes
+			if = {
+				limit = {
+					has_country_flag = MOD_USA_inner_circle_cd_flag
+				}
+				custom_trigger_tooltip = {
+					tooltip = MOD_USA_inner_circle_cd_days_tt
+					NOT = {	has_country_flag = MOD_USA_inner_circle_cd_flag }
+				}
+			}
+		}
+		
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		search_filters = { FOCUS_FILTER_INNER_CIRCLE FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_INDUSTRY }
+
+		select_effect = { #Necessary to prevent AI from getting stuck if the focus is paused due to available trigger returning false
+			set_country_flag = MOD_USA_2_ascension_flag
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = MOD_USA_ascension_of_character_tt
+				CHARACTER = MOD_USA_Character_2
+			}
+			show_ideas_tooltip = MOD_USA_Character_2_description
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = MOD_USA_ascension_of_character_focus_tt
+				CHARACTER = MOD_USA_Character_2
+			}
+
+			if = { #Just to make it easy to debug stuff for development
+				limit = {
+					OR = {
+						check_variable = { MOD_USA_ascended_advisor_1 = 2 }
+						check_variable = { MOD_USA_ascended_advisor_2 = 2 }
+						check_variable = { MOD_USA_ascended_advisor_3 = 2 }
+					}
+				}
+				log = "Advisor was already there. STOP CHEATING!"
+			}
+			else_if = { # ASCENDED ADVISORS FULL - NEED TO REPLACE SOMEONE
+				limit = {
+					check_variable = { MOD_USA_ascended_advisor_1 = 0 compare = not_equals }
+					check_variable = { MOD_USA_ascended_advisor_2 = 0 compare = not_equals }
+					check_variable = { MOD_USA_ascended_advisor_3 = 0 compare = not_equals }
+				}
+				hidden_effect = {
+					set_variable = { MOD_USA_ascending_advisor = 1 }
+					country_event = MOD_USA_inner_circle.01
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = {
+					localization_key = MOD_USA_event_to_replace_ascended_advisor_tt
+					EVENT = MOD_USA_inner_circle.01.t
+					CHARACTER = MOD_USA_Character_2
+				}
+			}
+			else = {
+				hidden_effect = {
+					add_ideas = MOD_USA_Character_2_description
+				}
+				if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_1 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_1 = 2 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_2 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_2 = 2 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_3 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_3 = 2 }
+				}
+			}
+
+			hidden_effect = {
+				country_event = { id = MOD_USA_inner_circle_1.01 days = MOD_USA_inner_circle_days_to_start_focus random_days = MOD_USA_inner_circle_random_days }
+
+				clr_country_flag = MOD_USA_2_ascension_flag
+
+				MOD_USA_inner_circle_set_ascension_cd = yes
+
+				if = { #If historical make sure Todt is not picked ever after being replaced by Speer in the Intrigue Event
+					limit = {
+						MOD_USA_is_historical_ai = yes
+					}
+					set_country_flag = MOD_USA_2_was_ascended_flag #Flag to prevent AI from taking the focus again after advisor has been replaced
+				}
+				else = {
+					set_country_flag = { #Flag to prevent AI from taking the focus again after advisor has been replaced
+						flag = MOD_USA_2_was_ascended_flag
+						days = 1500 # Clear after ~4 years 
+						value = 1
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_ascension_of_number_3
+		icon = GFX_focus_MOD_USA_ascension_of_3
+		prerequisite = { focus = MOD_USA_advisorship }
+
+		x = -3
+		y = 1
+		relative_position_id = MOD_USA_advisorship
+		cost = 2
+		
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				hidden_trigger = {
+					NOT = { has_country_flag = MOD_USA_3_was_ascended_flag } #Flag to prevent AI from taking the focus again after advisor has been replaced
+				}
+			}
+
+			has_government = democratic
+			if = {
+				limit = {
+					has_country_flag = MOD_USA_inner_circle_event_pending_flag
+				}
+				NOT = { has_country_flag = MOD_USA_inner_circle_event_pending_flag }
+			}
+
+			MOD_USA_inner_circle_is_ascension_cd_over = yes
+			if = {
+				limit = {
+					has_country_flag = MOD_USA_inner_circle_cd_flag
+				}
+				custom_trigger_tooltip = {
+					tooltip = MOD_USA_inner_circle_cd_days_tt
+					NOT = {	has_country_flag = MOD_USA_inner_circle_cd_flag }
+				}
+			}
+		}
+		
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		search_filters = { FOCUS_FILTER_INNER_CIRCLE FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_INDUSTRY }
+
+		select_effect = { #Necessary to prevent AI from getting stuck if the focus is paused due to available trigger returning false
+			set_country_flag = MOD_USA_3_ascension_flag
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = MOD_USA_ascension_of_character_tt
+				CHARACTER = MOD_USA_Character_3
+			}
+			show_ideas_tooltip = MOD_USA_Character_3_description
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = MOD_USA_ascension_of_character_focus_tt
+				CHARACTER = MOD_USA_Character_3
+			}
+
+			if = { #Just to make it easy to debug stuff for development
+				limit = {
+					OR = {
+						check_variable = { MOD_USA_ascended_advisor_1 = 3 }
+						check_variable = { MOD_USA_ascended_advisor_2 = 3 }
+						check_variable = { MOD_USA_ascended_advisor_3 = 3 }
+					}
+				}
+				log = "Advisor was already there. STOP CHEATING!"
+			}
+			else_if = { # ASCENDED ADVISORS FULL - NEED TO REPLACE SOMEONE
+				limit = {
+					check_variable = { MOD_USA_ascended_advisor_1 = 0 compare = not_equals }
+					check_variable = { MOD_USA_ascended_advisor_2 = 0 compare = not_equals }
+					check_variable = { MOD_USA_ascended_advisor_3 = 0 compare = not_equals }
+				}
+				hidden_effect = {
+					set_variable = { MOD_USA_ascending_advisor = 3 }
+					country_event = MOD_USA_inner_circle.01
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = {
+					localization_key = MOD_USA_event_to_replace_ascended_advisor_tt
+					EVENT = MOD_USA_inner_circle.01.t
+					CHARACTER = MOD_USA_Character_3
+				}
+			}
+			else = {
+				hidden_effect = {
+					add_ideas = MOD_USA_Character_3_description
+				}
+				if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_1 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_1 = 3 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_2 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_2 = 3 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_3 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_3 = 3 }
+				}
+			}
+
+			hidden_effect = {
+				country_event = { id = MOD_USA_inner_circle_1.01 days = MOD_USA_inner_circle_days_to_start_focus random_days = MOD_USA_inner_circle_random_days }
+
+				clr_country_flag = MOD_USA_3_ascension_flag
+
+				MOD_USA_inner_circle_set_ascension_cd = yes
+
+				if = { #If historical make sure Todt is not picked ever after being replaced by Speer in the Intrigue Event
+					limit = {
+						MOD_USA_is_historical_ai = yes
+					}
+					set_country_flag = MOD_USA_3_was_ascended_flag #Flag to prevent AI from taking the focus again after advisor has been replaced
+				}
+				else = {
+					set_country_flag = { #Flag to prevent AI from taking the focus again after advisor has been replaced
+						flag = MOD_USA_3_was_ascended_flag
+						days = 1500 # Clear after ~4 years 
+						value = 1
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_ascension_of_number_4
+		icon = GFX_focus_MOD_USA_ascension_of_4
+		prerequisite = { focus = MOD_USA_advisorship }
+
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_advisorship
+		cost = 2
+		
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				hidden_trigger = {
+					NOT = { has_country_flag = MOD_USA_4_was_ascended_flag } #Flag to prevent AI from taking the focus again after advisor has been replaced
+				}
+			}
+
+			has_government = democratic
+			if = {
+				limit = {
+					has_country_flag = MOD_USA_inner_circle_event_pending_flag
+				}
+				NOT = { has_country_flag = MOD_USA_inner_circle_event_pending_flag }
+			}
+
+			MOD_USA_inner_circle_is_ascension_cd_over = yes
+			if = {
+				limit = {
+					has_country_flag = MOD_USA_inner_circle_cd_flag
+				}
+				custom_trigger_tooltip = {
+					tooltip = MOD_USA_inner_circle_cd_days_tt
+					NOT = {	has_country_flag = MOD_USA_inner_circle_cd_flag }
+				}
+			}
+		}
+		
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		search_filters = { FOCUS_FILTER_INNER_CIRCLE FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_INDUSTRY }
+
+		select_effect = { #Necessary to prevent AI from getting stuck if the focus is paused due to available trigger returning false
+			set_country_flag = MOD_USA_4_ascension_flag
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = MOD_USA_ascension_of_character_tt
+				CHARACTER = MOD_USA_Character_4
+			}
+			show_ideas_tooltip = MOD_USA_Character_4_description
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = MOD_USA_ascension_of_character_focus_tt
+				CHARACTER = MOD_USA_Character_4
+			}
+
+			if = { #Just to make it easy to debug stuff for development
+				limit = {
+					OR = {
+						check_variable = { MOD_USA_ascended_advisor_1 = 4 }
+						check_variable = { MOD_USA_ascended_advisor_2 = 4 }
+						check_variable = { MOD_USA_ascended_advisor_3 = 4 }
+					}
+				}
+				log = "Advisor was already there. STOP CHEATING!"
+			}
+			else_if = { # ASCENDED ADVISORS FULL - NEED TO REPLACE SOMEONE
+				limit = {
+					check_variable = { MOD_USA_ascended_advisor_1 = 0 compare = not_equals }
+					check_variable = { MOD_USA_ascended_advisor_2 = 0 compare = not_equals }
+					check_variable = { MOD_USA_ascended_advisor_3 = 0 compare = not_equals }
+				}
+				hidden_effect = {
+					set_variable = { MOD_USA_ascending_advisor = 4 }
+					country_event = MOD_USA_inner_circle.01
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = {
+					localization_key = MOD_USA_event_to_replace_ascended_advisor_tt
+					EVENT = MOD_USA_inner_circle.01.t
+					CHARACTER = MOD_USA_Character_4
+				}
+			}
+			else = {
+				hidden_effect = {
+					add_ideas = MOD_USA_Character_4_description
+				}
+				if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_1 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_1 = 4 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_2 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_2 = 4 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_3 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_3 = 4 }
+				}
+			}
+
+			hidden_effect = {
+				country_event = { id = MOD_USA_inner_circle_1.01 days = MOD_USA_inner_circle_days_to_start_focus random_days = MOD_USA_inner_circle_random_days }
+
+				clr_country_flag = MOD_USA_4_ascension_flag
+
+				MOD_USA_inner_circle_set_ascension_cd = yes
+
+				if = { #If historical make sure Todt is not picked ever after being replaced by Speer in the Intrigue Event
+					limit = {
+						MOD_USA_is_historical_ai = yes
+					}
+					set_country_flag = MOD_USA_4_was_ascended_flag #Flag to prevent AI from taking the focus again after advisor has been replaced
+				}
+				else = {
+					set_country_flag = { #Flag to prevent AI from taking the focus again after advisor has been replaced
+						flag = MOD_USA_4_was_ascended_flag
+						days = 1500 # Clear after ~4 years 
+						value = 1
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_ascension_of_number_5
+		icon = GFX_focus_MOD_USA_ascension_of_5
+		prerequisite = { focus = MOD_USA_advisorship }
+
+		x = 3
+		y = 1
+		relative_position_id = MOD_USA_advisorship
+		cost = 2
+		
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				hidden_trigger = {
+					NOT = { has_country_flag = MOD_USA_5_was_ascended_flag } #Flag to prevent AI from taking the focus again after advisor has been replaced
+				}
+			}
+
+			has_government = democratic
+			if = {
+				limit = {
+					has_country_flag = MOD_USA_inner_circle_event_pending_flag
+				}
+				NOT = { has_country_flag = MOD_USA_inner_circle_event_pending_flag }
+			}
+
+			MOD_USA_inner_circle_is_ascension_cd_over = yes
+			if = {
+				limit = {
+					has_country_flag = MOD_USA_inner_circle_cd_flag
+				}
+				custom_trigger_tooltip = {
+					tooltip = MOD_USA_inner_circle_cd_days_tt
+					NOT = {	has_country_flag = MOD_USA_inner_circle_cd_flag }
+				}
+			}
+		}
+		
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		search_filters = { FOCUS_FILTER_INNER_CIRCLE FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_INDUSTRY }
+
+		select_effect = { #Necessary to prevent AI from getting stuck if the focus is paused due to available trigger returning false
+			set_country_flag = MOD_USA_5_ascension_flag
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = MOD_USA_ascension_of_character_tt
+				CHARACTER = MOD_USA_Character_5
+			}
+			show_ideas_tooltip = MOD_USA_Character_5_description
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = MOD_USA_ascension_of_character_focus_tt
+				CHARACTER = MOD_USA_Character_5
+			}
+
+			if = { #Just to make it easy to debug stuff for development
+				limit = {
+					OR = {
+						check_variable = { MOD_USA_ascended_advisor_1 = 5 }
+						check_variable = { MOD_USA_ascended_advisor_2 = 5 }
+						check_variable = { MOD_USA_ascended_advisor_3 = 5 }
+					}
+				}
+				log = "Advisor was already there. STOP CHEATING!"
+			}
+			else_if = { # ASCENDED ADVISORS FULL - NEED TO REPLACE SOMEONE
+				limit = {
+					check_variable = { MOD_USA_ascended_advisor_1 = 0 compare = not_equals }
+					check_variable = { MOD_USA_ascended_advisor_2 = 0 compare = not_equals }
+					check_variable = { MOD_USA_ascended_advisor_3 = 0 compare = not_equals }
+				}
+				hidden_effect = {
+					set_variable = { MOD_USA_ascending_advisor = 5 }
+					country_event = MOD_USA_inner_circle.01
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = {
+					localization_key = MOD_USA_event_to_replace_ascended_advisor_tt
+					EVENT = MOD_USA_inner_circle.01.t
+					CHARACTER = MOD_USA_Character_5
+				}
+			}
+			else = {
+				hidden_effect = {
+					add_ideas = MOD_USA_Character_5_description
+				}
+				if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_1 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_1 = 5 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_2 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_2 = 5 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_3 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_3 = 5 }
+				}
+			}
+
+			hidden_effect = {
+				country_event = { id = MOD_USA_inner_circle_1.01 days = MOD_USA_inner_circle_days_to_start_focus random_days = MOD_USA_inner_circle_random_days }
+
+				clr_country_flag = MOD_USA_5_ascension_flag
+
+				MOD_USA_inner_circle_set_ascension_cd = yes
+
+				if = { #If historical make sure Todt is not picked ever after being replaced by Speer in the Intrigue Event
+					limit = {
+						MOD_USA_is_historical_ai = yes
+					}
+					set_country_flag = MOD_USA_5_was_ascended_flag #Flag to prevent AI from taking the focus again after advisor has been replaced
+				}
+				else = {
+					set_country_flag = { #Flag to prevent AI from taking the focus again after advisor has been replaced
+						flag = MOD_USA_5_was_ascended_flag
+						days = 1500 # Clear after ~4 years 
+						value = 1
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_ascension_of_number_6
+		icon = GFX_focus_MOD_USA_ascension_of_6
+		prerequisite = { focus = MOD_USA_advisorship }
+
+		x = 5
+		y = 1
+		relative_position_id = MOD_USA_advisorship
+		cost = 2
+		
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				hidden_trigger = {
+					NOT = { has_country_flag = MOD_USA_6_was_ascended_flag } #Flag to prevent AI from taking the focus again after advisor has been replaced
+				}
+			}
+
+			has_government = democratic
+			if = {
+				limit = {
+					has_country_flag = MOD_USA_inner_circle_event_pending_flag
+				}
+				NOT = { has_country_flag = MOD_USA_inner_circle_event_pending_flag }
+			}
+
+			MOD_USA_inner_circle_is_ascension_cd_over = yes
+			if = {
+				limit = {
+					has_country_flag = MOD_USA_inner_circle_cd_flag
+				}
+				custom_trigger_tooltip = {
+					tooltip = MOD_USA_inner_circle_cd_days_tt
+					NOT = {	has_country_flag = MOD_USA_inner_circle_cd_flag }
+				}
+			}
+		}
+		
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		search_filters = { FOCUS_FILTER_INNER_CIRCLE FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_INDUSTRY }
+
+		select_effect = { #Necessary to prevent AI from getting stuck if the focus is paused due to available trigger returning false
+			set_country_flag = MOD_USA_6_ascension_flag
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = MOD_USA_ascension_of_character_tt
+				CHARACTER = MOD_USA_Character_6
+			}
+			show_ideas_tooltip = MOD_USA_Character_6_description
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = MOD_USA_ascension_of_character_focus_tt
+				CHARACTER = MOD_USA_Character_6
+			}
+
+			if = { #Just to make it easy to debug stuff for development
+				limit = {
+					OR = {
+						check_variable = { MOD_USA_ascended_advisor_1 = 6 }
+						check_variable = { MOD_USA_ascended_advisor_2 = 6 }
+						check_variable = { MOD_USA_ascended_advisor_3 = 6 }
+					}
+				}
+				log = "Advisor was already there. STOP CHEATING!"
+			}
+			else_if = { # ASCENDED ADVISORS FULL - NEED TO REPLACE SOMEONE
+				limit = {
+					check_variable = { MOD_USA_ascended_advisor_1 = 0 compare = not_equals }
+					check_variable = { MOD_USA_ascended_advisor_2 = 0 compare = not_equals }
+					check_variable = { MOD_USA_ascended_advisor_3 = 0 compare = not_equals }
+				}
+				hidden_effect = {
+					set_variable = { MOD_USA_ascending_advisor = 6 }
+					country_event = MOD_USA_inner_circle.01
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = {
+					localization_key = MOD_USA_event_to_replace_ascended_advisor_tt
+					EVENT = MOD_USA_inner_circle.01.t
+					CHARACTER = MOD_USA_Character_6
+				}
+			}
+			else = {
+				hidden_effect = {
+					add_ideas = MOD_USA_Character_6_description
+				}
+				if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_1 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_1 = 6 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_2 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_2 = 6 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_3 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_3 = 6 }
+				}
+			}
+
+			hidden_effect = {
+				country_event = { id = MOD_USA_inner_circle_1.01 days = MOD_USA_inner_circle_days_to_start_focus random_days = MOD_USA_inner_circle_random_days }
+
+				clr_country_flag = MOD_USA_6_ascension_flag
+
+				MOD_USA_inner_circle_set_ascension_cd = yes
+
+				if = { #If historical make sure Todt is not picked ever after being replaced by Speer in the Intrigue Event
+					limit = {
+						MOD_USA_is_historical_ai = yes
+					}
+					set_country_flag = MOD_USA_6_was_ascended_flag #Flag to prevent AI from taking the focus again after advisor has been replaced
+				}
+				else = {
+					set_country_flag = { #Flag to prevent AI from taking the focus again after advisor has been replaced
+						flag = MOD_USA_6_was_ascended_flag
+						days = 1500 # Clear after ~4 years 
+						value = 1
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = MOD_USA_ascension_of_number_7
+		icon = GFX_focus_MOD_USA_ascension_of_7
+		prerequisite = { focus = MOD_USA_advisorship }
+
+		x = 7
+		y = 1
+		relative_position_id = MOD_USA_advisorship
+		cost = 2
+		
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				hidden_trigger = {
+					NOT = { has_country_flag = MOD_USA_7_was_ascended_flag } #Flag to prevent AI from taking the focus again after advisor has been replaced
+				}
+			}
+
+			has_government = democratic
+			if = {
+				limit = {
+					has_country_flag = MOD_USA_inner_circle_event_pending_flag
+				}
+				NOT = { has_country_flag = MOD_USA_inner_circle_event_pending_flag }
+			}
+
+			MOD_USA_inner_circle_is_ascension_cd_over = yes
+			if = {
+				limit = {
+					has_country_flag = MOD_USA_inner_circle_cd_flag
+				}
+				custom_trigger_tooltip = {
+					tooltip = MOD_USA_inner_circle_cd_days_tt
+					NOT = {	has_country_flag = MOD_USA_inner_circle_cd_flag }
+				}
+			}
+		}
+		
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		search_filters = { FOCUS_FILTER_INNER_CIRCLE FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_INDUSTRY }
+
+		select_effect = { #Necessary to prevent AI from getting stuck if the focus is paused due to available trigger returning false
+			set_country_flag = MOD_USA_7_ascension_flag
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = MOD_USA_ascension_of_character_tt
+				CHARACTER = MOD_USA_Character_7
+			}
+			show_ideas_tooltip = MOD_USA_Character_7_description
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = MOD_USA_ascension_of_character_focus_tt
+				CHARACTER = MOD_USA_Character_7
+			}
+
+			if = { #Just to make it easy to debug stuff for development
+				limit = {
+					OR = {
+						check_variable = { MOD_USA_ascended_advisor_1 = 7 }
+						check_variable = { MOD_USA_ascended_advisor_2 = 7 }
+						check_variable = { MOD_USA_ascended_advisor_3 = 7 }
+					}
+				}
+				log = "Advisor was already there. STOP CHEATING!"
+			}
+			else_if = { # ASCENDED ADVISORS FULL - NEED TO REPLACE SOMEONE
+				limit = {
+					check_variable = { MOD_USA_ascended_advisor_1 = 0 compare = not_equals }
+					check_variable = { MOD_USA_ascended_advisor_2 = 0 compare = not_equals }
+					check_variable = { MOD_USA_ascended_advisor_3 = 0 compare = not_equals }
+				}
+				hidden_effect = {
+					set_variable = { MOD_USA_ascending_advisor = 7 }
+					country_event = MOD_USA_inner_circle.01
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = {
+					localization_key = MOD_USA_event_to_replace_ascended_advisor_tt
+					EVENT = MOD_USA_inner_circle.01.t
+					CHARACTER = MOD_USA_Character_7
+				}
+			}
+			else = {
+				hidden_effect = {
+					add_ideas = MOD_USA_Character_7_description
+				}
+				if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_1 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_1 = 7 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_2 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_2 = 7 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { MOD_USA_ascended_advisor_3 = 0 }
+					}
+					set_variable = { MOD_USA_ascended_advisor_3 = 7 }
+				}
+			}
+
+			hidden_effect = {
+				country_event = { id = MOD_USA_inner_circle_1.01 days = MOD_USA_inner_circle_days_to_start_focus random_days = MOD_USA_inner_circle_random_days }
+
+				clr_country_flag = MOD_USA_7_ascension_flag
+
+				MOD_USA_inner_circle_set_ascension_cd = yes
+
+				if = { #If historical make sure Todt is not picked ever after being replaced by Speer in the Intrigue Event
+					limit = {
+						MOD_USA_is_historical_ai = yes
+					}
+					set_country_flag = MOD_USA_7_was_ascended_flag #Flag to prevent AI from taking the focus again after advisor has been replaced
+				}
+				else = {
+					set_country_flag = { #Flag to prevent AI from taking the focus again after advisor has been replaced
+						flag = MOD_USA_7_was_ascended_flag
+						days = 1500 # Clear after ~4 years 
+						value = 1
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_The_Forgotten_Navy
+		icon = GFX_USA_US_Navy
+		x = 73
+		y = 0
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_A_Tale_Of_2_Oceans
+		icon = GFX_focus_GER_sentinels_of_the_pacific
+		relative_position_id = MOD_USA_The_Forgotten_Navy
+		x = 0
+		y = 2
+		prerequisite = { focus = MOD_USA_The_Forgotten_Navy }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_The_Naval_Officer
+		icon = GFX_goal_generic_intelligence_exchange
+		relative_position_id = MOD_USA_The_Forgotten_Navy
+		x = -1
+		y = 3
+		prerequisite = { focus = MOD_USA_A_Tale_Of_2_Oceans }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Naval_Facilities
+		icon = GFX_GENERIC_Naval_School
+		relative_position_id = MOD_USA_The_Forgotten_Navy
+		x = 2
+		y = 3
+		prerequisite = { focus = MOD_USA_A_Tale_Of_2_Oceans }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Invite_Foreign_Navy_Experts
+		icon = GFX_SOV_foreign_experts_ccp_2d_sov_compatibility
+		relative_position_id = MOD_USA_Naval_Facilities
+		x = 1
+		y = 1
+		prerequisite = { focus = MOD_USA_Naval_Facilities }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Eradicate_Flaws
+		icon = GFX_SOV_pc_of_the_ussr_navy_ccp_2d_sov_compatibility
+		relative_position_id = MOD_USA_Naval_Facilities
+		x = 1
+		y = 2
+		prerequisite = { focus = MOD_USA_Invite_Foreign_Navy_Experts }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Upgrade_Tools
+		icon = GFX_GENERIC_Design_Contemporary_Equipment_Standards
+		relative_position_id = MOD_USA_Eradicate_Flaws
+		x = 1
+		y = 1
+		prerequisite = { focus = MOD_USA_Eradicate_Flaws }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Research_Equipment
+		icon = GFX_focus_generic_navy_research_bonus
+		relative_position_id = MOD_USA_Eradicate_Flaws
+		x = -1
+		y = 1
+		prerequisite = { focus = MOD_USA_Eradicate_Flaws }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Better_Standards
+		icon = GFX_GENERIC_Fleet_in_Being
+		relative_position_id = MOD_USA_Eradicate_Flaws
+		x = -1
+		y = 2
+		prerequisite = { focus = MOD_USA_Research_Equipment }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Mass_Build_Dockyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		relative_position_id = MOD_USA_Naval_Facilities
+		x = -1
+		y = 1
+		prerequisite = { focus = MOD_USA_Naval_Facilities }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Pacific_Theatre
+		icon = GFX_SOV_the_fight_for_the_pacific_ccp_2d_sov_compatibility
+		relative_position_id = MOD_USA_The_Forgotten_Navy
+		x = -3
+		y = 3
+		prerequisite = { focus = MOD_USA_A_Tale_Of_2_Oceans }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Atlantic_Theatre
+		icon = GFX_focus_generic_north_atlantic_fleet
+		relative_position_id = MOD_USA_The_Forgotten_Navy
+		x = 5
+		y = 3
+		prerequisite = { focus = MOD_USA_A_Tale_Of_2_Oceans }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Destroyer_Primacy
+		icon = GFX_GENERIC_Destroyer
+		relative_position_id = MOD_USA_Atlantic_Theatre
+		x = 0
+		y = 1
+		prerequisite = { focus = MOD_USA_Atlantic_Theatre }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Protect_The_Trade
+		icon = GFX_goal_generic_positive_trade_relations
+		relative_position_id = MOD_USA_Atlantic_Theatre
+		x = 0
+		y = 2
+		prerequisite = { focus = MOD_USA_Destroyer_Primacy }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Mass_Produce_Convoys
+		icon = GFX_GENERIC_Trade_Interdiction
+		relative_position_id = MOD_USA_Atlantic_Theatre
+		x = 1
+		y = 3
+		prerequisite = { focus = MOD_USA_Protect_The_Trade }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Destroyers_For_Cheap
+		icon = GFX_focus_generic_destroyer
+		relative_position_id = MOD_USA_Atlantic_Theatre
+		x = 0
+		y = 4
+		prerequisite = { focus = MOD_USA_Protect_The_Trade }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_Carrier_Waters
+		icon = GFX_GENERIC_Carrier
+		relative_position_id = MOD_USA_Pacific_Theatre
+		x = -2
+		y = 1
+		prerequisite = { focus = MOD_USA_Pacific_Theatre }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Cruisers
+		icon = GFX_GENERIC_Cruiser
+		relative_position_id = MOD_USA_Pacific_Theatre
+		x = -2
+		y = 2
+		prerequisite = { focus = MOD_USA_Carrier_Waters }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Cruiser_Production
+		icon = GFX_focus_generic_cruiser2
+		relative_position_id = MOD_USA_Pacific_Theatre
+		x = -3
+		y = 3
+		prerequisite = { focus = MOD_USA_Cruisers }
+		mutually_exclusive = { focus = MOD_USA_Carrier_Production }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Carrier_Production
+		icon = GFX_goal_generic_navy_carrier
+		relative_position_id = MOD_USA_Pacific_Theatre
+		x = -1
+		y = 3
+		prerequisite = { focus = MOD_USA_Cruisers }
+		mutually_exclusive = { focus = MOD_USA_Cruiser_Production }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_The_Naval_Air_War
+		icon = GFX_focus_generic_air_carrier
+		relative_position_id = MOD_USA_Pacific_Theatre
+		x = -2
+		y = 4
+		prerequisite = { focus = MOD_USA_Carrier_Production focus = MOD_USA_Cruiser_Production }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_The_Gigantic_Pacific
+		icon = GFX_SOV_an_oceangoing_navy_ccp_2d_sov_compatibility
+		relative_position_id = MOD_USA_Pacific_Theatre
+		x = 2
+		y = 1
+		prerequisite = { focus = MOD_USA_Pacific_Theatre }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Weitsee_Flotte
+		icon = GFX_GENERIC_Battleship
+		relative_position_id = MOD_USA_Pacific_Theatre
+		x = 1
+		y = 2
+		prerequisite = { focus = MOD_USA_The_Gigantic_Pacific }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Build_Up_Landsteine
+		icon = GFX_JAP_Greater_East_Asia_Co_Prosperity_Sphere
+		relative_position_id = MOD_USA_Pacific_Theatre
+		x = 3
+		y = 2
+		prerequisite = { focus = MOD_USA_The_Gigantic_Pacific }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Unternehmen_Schwertwal
+		icon = GFX_goal_generic_intelligence_exchange
+		relative_position_id = MOD_USA_The_Forgotten_Navy
+		x = 0
+		y = 8
+		prerequisite = { focus = MOD_USA_The_Naval_Air_War }
+		prerequisite = { focus = MOD_USA_Better_Standards }
+		prerequisite = { focus = MOD_USA_Destroyers_For_Cheap }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_The_Future_of_War
+		icon = GFX_USA_US_Army_Air_Corps
+		x = 84
+		y = 0
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Progress_for_Air
+		icon = GFX_focus_generic_air_research_boost
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = 0
+		y = 1
+		prerequisite = { focus = MOD_USA_The_Future_of_War }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_The_Aviation_Expert
+		icon = GFX_goal_generic_intelligence_exchange
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = 0
+		y = 2
+		prerequisite = { focus = MOD_USA_Progress_for_Air }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Raketengelade
+		icon = GFX_GENERIC_Jet_Engine
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = 6
+		y = 3
+		prerequisite = { focus = MOD_USA_The_Aviation_Expert }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Fallschirmbrigaden
+		icon = GFX_focus_generic_paratrooper
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = 1
+		y = 3
+		prerequisite = { focus = MOD_USA_The_Aviation_Expert }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Transport_is_Key
+		icon = GFX_focus_generic_reinforcing_the_supply_network
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = 1
+		y = 5
+		prerequisite = { focus = MOD_USA_Fallschirmbrigaden }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Radar_Research
+		icon = GFX_goal_generic_radar
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = 1
+		y = 7
+		prerequisite = { focus = MOD_USA_Transport_is_Key }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Invest_In_DTS
+		icon = GFX_GENERIC_Military_Production
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = 4
+		y = 3
+		prerequisite = { focus = MOD_USA_The_Aviation_Expert }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Small_Scale_Fighters
+		icon = GFX_USA_The_Mustang
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = 2
+		y = 4
+		prerequisite = { focus = MOD_USA_Invest_In_DTS }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Medium_Scale_Fighters
+		icon = GFX_focus_usa_escort_fighters
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = 4
+		y = 4
+		prerequisite = { focus = MOD_USA_Invest_In_DTS }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Large_Scale_Machinery
+		icon = GFX_focus_generic_jet_planes
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = 6
+		y = 4
+		prerequisite = { focus = MOD_USA_Invest_In_DTS }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Long_Flights
+		icon = GFX_focus_usa_escort_fighters
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = 6
+		y = 5
+		prerequisite = { focus = MOD_USA_Large_Scale_Machinery }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Hundekampf
+		icon = GFX_USA_F86
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = 3
+		y = 5
+		prerequisite = { focus = MOD_USA_Small_Scale_Fighters focus = MOD_USA_Medium_Scale_Fighters }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Navalbombing
+		icon = GFX_goal_generic_air_naval_bomber
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = 3
+		y = 6
+		prerequisite = { focus = MOD_USA_Hundekampf }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Big_Fighter_Production
+		icon = GFX_goal_generic_air_fighter2
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = 3
+		y = 7
+		prerequisite = { focus = MOD_USA_Navalbombing }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_CAS_Is_King
+		icon = GFX_focus_generic_cas_aircraft
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = -2
+		y = 3
+		prerequisite = { focus = MOD_USA_The_Aviation_Expert }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Ground_Support
+		icon = GFX_focus_generic_tank_air_support
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = -3
+		y = 4
+		prerequisite = { focus = MOD_USA_CAS_Is_King }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Nachtrauber
+		icon = GFX_USA_Peacemaker
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = -1
+		y = 4
+		prerequisite = { focus = MOD_USA_CAS_Is_King }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Blauer_Baron
+		icon = GFX_USA_The_Lockheed_Shooting_Star
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = -1
+		y = 5
+		prerequisite = { focus = MOD_USA_Nachtrauber }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Continuing_A_Legacy
+		icon = GFX_USA_Flying_Fortresses
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = 0
+		y = 6
+		prerequisite = { focus = MOD_USA_Blauer_Baron }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Prevent_Accidents
+		icon = GFX_focus_PER_luftwaffe_planes
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = -2
+		y = 6
+		prerequisite = { focus = MOD_USA_Blauer_Baron }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Reorganize_Airforce
+		icon = GFX_GENERIC_International_Airport
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = -2
+		y = 7
+		prerequisite = { focus = MOD_USA_Prevent_Accidents }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_CAS_En_Masse
+		icon = GFX_focus_generic_armored_air_support
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = -3
+		y = 5
+		prerequisite = { focus = MOD_USA_Ground_Support }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Air_Is_The_Basis
+		icon = GFX_goal_generic_intelligence_exchange
+		relative_position_id = MOD_USA_The_Future_of_War
+		x = 0
+		y = 8
+		prerequisite = { focus = MOD_USA_Reorganize_Airforce }
+		prerequisite = { focus = MOD_USA_Radar_Research }
+		prerequisite = { focus = MOD_USA_Big_Fighter_Production }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = MOD_USA_The_3_Aspects_of_War
+		icon = GFX_focus_generic_armored_air_support
+		x = 66
+		y = 9
+		prerequisite = { focus = MOD_USA_Glorious_Evolution focus = MOD_USA_Establish_Discardian_Strategies focus = MOD_USA_The_Meta_Of_War focus = MOD_USA_Retardation_Elimination }
+		prerequisite = { focus = MOD_USA_Unternehmen_Schwertwal }
+		prerequisite = { focus = MOD_USA_Air_Is_The_Basis }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Supply_Is_Everything
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		prerequisite = { focus = MOD_USA_The_3_Aspects_of_War }
+		relative_position_id = MOD_USA_The_3_Aspects_of_War
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_The_Offenbach_Project
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -3
+		y = 1
+		prerequisite = { focus = MOD_USA_The_3_Aspects_of_War }
+		relative_position_id = MOD_USA_The_3_Aspects_of_War
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Super_Heavy_Machinery
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 3
+		y = 1
+		prerequisite = { focus = MOD_USA_The_3_Aspects_of_War }
+		relative_position_id = MOD_USA_The_3_Aspects_of_War
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+
+#INDUSTRY
+	focus = {
+		id = MOD_USA_An_Industrial_Plan
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 103
+		y = 0
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	#THOMAN BRANCH
+	focus = {
+		id = MOD_USA_Follow_Thomans
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -4
+		y = 1
+		relative_position_id = MOD_USA_An_Industrial_Plan
+		prerequisite = { focus = MOD_USA_An_Industrial_Plan }
+		mutually_exclusive = { focus = MOD_USA_The_Rambler_Plan }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Intercontinental_Railway
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_Follow_Thomans
+		prerequisite = { focus = MOD_USA_Follow_Thomans }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Civ_Construction_Priority
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -4
+		y = 1
+		relative_position_id = MOD_USA_Follow_Thomans
+		prerequisite = { focus = MOD_USA_Follow_Thomans }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Relieve_the_Companies
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_Civ_Construction_Priority
+		prerequisite = { focus = MOD_USA_Civ_Construction_Priority }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Build_Up_The_Sonderwerke
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 1
+		relative_position_id = MOD_USA_Civ_Construction_Priority
+		prerequisite = { focus = MOD_USA_Civ_Construction_Priority }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Reuse_Factories
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 2
+		relative_position_id = MOD_USA_Civ_Construction_Priority
+		prerequisite = { focus = MOD_USA_Build_Up_The_Sonderwerke }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_The_Means_Necessary
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 3
+		relative_position_id = MOD_USA_Civ_Construction_Priority
+		prerequisite = { focus = MOD_USA_Reuse_Factories }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Healthy_Competition
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 4
+		relative_position_id = MOD_USA_Civ_Construction_Priority
+		prerequisite = { focus = MOD_USA_The_Means_Necessary }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Standardize_Services
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 5
+		relative_position_id = MOD_USA_Civ_Construction_Priority
+		prerequisite = { focus = MOD_USA_Healthy_Competition }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Scientific_Management_of_Industry
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 6
+		relative_position_id = MOD_USA_Civ_Construction_Priority
+		prerequisite = { focus = MOD_USA_Standardize_Services }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_The_Welfare_State
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 4
+		relative_position_id = MOD_USA_Civ_Construction_Priority
+		prerequisite = { focus = MOD_USA_The_Means_Necessary }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Innovativeness
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 4
+		y = 4
+		relative_position_id = MOD_USA_Civ_Construction_Priority
+		prerequisite = { focus = MOD_USA_The_Means_Necessary }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Create_The_Neu_Duisburg_School_Of_Business
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 4
+		y = 5
+		relative_position_id = MOD_USA_Civ_Construction_Priority
+		prerequisite = { focus = MOD_USA_Innovativeness }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Karolisches_Institut
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 2
+		relative_position_id = MOD_USA_Civ_Construction_Priority
+		prerequisite = { focus = MOD_USA_Build_Up_The_Sonderwerke }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Build_Up_The_Company
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -2
+		y = 1
+		relative_position_id = MOD_USA_Civ_Construction_Priority
+		prerequisite = { focus = MOD_USA_Civ_Construction_Priority }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Invest_In_Them
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -2
+		y = 2
+		relative_position_id = MOD_USA_Civ_Construction_Priority
+		prerequisite = { focus = MOD_USA_Build_Up_The_Company }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Higher_Positions
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -3
+		y = 3
+		relative_position_id = MOD_USA_Civ_Construction_Priority
+		prerequisite = { focus = MOD_USA_Invest_In_Them }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Technocratic_Leadership
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 3
+		relative_position_id = MOD_USA_Civ_Construction_Priority
+		prerequisite = { focus = MOD_USA_Invest_In_Them }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	#RAMBLER BRANCH
+	focus = {
+		id = MOD_USA_The_Rambler_Plan
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 4
+		y = 1
+		relative_position_id = MOD_USA_An_Industrial_Plan
+		prerequisite = { focus = MOD_USA_An_Industrial_Plan }
+		mutually_exclusive = { focus = MOD_USA_Follow_Thomans }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_The_Ramler_Try
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_The_Rambler_Plan
+		prerequisite = { focus = MOD_USA_The_Rambler_Plan }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Mil_Construction_Priority
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 4
+		y = 1
+		relative_position_id = MOD_USA_The_Rambler_Plan
+		prerequisite = { focus = MOD_USA_The_Rambler_Plan }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Integrated_War_Technate
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_Mil_Construction_Priority
+		prerequisite = { focus = MOD_USA_Mil_Construction_Priority }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Industrial_Mobilization_Bureau
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 1
+		relative_position_id = MOD_USA_Mil_Construction_Priority
+		prerequisite = { focus = MOD_USA_Mil_Construction_Priority }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Standardized_Military_Designs
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 4
+		y = 2
+		relative_position_id = MOD_USA_Mil_Construction_Priority
+		prerequisite = { focus = MOD_USA_Industrial_Mobilization_Bureau }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Standardized_Production_of_Design
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 4
+		y = 3
+		relative_position_id = MOD_USA_Mil_Construction_Priority
+		prerequisite = { focus = MOD_USA_Standardized_Military_Designs }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Technological_Arsenal
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 4
+		y = 4
+		relative_position_id = MOD_USA_Mil_Construction_Priority
+		prerequisite = { focus = MOD_USA_Standardized_Production_of_Design }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Economic_Assembly_Lines
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 2
+		relative_position_id = MOD_USA_Mil_Construction_Priority
+		prerequisite = { focus = MOD_USA_Industrial_Mobilization_Bureau }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Strategic_Plan_Of_Production
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 3
+		relative_position_id = MOD_USA_Mil_Construction_Priority
+		prerequisite = { focus = MOD_USA_Economic_Assembly_Lines }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Happy_Worker_Is_Good_Worker
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 4
+		relative_position_id = MOD_USA_Mil_Construction_Priority
+		prerequisite = { focus = MOD_USA_Strategic_Plan_Of_Production }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Support_Businesses
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -2
+		y = 1
+		relative_position_id = MOD_USA_Mil_Construction_Priority
+		prerequisite = { focus = MOD_USA_Mil_Construction_Priority }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Output_At_Optimum_Load
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -2
+		y = 2
+		relative_position_id = MOD_USA_Mil_Construction_Priority
+		prerequisite = { focus = MOD_USA_Support_Businesses }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Integrated_Military_Support_Chain
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -2
+		y = 3
+		relative_position_id = MOD_USA_Mil_Construction_Priority
+		prerequisite = { focus = MOD_USA_Output_At_Optimum_Load }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Industrial_Coordination_Board
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 3
+		relative_position_id = MOD_USA_Mil_Construction_Priority
+		prerequisite = { focus = MOD_USA_Output_At_Optimum_Load }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Unified_Parts_Blog
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 4
+		relative_position_id = MOD_USA_Mil_Construction_Priority
+		prerequisite = { focus = MOD_USA_Industrial_Coordination_Board }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Industrial_Workforce_Training
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 5
+		relative_position_id = MOD_USA_Mil_Construction_Priority
+		prerequisite = { focus = MOD_USA_Unified_Parts_Blog focus = MOD_USA_Happy_Worker_Is_Good_Worker }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Skill_Development_Programs
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 6
+		relative_position_id = MOD_USA_Mil_Construction_Priority
+		prerequisite = { focus = MOD_USA_Industrial_Workforce_Training }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	#SHARED BRANCH
+	focus = {
+		id = MOD_USA_Infrastructure
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 2
+		relative_position_id = MOD_USA_An_Industrial_Plan
+		prerequisite = { focus = MOD_USA_Follow_Thomans focus = MOD_USA_The_Rambler_Plan }
+		
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Central
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MOD_USA_Infrastructure
+		prerequisite = { focus = MOD_USA_Infrastructure }
+		
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Neu_Saxony
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 2
+		relative_position_id = MOD_USA_Infrastructure
+		prerequisite = { focus = MOD_USA_Infrastructure }
+		
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_South_East
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 2
+		relative_position_id = MOD_USA_Infrastructure
+		prerequisite = { focus = MOD_USA_Infrastructure }
+		
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_South
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -2
+		y = 1
+		relative_position_id = MOD_USA_Infrastructure
+		prerequisite = { focus = MOD_USA_Infrastructure }
+		
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_North
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 1
+		relative_position_id = MOD_USA_Infrastructure
+		prerequisite = { focus = MOD_USA_Infrastructure }
+		
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_North_West
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 3
+		y = 2
+		relative_position_id = MOD_USA_Infrastructure
+		prerequisite = { focus = MOD_USA_Infrastructure }
+		
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_South_West
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -3
+		y = 2
+		relative_position_id = MOD_USA_Infrastructure
+		prerequisite = { focus = MOD_USA_Infrastructure }
+		
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Build_the_Railways
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 3
+		relative_position_id = MOD_USA_Infrastructure
+		prerequisite = { focus = MOD_USA_South focus = MOD_USA_South_East focus = MOD_USA_Central focus = MOD_USA_Neu_Saxony focus = MOD_USA_North focus = MOD_USA_North_West focus = MOD_USA_South_West }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Prospect_For_Resources
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 4
+		relative_position_id = MOD_USA_Infrastructure
+		prerequisite = { focus = MOD_USA_Build_the_Railways }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Efficient_Resource_Gain
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 5
+		relative_position_id = MOD_USA_Infrastructure
+		prerequisite = { focus = MOD_USA_Prospect_For_Resources }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Synthetic_Oil
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -2
+		y = 4
+		relative_position_id = MOD_USA_Infrastructure
+		prerequisite = { focus = MOD_USA_Build_the_Railways }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MOD_USA_Building_the_Dam
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 4
+		relative_position_id = MOD_USA_Infrastructure
+		prerequisite = { focus = MOD_USA_Build_the_Railways }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+		}
+	}
 }
+
