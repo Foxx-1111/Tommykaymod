@@ -9,10 +9,9 @@ state={
 	state_category = wasteland
 	history={
 
-		owner = XSM
-		add_core_of = XSM
-		add_core_of = CHI
-		add_core_of = PRC
+		owner = MEN
+		add_core_of = MEN
+		add_core_of = MON
 
 		victory_points = {
 			4783 1 # Ejin Banner

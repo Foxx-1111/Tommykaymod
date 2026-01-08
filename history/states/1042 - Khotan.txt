@@ -6,10 +6,10 @@ state = {
 
 	history = {
 
-		owner = SIK
+		owner = MEN
 		add_core_of = SIK
-		add_core_of = CHI
-		add_core_of = PRC
+		add_core_of = XSM
+		add_core_of = MEN
 
 		1936.1.1 = {
 			IF = {

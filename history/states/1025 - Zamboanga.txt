@@ -11,7 +11,7 @@ state = {
 
 	history = {
 
-		owner = PHI
+		owner = MAL
 		add_core_of = PHI
 
 		buildings = {
