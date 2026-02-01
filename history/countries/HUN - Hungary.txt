@@ -121,10 +121,7 @@ IF = {
 	}
 
 	add_ideas = {
-		disarmed_nation
-		HUN_gombos_trade_treaty
-		HUN_hungarian_national_defense_association
-		HUN_levente_associations
+		#add a debuff for sepratism
 	}
 
 	### OPINION MODIFIERS ###
@@ -151,23 +148,7 @@ IF = {
 		}	
 	}
 
-	IF = {
-		limit = { has_dlc = "Arms Against Tyranny" }
-		add_ideas = { HUN_treaty_of_triannon_aat_wuw }
-		add_relation_rule_override = { 
-			target = GER
-			usage_desc = HUN_gombos_trade_treaty_tt
-			can_access_market = yes
-		}
-		give_market_access = GER
-	}
 
-	IF = {
-		limit = {
-			NOT = { has_dlc = "Arms Against Tyranny" }
-		}
-		add_ideas = { HUN_treaty_of_triannon_wuw }
-	}
 
 }
 
@@ -448,12 +429,7 @@ recruit_character = HUN_laszlo_varga
 
 
 # HIRES THE STARTING PM
-IF = {
-	limit = {
-		has_dlc = "Gotterdammerung"
-	}
-	add_ideas = { HUN_gyula_gombos_de_jakfa }
-}
+
 
 add_breakthrough_progress = {
 	specialization = specialization_land
@@ -531,7 +507,6 @@ add_breakthrough_progress = {
 			unlock_national_focus = HUN_renounce_the_treaty_of_trianon
 			add_ideas = {
 				limited_conscription
-				HUN_treaty_of_triannon_3
 			}
 
 			unlock_national_focus = HUN_strengthen_fascists #To avoid leader ID clash
