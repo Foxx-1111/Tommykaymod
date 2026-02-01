@@ -227,10 +227,16 @@ if = {
 		autonomous_state = autonomy_dominion
 	}
 
+	set_autonomy = {
+		target = IRE
+		autonomous_state = autonomy_dominion
+	}
+
 	else = {
 		puppet = MAL
 		puppet = AST
 		puppet = ICE
+		puppet = IRE
 	}
 }
 
