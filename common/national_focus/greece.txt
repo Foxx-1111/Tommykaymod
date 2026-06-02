@@ -23,7 +23,7 @@ focus_tree = {
 		id = GRE_revoke_heraklion
 		icon = GFX_focus_renounce_the_treaty_of_trianon
 
-		x = 15
+		x = 9
 		y = 0
 		cost = 10
 		ai_will_do = {
@@ -48,18 +48,75 @@ focus_tree = {
 				
 			}
 		}
-		
-
 
 	}
+		
 
-		focus = {
-		id = GRE_recruit_the_fascists
-		icon = GFX_goal_support_fascism
+	focus = {
+		id = GRE_stablizing_the_nation
+		icon = GFX_focus_GRE_bedrock_of_balkan_stability
 		prerequisite = { focus = GRE_revoke_heraklion }
 		x = 0
 		y = 1
 		relative_position_id = GRE_revoke_heraklion
+		cost = 8
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 5
+				OR = { 
+					is_historical_focus_on = yes
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_political_power = 50
+			add_stability =.05
+			hidden_effect = { 
+				
+			}
+		}
+
+	}
+
+	focus = {
+		id = GRE_ending_civil_disobedience
+		icon = GFX_focus_GRE_bedrock_of_balkan_stability
+		prerequisite = { focus = GRE_stablizing_the_nation }
+		x = -2
+		y = 1
+		relative_position_id = GRE_stablizing_the_nation
+		cost = 8
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 5
+				OR = { 
+					is_historical_focus_on = yes
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_political_power = 50
+			add_stability =.05
+			hidden_effect = { 
+				
+			}
+		}
+
+	}
+
+
+
+		focus = {
+		id = GRE_recruit_the_fascists
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = GRE_ending_civil_disobedience }
+		x = -2
+		y = 1
+		relative_position_id = GRE_ending_civil_disobedience
 		cost = 8
 		ai_will_do = {
 			base = 0
@@ -116,10 +173,10 @@ focus_tree = {
 		focus = {
 		id = GRE_use_the_military
 		icon = GFX_focus_generic_military_mission
-		prerequisite = { focus = GRE_recruit_the_fascists }
+		prerequisite = { focus = GRE_ending_civil_disobedience }
 		x = 0
 		y = 1
-		relative_position_id = GRE_recruit_the_fascists
+		relative_position_id = GRE_ending_civil_disobedience
 		cost = 5
 		ai_will_do = {
 			base = 1
@@ -181,373 +238,15 @@ focus_tree = {
 		}
 	}
 	
-	focus = {
-		id = GRE_following_in_the_footsteps_of_giants
-		icon = GFX_focus_GRE_following_in_the_footsteps_of_giants
-		prerequisite = { focus = GRE_use_the_military }
-		x = 0
-		y = 1
-		relative_position_id = GRE_use_the_military
-		cost = 5
-		ai_will_do = {
-			base = 1
-		}
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			add_popularity = {
-   				ideology = fascism
-   	 			popularity = 0.1
-			}
-			if = { 
-				limit = { 
-					GER = { has_government = fascism }
-				}
-				GER = { 
-					add_opinion_modifier = { 
-						target = GRE
-						modifier = GRE_fascist_leanings
-					}
-				}
-			}
-			if = { 
-				limit = { 
-					ITA = { has_government = fascism }
-				}
-				ITA = { 
-					add_opinion_modifier = { 
-						target = GRE
-						modifier = GRE_fascist_leanings
-					}
-				}
-			}
-			if = { 
-				limit = { 
-					has_idea = GRE_metaxism_6
-				}
-				swap_ideas = {
-					remove_idea = GRE_metaxism_6
-					add_idea = GRE_metaxism_7
-				}
-			}
-			else_if = {
-				limit = {
-					has_country_leader = { 
-						character = GRE_ioannis_metaxas
-						ruling_only = yes
-					}
-					has_government = neutrality
-					NOT = { has_idea = GRE_metaxism_6 }
-				}
-				custom_effect_tooltip = no_fascist_metaxism_spirit_tt
-			}
-			hidden_effect = { 
-				if = { 
-					limit = { 
-						GER = { has_government = fascism }
-					}
-					add_opinion_modifier = { 
-						target = GRE
-						modifier = GRE_fascist_trading_bloc
-					}
-				}
-				if = { 
-					limit = { 
-						ITA = { has_government = fascism }
-					}
-					add_opinion_modifier = { 
-						target = GRE
-						modifier = GRE_fascist_trading_bloc
-					}
-				}
-				swap_ideas = {
-					remove_idea = GRE_eon
-					add_idea = GRE_eon_fascist
-				}
-				if = {
-					limit = { 
-						has_idea = GRE_metaxism
-					}
-					remove_ideas = GRE_metaxism
-				} 
-				if = {
-					limit = { 
-						has_idea = GRE_metaxism_2
-					}	
-					remove_ideas = GRE_metaxism_2
-				}
-				if = {
-					limit = { 
-						has_idea = GRE_metaxism_3
-					}	
-					remove_ideas = GRE_metaxism_3
-				}
-				if = {
-					limit = { 
-						has_idea = GRE_metaxism_4
-					}	
-					remove_ideas = GRE_metaxism_4
-				}
-				if = {
-					limit = { 
-						has_idea = GRE_metaxism_5
-					}	
-					remove_ideas = GRE_metaxism_5
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = GRE_remembering_the_anatolian_catastrophe
-		icon = GFX_goal_generic_attack_allies
-		prerequisite = { focus = GRE_following_in_the_footsteps_of_giants }
-		x = 0
-		y = 1
-		relative_position_id = GRE_following_in_the_footsteps_of_giants
-		cost = 5
-		ai_will_do = {
-			base = 1
-		}
-
-		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
-		completion_reward = {
-			add_ideas = GRE_martyrs_of_the_anatolian_catastrophe
-			custom_effect_tooltip = GRE_old_memories_stir_new_threats_tt
-			hidden_effect = { 
-				country_event = { id = bftb_greece.3 days = 7 }
-				country_event = { id = bftb_greece.90 days = 28 }
-			}
-		}
-	}
-
-	focus = {
-		id = GRE_venerate_the_ancient_hellenes
-		icon = GFX_goal_generic_national_unity
-		prerequisite = { focus = GRE_remembering_the_anatolian_catastrophe }
-		x = 0
-		y = 1
-		relative_position_id = GRE_remembering_the_anatolian_catastrophe
-		cost = 5
-		ai_will_do = {
-			base = 1
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {
-			add_ideas = GRE_venerate_the_ancient_hellenes_spirit
-			add_political_power = 120
-		}
-	}
-	
-	
-
-	focus = {
-		id = GRE_theban_warriors #HELLENES2
-		icon = GFX_goal_demand_sudetenland
-		prerequisite = { focus = GRE_venerate_the_ancient_hellenes }
-		x = -2
-		y = 2
-		relative_position_id = GRE_remembering_the_anatolian_catastrophe
-		cost = 5
-		ai_will_do = {
-			base = 1
-		}
-
-		completion_reward = {	
-			if = {
-				limit = {
-					has_idea = GRE_venerate_the_ancient_hellenes_spirit
-				}
-				swap_ideas = {
-					remove_idea = GRE_venerate_the_ancient_hellenes_spirit
-					add_idea = GRE_venerate_the_ancient_hellenes_2
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = GRE_venerate_the_ancient_hellenes_3
-				}
-				swap_ideas = {
-					remove_idea = GRE_venerate_the_ancient_hellenes_3
-					add_idea = GRE_venerate_the_ancient_hellenes_5
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = GRE_venerate_the_ancient_hellenes_4
-				}
-				swap_ideas = {
-					remove_idea = GRE_venerate_the_ancient_hellenes_4
-					add_idea = GRE_venerate_the_ancient_hellenes_6
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = GRE_venerate_the_ancient_hellenes_7
-				}
-				swap_ideas = {
-					remove_idea = GRE_venerate_the_ancient_hellenes_7
-					add_idea = GRE_venerate_the_ancient_hellenes_8
-				}
-			}
-			else = { 
-				effect_tooltip = { 
-					swap_ideas = {
-						remove_idea = GRE_venerate_the_ancient_hellenes_spirit
-						add_idea = GRE_venerate_the_ancient_hellenes_2 
-					}
-				}
-			}			
-		}
-	}
-
-	focus = {
-		id = GRE_athenian_thinkers #HELLENES3
-		icon = GFX_focus_research
-		prerequisite = { focus = GRE_venerate_the_ancient_hellenes }
-		x = 0
-		y = 2
-		relative_position_id = GRE_remembering_the_anatolian_catastrophe
-		cost = 5
-		ai_will_do = {
-			base = 1
-		}
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-			if = {
-				limit = {
-					has_idea = GRE_venerate_the_ancient_hellenes_spirit
-				}
-				swap_ideas = {
-					remove_idea = GRE_venerate_the_ancient_hellenes_spirit
-					add_idea = GRE_venerate_the_ancient_hellenes_3
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = GRE_venerate_the_ancient_hellenes_2
-				}
-				swap_ideas = {
-					remove_idea = GRE_venerate_the_ancient_hellenes_2
-					add_idea = GRE_venerate_the_ancient_hellenes_5
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = GRE_venerate_the_ancient_hellenes_4
-				}
-				swap_ideas = {
-					remove_idea = GRE_venerate_the_ancient_hellenes_4
-					add_idea = GRE_venerate_the_ancient_hellenes_7
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = GRE_venerate_the_ancient_hellenes_6
-				}
-				swap_ideas = {
-					remove_idea = GRE_venerate_the_ancient_hellenes_6
-					add_idea = GRE_venerate_the_ancient_hellenes_8
-				}
-			}	
-			else = { 
-				effect_tooltip = { 
-					swap_ideas = {
-						remove_idea = GRE_venerate_the_ancient_hellenes_spirit
-						add_idea = GRE_venerate_the_ancient_hellenes_3
-					}
-				}
-			}		
-		}
-	}
-
-	focus = {
-		id = GRE_expansion_of_athens_university
-		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = GRE_athenian_thinkers }
-		x = 0
-		y = 1
-		relative_position_id = GRE_athenian_thinkers
-		cost = 10
-		ai_will_do = {
-			base = 1
-		}
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}	
-
-	focus = {
-		id = GRE_macedonian_generals #HELLENES4
-		icon = GFX_goal_generic_position_armies
-		prerequisite = { focus = GRE_venerate_the_ancient_hellenes }
-		x = 2
-		y = 2
-		relative_position_id = GRE_remembering_the_anatolian_catastrophe
-		cost = 5
-		ai_will_do = {
-			base = 1
-		}
-
-		completion_reward = {
-			if = {
-				limit = {
-					has_idea = GRE_venerate_the_ancient_hellenes_spirit
-				}
-				swap_ideas = {
-					remove_idea = GRE_venerate_the_ancient_hellenes_spirit
-					add_idea = GRE_venerate_the_ancient_hellenes_4
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = GRE_venerate_the_ancient_hellenes_2
-				}
-				swap_ideas = {
-					remove_idea = GRE_venerate_the_ancient_hellenes_2
-					add_idea = GRE_venerate_the_ancient_hellenes_6
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = GRE_venerate_the_ancient_hellenes_3
-				}
-				swap_ideas = {
-					remove_idea = GRE_venerate_the_ancient_hellenes_3
-					add_idea = GRE_venerate_the_ancient_hellenes_7
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = GRE_venerate_the_ancient_hellenes_5
-				}
-				swap_ideas = {
-					remove_idea = GRE_venerate_the_ancient_hellenes_5
-					add_idea = GRE_venerate_the_ancient_hellenes_8
-				}
-			}
-			else = { 
-				effect_tooltip = { 
-					swap_ideas = {
-						remove_idea = GRE_venerate_the_ancient_hellenes_spirit
-						add_idea = GRE_venerate_the_ancient_hellenes_4
-					}
-				}
-			}
-		}
-	}		
+		
 
 	focus = {
 		id = GRE_the_anatolian_refugees
 		icon = GFX_goal_generic_dangerous_deal
-		prerequisite = { focus = GRE_theban_warriors focus = GRE_athenian_thinkers focus = GRE_macedonian_generals }
+		prerequisite = { focus = GRE_use_the_military }
 		x = 0
 		y = 1
-		relative_position_id = GRE_expansion_of_athens_university
+		relative_position_id = GRE_use_the_military
 		cost = 5
 		ai_will_do = {
 			base = 1
@@ -758,233 +457,7 @@ focus_tree = {
 		}
 	}
 	
-		focus = {
-		id = GRE_the_hellenic_spirit
-		icon = GFX_goal_generic_propaganda
-		prerequisite = { focus = GRE_macedonian_generals }
-		x = 0
-		y = 1
-		relative_position_id = GRE_macedonian_generals
-		cost = 10
-		ai_will_do = {
-			base = 1
-		}
-
-		completion_reward = {
-			add_political_power = 120
-			effect_tooltip = { 
-				swap_ideas = {
-					remove_idea = GRE_metaxism
-					add_idea = GRE_metaxism_2
-				}
-			}
-			hidden_effect = { 
-				if = {
-					limit = {
-						has_idea = GRE_metaxism
-					}
-					swap_ideas = {
-						remove_idea = GRE_metaxism
-						add_idea = GRE_metaxism_2
-					}
-				}
-			}
-		}		
-	}
 	
-	focus = {
-		id = GRE_the_national_youth_organisation
-		icon = GFX_goal_generic_secret_weapon
-		prerequisite = { focus = GRE_the_hellenic_spirit }
-		x = 0
-		y = 1
-		relative_position_id = GRE_the_hellenic_spirit
-		cost = 10
-		ai_will_do = {
-			base = 1
-		}
-
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		completion_reward = {
-			add_ideas = GRE_eon 
-		}
-	}
-	
-	focus = {
-		id = GRE_heirs_of_alexander
-		icon = GFX_focus_BEL_legacy_of_the_great_war
-		prerequisite = { focus = GRE_the_national_youth_organisation }
-		x = 0
-		y = 1
-		relative_position_id = GRE_the_national_youth_organisation
-		cost = 10
-		ai_will_do = {
-			base = 1
-		}
-
-		completion_reward = {
-			if = {
-				limit = {
-					has_idea = GRE_venerate_the_ancient_hellenes_4
-				}
-				swap_ideas = {
-					remove_idea = GRE_venerate_the_ancient_hellenes_4
-					add_idea = GRE_venerate_the_ancient_hellenes_8
-				}
-			}
-			
-			else_if = {
-				limit = {
-					NOT = { has_idea = GRE_venerate_the_ancient_hellenes_4 } 
-				}
-				effect_tooltip = { 	
-					swap_ideas = {
-						remove_idea = GRE_venerate_the_ancient_hellenes_4
-						add_idea = GRE_venerate_the_ancient_hellenes_8
-					}
-				}
-			}
-		}
-	}
-	
-
-	
-	focus = {
-		id = GRE_an_orthodox_state
-		icon = GFX_focus_GRE_an_orthodox_state
-		prerequisite = { focus = GRE_theban_warriors }
-		available = { 
-			has_country_leader = { 
-				character = GRE_ioannis_metaxas
-				ruling_only = yes
-			}
-			has_idea = GRE_metaxism_2
-		}
-		x = 0
-		y = 1
-		relative_position_id = GRE_theban_warriors
-		cost = 10
-		ai_will_do = {
-			base = 1
-		}
-
-		completion_reward = {
-			if = {
-				limit = {
-					has_idea = GRE_metaxism_2
-				}
-				swap_ideas = {
-					remove_idea = GRE_metaxism_2
-					add_idea = GRE_metaxism_3
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = GRE_metaxism
-				}
-				effect_tooltip = { 	
-					swap_ideas = {
-						remove_idea = GRE_metaxism
-						add_idea = GRE_metaxism_3
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { has_idea = GRE_metaxism } 
-				}
-				effect_tooltip = { 	
-					swap_ideas = {
-						remove_idea = GRE_metaxism
-						add_idea = GRE_metaxism_3
-					}
-				}
-			}
-		}			
-	}
-
-
-	focus = {
-		id = GRE_defending_our_kingdom
-		icon = GFX_goal_generic_defence
-		prerequisite = { focus = GRE_an_orthodox_state }
-		available = { 
-			has_country_leader = { 
-				character = GRE_ioannis_metaxas
-				ruling_only = yes
-			}
-			is_in_faction = no
-			has_idea = GRE_metaxism_4
-		}
-		x = 0
-		y = 1
-		relative_position_id = GRE_an_orthodox_state
-		cost = 10
-		ai_will_do = {
-			base = 1
-		}
-
-		completion_reward = {
-			effect_tooltip = { 
-				swap_ideas = {
-					remove_idea = GRE_metaxism_4
-					add_idea = GRE_metaxism_5
-				}
-			}
-			hidden_effect = { 
-				if = {
-					limit = {
-						has_idea = GRE_metaxism_4
-					}
-					swap_ideas = {
-						remove_idea = GRE_metaxism_4
-						add_idea = GRE_metaxism_5
-					}
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = GRE_reviving_the_spartan_warrior_spirit
-		icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
-		prerequisite = { focus = GRE_defending_our_kingdom }
-		available = { 
-			has_country_leader = { 
-				character = GRE_ioannis_metaxas
-				ruling_only = yes
-			}
-			is_in_faction = no
-			has_idea = GRE_metaxism_5
-		}
-		x = 0
-		y = 1
-		relative_position_id = GRE_defending_our_kingdom
-		cost = 10
-		ai_will_do = {
-			base = 1
-		}
-
-		completion_reward = {
-			effect_tooltip = { 
-				swap_ideas = {
-					remove_idea = GRE_metaxism_5
-					add_idea = GRE_metaxism_6
-				}
-			}
-			hidden_effect = { 
-				if = {
-					limit = {
-						has_idea = GRE_metaxism_5
-					}
-					swap_ideas = {
-						remove_idea = GRE_metaxism_5
-						add_idea = GRE_metaxism_6
-					}
-				}
-			}
-		}
-	}	
 	
 	focus = {
 		id = GRE_forada_nostrum
@@ -1114,7 +587,7 @@ focus_tree = {
 		available = { 
 			fascism > 0.4
 		}
-		x = -6
+		x = -11
 		y = 1
 		relative_position_id = GRE_revoke_heraklion
 		cost = 8
@@ -1376,6 +849,814 @@ focus_tree = {
 		}
 	}
 
+
+####################   ### ###  ### ### 
+####################    #  #  # #   #   
+##unifiying nation##    #  ###  ##  ##  
+####################    #  #  # #   #   
+####################    #  #  # ### ### 
+
+	focus = {
+		id = GRE_Fixing_the_malaise
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = GRE_stablizing_the_nation }
+		x = 4
+		y = 1
+		relative_position_id = GRE_stablizing_the_nation
+		cost = 6
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		
+		}
+	}
+
+		focus = {
+		id = GRE_breed_revanchism
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = GRE_Fixing_the_malaise }
+		x = -1
+		y = 1
+		relative_position_id = GRE_Fixing_the_malaise
+		cost = 6
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		
+		}
+	}
+
+		focus = {
+		id = GRE_crackdown_on_defeatism
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = GRE_breed_revanchism}
+		x = 0
+		y = 1
+		relative_position_id = GRE_breed_revanchism
+		cost = 6
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		remove_ideas = GRE_two_decades_of_humiliation
+		}
+	}
+
+	focus = {
+		id = GRE_remembering_the_anatolian_catastrophe
+		icon = GFX_goal_generic_attack_allies
+		prerequisite = { focus = GRE_crackdown_on_defeatism}
+		x = 0
+		y = 1
+		relative_position_id = GRE_crackdown_on_defeatism
+		cost = 5
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_ideas = GRE_martyrs_of_the_anatolian_catastrophe
+			custom_effect_tooltip = GRE_old_memories_stir_new_threats_tt
+			hidden_effect = { 
+				country_event = { id = bftb_greece.3 days = 7 }
+				country_event = { id = bftb_greece.90 days = 28 }
+			}
+		}
+	}
+
+		focus = {
+		id = GRE_stoke_the_flames_of_revenge
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = GRE_remembering_the_anatolian_catastrophe }
+		x = 0
+		y = 1
+		relative_position_id = GRE_remembering_the_anatolian_catastrophe
+		cost = 6
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		
+		}
+
+	}
+
+
+	focus = {
+		id = GRE_the_national_youth_organisation
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = { focus = GRE_breed_revanchism } 
+		x = -2
+		y = 1
+		relative_position_id = GRE_breed_revanchism
+		cost = 10
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_ideas = GRE_eon 
+		}
+	}
+
+
+		focus = {
+		id = GRE_provide_scapegoats
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = GRE_breed_revanchism }
+		x = 2
+		y = 1
+		relative_position_id = GRE_breed_revanchism
+		cost = 6
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		
+		}
+	}
+
+		focus = {
+		id = GRE_breed_patriotism
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = GRE_Fixing_the_malaise }
+		x = 5
+		y = 1
+		relative_position_id = GRE_Fixing_the_malaise
+		cost = 6
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 1
+				}
+		}
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = {
+		id = GRE_venerate_the_ancient_hellenes
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = GRE_breed_patriotism }
+		x = 0
+		y = 1
+		relative_position_id = GRE_breed_patriotism
+		cost = 5
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = GRE_venerate_the_ancient_hellenes_spirit
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = GRE_our_great_civilization
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = GRE_venerate_the_ancient_hellenes }
+		x = 0
+		y = 1
+		relative_position_id = GRE_venerate_the_ancient_hellenes
+		cost = 5
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = GRE_venerate_the_ancient_hellenes_spirit
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = GRE_theban_warriors #HELLENES2
+		icon = GFX_goal_demand_sudetenland
+		prerequisite = { focus = GRE_our_great_civilization }
+		x = -2
+		y = 1
+		relative_position_id = GRE_our_great_civilization
+		cost = 5
+		ai_will_do = {
+			base = 1
+		}
+
+		completion_reward = {	
+			if = {
+				limit = {
+					has_idea = GRE_venerate_the_ancient_hellenes_spirit
+				}
+				swap_ideas = {
+					remove_idea = GRE_venerate_the_ancient_hellenes_spirit
+					add_idea = GRE_venerate_the_ancient_hellenes_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = GRE_venerate_the_ancient_hellenes_3
+				}
+				swap_ideas = {
+					remove_idea = GRE_venerate_the_ancient_hellenes_3
+					add_idea = GRE_venerate_the_ancient_hellenes_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = GRE_venerate_the_ancient_hellenes_4
+				}
+				swap_ideas = {
+					remove_idea = GRE_venerate_the_ancient_hellenes_4
+					add_idea = GRE_venerate_the_ancient_hellenes_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = GRE_venerate_the_ancient_hellenes_7
+				}
+				swap_ideas = {
+					remove_idea = GRE_venerate_the_ancient_hellenes_7
+					add_idea = GRE_venerate_the_ancient_hellenes_8
+				}
+			}
+			else = { 
+				effect_tooltip = { 
+					swap_ideas = {
+						remove_idea = GRE_venerate_the_ancient_hellenes_spirit
+						add_idea = GRE_venerate_the_ancient_hellenes_2 
+					}
+				}
+			}			
+		}
+	}
+
+	focus = {
+		id = GRE_athenian_thinkers #HELLENES3
+		icon = GFX_focus_research
+		prerequisite = { focus = GRE_our_great_civilization }
+		x = 0
+		y = 1
+		relative_position_id = GRE_our_great_civilization
+		cost = 5
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = GRE_venerate_the_ancient_hellenes_spirit
+				}
+				swap_ideas = {
+					remove_idea = GRE_venerate_the_ancient_hellenes_spirit
+					add_idea = GRE_venerate_the_ancient_hellenes_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = GRE_venerate_the_ancient_hellenes_2
+				}
+				swap_ideas = {
+					remove_idea = GRE_venerate_the_ancient_hellenes_2
+					add_idea = GRE_venerate_the_ancient_hellenes_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = GRE_venerate_the_ancient_hellenes_4
+				}
+				swap_ideas = {
+					remove_idea = GRE_venerate_the_ancient_hellenes_4
+					add_idea = GRE_venerate_the_ancient_hellenes_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = GRE_venerate_the_ancient_hellenes_6
+				}
+				swap_ideas = {
+					remove_idea = GRE_venerate_the_ancient_hellenes_6
+					add_idea = GRE_venerate_the_ancient_hellenes_8
+				}
+			}	
+			else = { 
+				effect_tooltip = { 
+					swap_ideas = {
+						remove_idea = GRE_venerate_the_ancient_hellenes_spirit
+						add_idea = GRE_venerate_the_ancient_hellenes_3
+					}
+				}
+			}		
+		}
+	}
+	
+
+	focus = {
+		id = GRE_macedonian_generals #HELLENES4
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = GRE_our_great_civilization }
+		x = 2
+		y = 1
+		relative_position_id = GRE_our_great_civilization
+		cost = 5
+		ai_will_do = {
+			base = 1
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = GRE_venerate_the_ancient_hellenes_spirit
+				}
+				swap_ideas = {
+					remove_idea = GRE_venerate_the_ancient_hellenes_spirit
+					add_idea = GRE_venerate_the_ancient_hellenes_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = GRE_venerate_the_ancient_hellenes_2
+				}
+				swap_ideas = {
+					remove_idea = GRE_venerate_the_ancient_hellenes_2
+					add_idea = GRE_venerate_the_ancient_hellenes_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = GRE_venerate_the_ancient_hellenes_3
+				}
+				swap_ideas = {
+					remove_idea = GRE_venerate_the_ancient_hellenes_3
+					add_idea = GRE_venerate_the_ancient_hellenes_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = GRE_venerate_the_ancient_hellenes_5
+				}
+				swap_ideas = {
+					remove_idea = GRE_venerate_the_ancient_hellenes_5
+					add_idea = GRE_venerate_the_ancient_hellenes_8
+				}
+			}
+			else = { 
+				effect_tooltip = { 
+					swap_ideas = {
+						remove_idea = GRE_venerate_the_ancient_hellenes_spirit
+						add_idea = GRE_venerate_the_ancient_hellenes_4
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_romaioi_resilience
+		icon = GFX_focus_GRE_byzantine_themata
+		prerequisite = { focus = GRE_athenian_thinkers }
+		prerequisite = { focus = GRE_macedonian_generals }
+		prerequisite = { focus = GRE_theban_warriors }
+		x = 0
+		y = 1
+		relative_position_id = GRE_athenian_thinkers
+		cost = 10
+		ai_will_do = {
+			base = 1
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = GRE_venerate_the_ancient_hellenes_4
+				}
+				swap_ideas = {
+					remove_idea = GRE_venerate_the_ancient_hellenes_4
+					add_idea = GRE_venerate_the_ancient_hellenes_8
+				}
+			}
+			
+			else_if = {
+				limit = {
+					NOT = { has_idea = GRE_venerate_the_ancient_hellenes_4 } 
+				}
+				effect_tooltip = { 	
+					swap_ideas = {
+						remove_idea = GRE_venerate_the_ancient_hellenes_4
+						add_idea = GRE_venerate_the_ancient_hellenes_8
+					}
+				}
+			}
+		}
+	}
+	
+		focus = {
+		id = GRE_following_in_the_footsteps_of_giants
+		icon = GFX_focus_GRE_following_in_the_footsteps_of_giants
+		prerequisite = { focus = GRE_venerate_the_ancient_hellenes }
+		x = 4
+		y = 1
+		relative_position_id = GRE_venerate_the_ancient_hellenes
+		cost = 5
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = {
+   				ideology = fascism
+   	 			popularity = 0.1
+			}
+			if = { 
+				limit = { 
+					GER = { has_government = fascism }
+				}
+				GER = { 
+					add_opinion_modifier = { 
+						target = GRE
+						modifier = GRE_fascist_leanings
+					}
+				}
+			}
+			if = { 
+				limit = { 
+					ITA = { has_government = fascism }
+				}
+				ITA = { 
+					add_opinion_modifier = { 
+						target = GRE
+						modifier = GRE_fascist_leanings
+					}
+				}
+			}
+			if = { 
+				limit = { 
+					has_idea = GRE_metaxism_6
+				}
+				swap_ideas = {
+					remove_idea = GRE_metaxism_6
+					add_idea = GRE_metaxism_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_leader = { 
+						character = GRE_ioannis_metaxas
+						ruling_only = yes
+					}
+					has_government = neutrality
+					NOT = { has_idea = GRE_metaxism_6 }
+				}
+				custom_effect_tooltip = no_fascist_metaxism_spirit_tt
+			}
+			hidden_effect = { 
+				if = { 
+					limit = { 
+						GER = { has_government = fascism }
+					}
+					add_opinion_modifier = { 
+						target = GRE
+						modifier = GRE_fascist_trading_bloc
+					}
+				}
+				if = { 
+					limit = { 
+						ITA = { has_government = fascism }
+					}
+					add_opinion_modifier = { 
+						target = GRE
+						modifier = GRE_fascist_trading_bloc
+					}
+				}
+				swap_ideas = {
+					remove_idea = GRE_eon
+					add_idea = GRE_eon_fascist
+				}
+				if = {
+					limit = { 
+						has_idea = GRE_metaxism
+					}
+					remove_ideas = GRE_metaxism
+				} 
+				if = {
+					limit = { 
+						has_idea = GRE_metaxism_2
+					}	
+					remove_ideas = GRE_metaxism_2
+				}
+				if = {
+					limit = { 
+						has_idea = GRE_metaxism_3
+					}	
+					remove_ideas = GRE_metaxism_3
+				}
+				if = {
+					limit = { 
+						has_idea = GRE_metaxism_4
+					}	
+					remove_ideas = GRE_metaxism_4
+				}
+				if = {
+					limit = { 
+						has_idea = GRE_metaxism_5
+					}	
+					remove_ideas = GRE_metaxism_5
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_heirs_of_heracules
+		icon = GFX_focus_BEL_legacy_of_the_great_war
+		prerequisite = { focus = GRE_following_in_the_footsteps_of_giants }
+		x = 0
+		y = 1
+		relative_position_id = GRE_following_in_the_footsteps_of_giants
+		cost = 5
+		ai_will_do = {
+			base = 1
+		}
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = GRE_heirs_of_alexander
+		icon = GFX_focus_BEL_legacy_of_the_great_war
+		prerequisite = { focus = GRE_heirs_of_heracules}
+		x = 0
+		y = 1
+		relative_position_id = GRE_heirs_of_heracules
+		cost = 5
+		ai_will_do = {
+			base = 1
+		}
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = GRE_heirs_of_justinian
+		icon = GFX_focus_BEL_legacy_of_the_great_war
+		prerequisite = { focus = GRE_following_in_the_footsteps_of_giants }
+		x = 2
+		y = 1
+		relative_position_id = GRE_following_in_the_footsteps_of_giants
+		cost = 5
+		ai_will_do = {
+			base = 1
+		}
+
+		completion_reward = {
+
+		}
+	}
+
+
+	focus = {
+		id = GRE_heirs_of_alexios 
+		icon = GFX_focus_BEL_legacy_of_the_great_war
+		prerequisite = { focus = GRE_heirs_of_justinian }
+		x = 0
+		y = 1
+		relative_position_id = GRE_heirs_of_justinian
+		cost = 5
+		ai_will_do = {
+			base = 1
+		}
+
+		completion_reward = {
+
+		}
+	}
+
+
+	focus = {
+		id = GRE_embodying_these_giants
+		icon = GFX_focus_BEL_legacy_of_the_great_war
+		prerequisite = { focus = GRE_heirs_of_alexander }
+		prerequisite = { focus = GRE_heirs_of_alexios }
+		x = 1
+		y = 1
+		relative_position_id = GRE_heirs_of_alexander
+		cost = 10
+		ai_will_do = {
+			base = 1
+		}
+
+		completion_reward = {
+
+		}
+	}
+
+
+		focus = {
+		id = GRE_the_hellenic_spirit
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = GRE_venerate_the_ancient_hellenes }
+		x = -4
+		y = 1
+		relative_position_id = GRE_venerate_the_ancient_hellenes
+		cost = 10
+		ai_will_do = {
+			base = 1
+		}
+
+		completion_reward = {
+			add_political_power = 120
+			effect_tooltip = { 
+				swap_ideas = {
+					remove_idea = GRE_metaxism
+					add_idea = GRE_metaxism_2
+				}
+			}
+			hidden_effect = { 
+				if = {
+					limit = {
+						has_idea = GRE_metaxism
+					}
+					swap_ideas = {
+						remove_idea = GRE_metaxism
+						add_idea = GRE_metaxism_2
+					}
+				}
+			}
+		}		
+	}
+	
+
+	
+	focus = {
+		id = GRE_an_orthodox_state
+		icon = GFX_focus_GRE_an_orthodox_state
+		prerequisite = { focus = GRE_the_hellenic_spirit }
+		available = { 
+
+			has_idea = GRE_metaxism_2
+		}
+		x = 0
+		y = 1
+		relative_position_id = GRE_the_hellenic_spirit
+		cost = 10
+		ai_will_do = {
+			base = 1
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = GRE_metaxism_2
+				}
+				swap_ideas = {
+					remove_idea = GRE_metaxism_2
+					add_idea = GRE_metaxism_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = GRE_metaxism
+				}
+				effect_tooltip = { 	
+					swap_ideas = {
+						remove_idea = GRE_metaxism
+						add_idea = GRE_metaxism_3
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { has_idea = GRE_metaxism } 
+				}
+				effect_tooltip = { 	
+					swap_ideas = {
+						remove_idea = GRE_metaxism
+						add_idea = GRE_metaxism_3
+					}
+				}
+			}
+		}			
+	}
+
+
+	focus = {
+		id = GRE_defending_our_kingdom
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = GRE_an_orthodox_state }
+		available = { 
+			has_country_leader = { 
+				character = GRE_ioannis_metaxas
+				ruling_only = yes
+			}
+			is_in_faction = no
+			has_idea = GRE_metaxism_4
+		}
+		x = 0
+		y = 1
+		relative_position_id = GRE_an_orthodox_state
+		cost = 10
+		ai_will_do = {
+			base = 1
+		}
+
+		completion_reward = {
+			effect_tooltip = { 
+				swap_ideas = {
+					remove_idea = GRE_metaxism_4
+					add_idea = GRE_metaxism_5
+				}
+			}
+			hidden_effect = { 
+				if = {
+					limit = {
+						has_idea = GRE_metaxism_4
+					}
+					swap_ideas = {
+						remove_idea = GRE_metaxism_4
+						add_idea = GRE_metaxism_5
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_reviving_the_spartan_warrior_spirit
+		icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
+		prerequisite = { focus = GRE_defending_our_kingdom }
+		available = { 
+			has_country_leader = { 
+				character = GRE_ioannis_metaxas
+				ruling_only = yes
+			}
+			is_in_faction = no
+			has_idea = GRE_metaxism_5
+		}
+		x = 0
+		y = 1
+		relative_position_id = GRE_defending_our_kingdom
+		cost = 10
+		ai_will_do = {
+			base = 1
+		}
+
+		completion_reward = {
+			effect_tooltip = { 
+				swap_ideas = {
+					remove_idea = GRE_metaxism_5
+					add_idea = GRE_metaxism_6
+				}
+			}
+			hidden_effect = { 
+				if = {
+					limit = {
+						has_idea = GRE_metaxism_5
+					}
+					swap_ideas = {
+						remove_idea = GRE_metaxism_5
+						add_idea = GRE_metaxism_6
+					}
+				}
+			}
+		}
+	}
+
+
+
 #############   ### ###  ### ### 
 #############    #  #  # #   #   
 ##EXPANSION##    #  ###  ##  ##  
@@ -1392,7 +1673,7 @@ focus_tree = {
 		NOT = {country_exists = TUR}
 		}
 		prerequisite = {  }
-		x = 9
+		x = 1
 		y = 6
 		cost = 5
 		ai_will_do = {
@@ -1712,7 +1993,7 @@ focus = {
 		icon = GFX_SOV_great_commander_ccp_2d_sov_compatibility
 		prerequisite = { focus = GRE_revoke_heraklion }
 
-		x = 3
+		x = 11
 		y = 1
 		relative_position_id = GRE_revoke_heraklion
 		cost = 8
@@ -2048,6 +2329,25 @@ focus = {
 
 		completion_reward = {
 			add_ideas = GRE_macedonian_farmlands_idea
+		}
+	}
+
+	focus = {
+		id = GRE_expansion_of_athens_university
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = GRE_reevaluating_the_drachma }
+		x = 8
+
+		y = 1
+		relative_position_id = GRE_reevaluating_the_drachma
+		cost = 10
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
 		}
 	}
 
