@@ -3,4 +3,4 @@ tags={
 	"Alternative History"
 }
 name="TK mod"
-supported_version="1.17.*"
+supported_version="1.18.*"
