@@ -4,6 +4,7 @@ state={
 	resources={
 		steel=50.000
 		aluminium=14.000
+		coal = 14 # initial distirbution / 660 total
 	}
 	provinces={
 		563 3423 3558 9575 11435 11470 11494 11531 11547 11560 

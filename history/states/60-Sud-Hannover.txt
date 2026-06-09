@@ -5,6 +5,7 @@ state={
 		steel=9.000
 		chromium=3.000
 		tungsten=3.000
+		coal = 8 #initial distribution
 	}
 	provinces={
 		425 482 538 3500 3561 6501 6524 9497 

@@ -3,6 +3,7 @@ state={
 	name="STATE_51"
 	resources={
 		steel=35.000
+		coal = 30 # initial distribution / 660 total
 	}
 	provinces={
 		587 3444 3547 9522 
@@ -37,4 +38,6 @@ state={
 		}
 		start_resistance = GER
 		set_compliance = 20
+}
+
 }

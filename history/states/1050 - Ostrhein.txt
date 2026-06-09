@@ -4,6 +4,10 @@ state={
 	provinces={
 		529 3512 6469 6570 9482 
 	}
+	resources = {
+	steel = 5  #was 18 #was 30 was: 54
+	coal = 30 
+	}
 	manpower=1654598
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
