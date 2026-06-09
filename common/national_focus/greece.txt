@@ -82,12 +82,12 @@ focus_tree = {
 
 	focus = {
 		id = GRE_ending_civil_disobedience
-		icon = GFX_focus_GRE_bedrock_of_balkan_stability
+		icon = GFX_focus_BRA_end_the_state_of_emergency
 		prerequisite = { focus = GRE_stablizing_the_nation }
-		x = -2
+		x = -3
 		y = 1
 		relative_position_id = GRE_stablizing_the_nation
-		cost = 8
+		cost = 6
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -106,7 +106,37 @@ focus_tree = {
 			}
 		}
 
-	}
+	 }
+
+	focus = {
+		id = GRE_purge_the_party
+		icon = GFX_focus_BEL_prisoner_king
+		prerequisite = { focus = GRE_ending_civil_disobedience }
+		x = 2
+		y = 1
+		relative_position_id = GRE_ending_civil_disobedience
+		cost = 5
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 5
+				OR = { 
+					is_historical_focus_on = yes
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_political_power = -50
+			add_stability =-.05
+			remove_ideas = { GRE_civil_instability }
+
+			hidden_effect = { 
+				
+			}
+		}
+
+	 }
 
 
 
@@ -117,7 +147,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = GRE_ending_civil_disobedience
-		cost = 8
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -238,16 +268,175 @@ focus_tree = {
 		}
 	}
 	
+	focus = {
+		id = GRE_crack_down_on_civil_liberties
+		icon = GFX_SOV_liberate_ryutin_ccp_2d_sov_compatibility
+		prerequisite = { focus = GRE_recruit_the_fascists}
+		prerequisite = { focus = GRE_use_the_military}
+		prerequisite = { focus = GRE_purge_the_party}
+		x = -1
+		y = 1
+		relative_position_id = GRE_purge_the_party
+		cost = 5
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 5
+				OR = { 
+					is_historical_focus_on = yes
+				}
+			}
+		}
 		
+		completion_reward = {
+			add_political_power = -50
+			add_stability =-.05
+			remove_ideas = { GRE_civil_instability }
+
+			hidden_effect = { 
+				
+			}
+		}
+
+	 }
 
 	focus = {
-		id = GRE_the_anatolian_refugees
-		icon = GFX_goal_generic_dangerous_deal
-		prerequisite = { focus = GRE_use_the_military }
-		x = 0
+		id = GRE_control_the_courts
+		icon = GFX_focus_generic_court
+		prerequisite = { focus = GRE_recruit_the_fascists}
+		prerequisite = { focus = GRE_use_the_military}
+		prerequisite = { focus = GRE_purge_the_party}
+		x = 1
 		y = 1
-		relative_position_id = GRE_use_the_military
+		relative_position_id = GRE_recruit_the_fascists
 		cost = 5
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 5
+				OR = { 
+					is_historical_focus_on = yes
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_political_power = -50
+			add_stability =-.05
+			remove_ideas = { GRE_civil_instability }
+
+			hidden_effect = { 
+				
+			}
+		}
+
+	 }
+
+	focus = {
+		id = GRE_achieving_total_control
+		icon = GFX_focus_GER_total_control_over_domestic_affairs
+		prerequisite = { focus = GRE_crack_down_on_civil_liberties}
+		prerequisite = { focus = GRE_control_the_courts}
+		x = -1
+		y = 1
+		relative_position_id = GRE_crack_down_on_civil_liberties
+		cost = 2
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 5
+				OR = { 
+					is_historical_focus_on = yes
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_political_power = -50
+			add_stability =-.05
+			remove_ideas = { GRE_civil_instability }
+
+			hidden_effect = { 
+				
+			}
+		}
+
+	 }
+
+	focus = {
+		id = GRE_favor_the_Neo_Romaioi
+		icon = GFX_focus_PER_modern_cataphract
+		prerequisite = { focus = GRE_achieving_total_control}
+		mutually_exclusive = {focus = GRE_favor_the_Neo_Spartanists}
+		x = -2
+		y = 1
+		relative_position_id = GRE_achieving_total_control
+		cost = 5
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 5
+				OR = { 
+					is_historical_focus_on = yes
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_political_power = 50
+
+
+			hidden_effect = { 
+				
+			}
+		}
+
+	 }
+
+	focus = {
+		id = GRE_favor_the_Neo_Spartanists
+		icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
+		prerequisite = { focus = GRE_achieving_total_control}
+		mutually_exclusive = {focus = GRE_favor_the_Neo_Romaioi}
+		x = 2
+		y = 1
+		relative_position_id = GRE_achieving_total_control
+		cost = 5
+		ai_will_do = {
+			base = 0
+			modifier = { 
+				add = 5
+				OR = { 
+					is_historical_focus_on = yes
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_political_power = 50
+
+
+			hidden_effect = { 
+				
+			}
+		}
+
+	 }
+
+
+	focus = {
+		id = GRE_the_time_is_now
+		icon = GFX_SOV_claims_in_baltic_ccp_2d_sov_compatibility
+		prerequisite = { focus = GRE_achieving_total_control }
+		prerequisite = { focus = GRE_stoke_the_flames_of_revenge }
+		available = { 
+		NOT = {country_exists = PON}  
+		NOT = {}
+		} 
+		x = 0
+		y = 2
+		relative_position_id = GRE_achieving_total_control
+		cost = 2
 		ai_will_do = {
 			base = 1
 		}
@@ -255,7 +444,46 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 120
-			country_event = { id = bftb_greece.6 }
+
+		}
+	}
+
+	focus = {
+		id = GRE_reassure_the_high_command
+		icon = GFX_SOV_experts_in_camouflage_ccp_2d_sov_compatibility
+		prerequisite = { focus = GRE_the_time_is_now }
+		x = 1
+		y = 1
+		relative_position_id = GRE_the_time_is_now
+		cost = 4
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 120
+
+		}
+	}
+
+
+	focus = {
+		id = GRE_prepare_for_war_with_the_american_turk
+		icon = GFX_focus_TUR_purge_the_kemalists
+		prerequisite = { focus = GRE_the_time_is_now }
+		x = -1
+		y = 1
+		relative_position_id = GRE_the_time_is_now
+		cost = 4
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 120
+
 		}
 	}		
 	
@@ -266,10 +494,11 @@ focus_tree = {
 		available = {
 			is_subject = no
 		}
-		prerequisite = { focus = GRE_the_anatolian_refugees }
-		x = 0
+		prerequisite = { focus = GRE_prepare_for_war_with_the_american_turk }
+		prerequisite = { focus = GRE_reassure_the_high_command }
+		x = 1
 		y = 1
-		relative_position_id = GRE_the_anatolian_refugees
+		relative_position_id = GRE_prepare_for_war_with_the_american_turk
 		will_lead_to_war_with = TUR
 		cost = 2
 		ai_will_do = {
@@ -366,11 +595,8 @@ focus_tree = {
 	focus = {
 		id = GRE_reviving_the_double_headed_eagle
 		icon = GFX_focus_GRE_reviving_the_double_headed_eagle
-		available = {
-			
-		}
+		prerequisite = { focus = GRE_favor_the_Neo_Romaioi }
 		prerequisite = { focus = GRE_horror_and_fear }
-		mutually_exclusive = {focus = GRE_forging_a_Greek_empire}
 		x = -2
 		y = 1
 		relative_position_id = GRE_horror_and_fear
@@ -482,7 +708,7 @@ focus_tree = {
 		id = GRE_forging_a_Greek_empire
 		icon = GFX_focus_GRE_resurrecting_the_megali_idea
 		prerequisite = { focus = GRE_horror_and_fear }
-		mutually_exclusive = { focus = GRE_reviving_the_double_headed_eagle }
+		prerequisite = { focus = GRE_favor_the_Neo_Spartanists }
 		x = 2
 		y = 1
 		relative_position_id = GRE_horror_and_fear
@@ -555,7 +781,8 @@ focus_tree = {
 	focus = {
 		id = GRE_moulding_the_new_world_order
 		icon = GFX_focus_RAJ_to_shake_the_world
-		prerequisite = { focus = GRE_the_die_is_cast focus = GRE_forada_nostrum focus = GRE_masters_of_the_middle_east}
+		prerequisite = { focus = GRE_forada_nostrum focus = GRE_masters_of_the_middle_east}
+		prerequisite = { focus = GRE_the_die_is_cast }
 		x = 0
 		y = 2
 		relative_position_id = GRE_the_die_is_cast
@@ -878,12 +1105,12 @@ focus_tree = {
 
 		focus = {
 		id = GRE_breed_revanchism
-		icon = GFX_goal_generic_national_unity
+		icon = GFX_SOV_the_last_break_southward_ccp_2d_sov_compatibility
 		prerequisite = { focus = GRE_Fixing_the_malaise }
 		x = -1
 		y = 1
 		relative_position_id = GRE_Fixing_the_malaise
-		cost = 6
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -898,12 +1125,12 @@ focus_tree = {
 
 		focus = {
 		id = GRE_crackdown_on_defeatism
-		icon = GFX_goal_generic_national_unity
+		icon = GFX_SOV_depoliticize_the_military_ccp_2d_sov_compatibility
 		prerequisite = { focus = GRE_breed_revanchism}
 		x = 0
 		y = 1
 		relative_position_id = GRE_breed_revanchism
-		cost = 6
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -941,12 +1168,12 @@ focus_tree = {
 
 		focus = {
 		id = GRE_stoke_the_flames_of_revenge
-		icon = GFX_goal_generic_national_unity
+		icon = GFX_focus_PRC_stoke_the_flames
 		prerequisite = { focus = GRE_remembering_the_anatolian_catastrophe }
 		x = 0
 		y = 1
 		relative_position_id = GRE_remembering_the_anatolian_catastrophe
-		cost = 6
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
@@ -982,7 +1209,7 @@ focus_tree = {
 
 		focus = {
 		id = GRE_provide_scapegoats
-		icon = GFX_goal_generic_national_unity
+		icon = GFX_SOV_collectivist_propaganda_ccp_2d_sov_compatibility
 		prerequisite = { focus = GRE_breed_revanchism }
 		x = 2
 		y = 1
@@ -1002,7 +1229,7 @@ focus_tree = {
 
 		focus = {
 		id = GRE_breed_patriotism
-		icon = GFX_goal_generic_national_unity
+		icon = GFX_focus_BUL_promote_bulgarian_nationalism
 		prerequisite = { focus = GRE_Fixing_the_malaise }
 		x = 5
 		y = 1
@@ -1041,7 +1268,7 @@ focus_tree = {
 
 	focus = {
 		id = GRE_our_great_civilization
-		icon = GFX_goal_generic_national_unity
+		icon = GFX_focus_PER_absorb_byzantines
 		prerequisite = { focus = GRE_venerate_the_ancient_hellenes }
 		x = 0
 		y = 1
@@ -1673,7 +1900,7 @@ focus_tree = {
 		NOT = {country_exists = TUR}
 		}
 		prerequisite = {  }
-		x = 1
+		x = 0
 		y = 6
 		cost = 5
 		ai_will_do = {
@@ -1712,6 +1939,13 @@ focus_tree = {
 		id = GRE_surrounded_by_the_red_scurge
 		icon = GFX_focus_RAJ_red_in_the_shadows
 		prerequisite = { focus = GRE_deal_with_the_devil }
+		available = { 
+		owns_state = 79
+		owns_state = 78
+		owns_state = 766
+		owns_state = 192
+		owns_state = 834
+		}
 		x = 0
 		y = 1
 		relative_position_id = GRE_deal_with_the_devil
@@ -1745,7 +1979,11 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		
+		create_wargoal = {
+			type = take_state_focus
+			target = Yem
+			generator = { 677 }
+		}
 		}
 	}
 
@@ -1913,7 +2151,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GRE_operation_alexander
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 0
 			modifier = { 
